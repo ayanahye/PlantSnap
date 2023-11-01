@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>work breakdown structure</title>
     <style>
-        body{
+        body {
             font-family: sans-serif;
             white-space: nowrap;
         }
+
         .wbs {
             display: flex;
             flex-direction: row;
@@ -33,11 +34,33 @@
             border-radius: 1em;
             margin: 0.5em 0;
         }
+
         .tb {
             background: #d1f995;
             padding: 1em;
             border-radius: 1em;
             margin: 0.5em 0 0 1em;
+        }
+
+        .done::after {
+            content: "✓";
+            font-weight: bolder;
+            padding-left: 0.2em;
+        }
+
+        .progress::after {
+            content: "🚧";
+            font-weight: bolder;
+        }
+
+        .author {
+            color: #0008;
+            font-weight: bold;
+            padding: 0 0.2em;
+        }
+        .step div{
+            display: flex;
+            align-items: center;
         }
     </style>
 </head>
@@ -45,54 +68,68 @@
 <div class="wbs">
     <div class="step">
         <div class="title">plan</div>
-        <div class="ta">Create user stories</div>
-        <div class="ta">work breakdown structure</div>
-        <div class="tb">schedule/timeline</div>
-        <div class="ta">Choose technology stack</div>
-        <div class="tb">front end</div>
-        <div class="tb">back end</div>
-        <div class="tb">2 APIs</div>
-        <div class="ta">team tool</div>
-        <div class="tb">communication tool</div>
-        <div class="tb">github repository</div>
-
-
-        <!--        <div class="tb"></div>-->
-        <!--        <div class="tc"></div>-->
+        <div class="ta done">
+            Create user stories
+            <div class="author">AH</div>
+        </div>
+        <div class="ta done">work breakdown structure
+            <div class="author">DW</div></div>
+        <div class="tb done">schedule/timeline
+            <div class="author">HM</div></div>
+        <div class="ta done">Choose technology stack</div>
+        <div class="tb done">front end</div>
+        <div class="tb done">back end</div>
+        <div class="tb done">2 APIs</div>
+        <div class="ta done">team tool</div>
+        <div class="tb done">communication tool</div>
+        <div class="tb done">github repository</div>
     </div>
     <div class="step">
         <div class="title">design</div>
-        <div class="ta">wireframes and prototype elements</div>
-        <div class="ta">Data Flow Diagrams</div>
+        <div class="ta progress">wireframes and prototype elements
+            <div class="author">LB</div></div>
+        <div class="tb">desktop</div>
+        <div class="tb">mobile</div>
+        <div class="ta progress">Data Flow Diagrams
+            <div class="author">HM</div></div>
+        <div class="tb">Search by image</div>
+        <div class="tb">Search by name</div>
+        <div class="tb">Search by attributes</div>
+        <div class="tb">Search by plant classification</div>
         <div class="ta">test apis</div>
+        <div class="tb">image</div>
+        <div class="tb">data</div>
+        <div class="tb">classification</div>
         <div class="ta">Write tickets</div>
         <div class="ta">Develop a project report</div>
-        <!--        <div class="tb"></div>-->
-        <!--        <div class="tc"></div>-->
     </div>
     <div class="step">
         <div class="title">Implementation</div>
-        <div class="ta">Create page</div>
-        <div class="ta">Connect to api and display</div>
         <div class="ta">Build environment</div>
-        <!--        <div class="tb"></div>-->
-        <!--        <div class="tc"></div>-->
+        <div class="tb">nodejs</div>
+        <div class="tb">Connect to api</div>
+        <div class="ta">Create page</div>
+        <div class="tb">Search by image</div>
+        <div class="tb">Search by name</div>
+        <div class="tb">Search by attributes</div>
+        <div class="tb">plant classification</div>
+        <div class="tb">detail</div>
     </div>
     <div class="step">
         <div class="title">Beautify and optimize</div>
-        <div class="ta">adjust css</div>
-        <div class="ta">Adaptive</div>
-        <div class="ta">js adaptation</div>
-        <!--        <div class="tb"></div>-->
-        <!--        <div class="tc"></div>-->
+        <div class="ta">css</div>
+        <div class="tb">color</div>
+        <div class="tb">Adaptive</div>
+        <div class="tb">animation</div>
+        <div class="tb">hover click etc</div>
+        <div class="ta">js</div>
+        <div class="tb">touch control</div>
+        <div class="tb">upload</div>
     </div>
     <div class="step">
         <div class="title">Test and deploy</div>
-        <div class="ta">wireframes and prototype elements</div>
-        <div class="ta">Data Flow Diagrams</div>
-        <div class="ta">test apis</div>
-        <!--        <div class="tb"></div>-->
-        <!--        <div class="tc"></div>-->
+        <div class="ta">Test all functions</div>
+        <div class="ta">Deploy to computer</div>
     </div>
 </div>
 <div class="timeline"></div>
