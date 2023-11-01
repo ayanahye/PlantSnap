@@ -2,9 +2,99 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>work breakdown structure</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            white-space: nowrap;
+        }
+        .wbs {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .step {
+            padding: 1em;
+            border: #eee 2px solid;
+        }
+
+        .title {
+            background: #82b1f9;
+            padding: 1em;
+            font-weight: bolder;
+            font-size: large;
+            border-radius: 1em;
+            margin: 0.5em 0;
+        }
+
+        .ta {
+            background: #77f9c8;
+            padding: 1em;
+            border-radius: 1em;
+            margin: 0.5em 0;
+        }
+        .tb {
+            background: #d1f995;
+            padding: 1em;
+            border-radius: 1em;
+            margin: 0.5em 0 0 1em;
+        }
+    </style>
 </head>
 <body>
+<div class="wbs">
+    <div class="step">
+        <div class="title">plan</div>
+        <div class="ta">Create user stories</div>
+        <div class="ta">work breakdown structure</div>
+        <div class="tb">schedule/timeline</div>
+        <div class="ta">Choose technology stack</div>
+        <div class="tb">front end</div>
+        <div class="tb">back end</div>
+        <div class="tb">2 APIs</div>
+        <div class="ta">team tool</div>
+        <div class="tb">communication tool</div>
+        <div class="tb">github repository</div>
 
+
+        <!--        <div class="tb"></div>-->
+        <!--        <div class="tc"></div>-->
+    </div>
+    <div class="step">
+        <div class="title">design</div>
+        <div class="ta">wireframes and prototype elements</div>
+        <div class="ta">Data Flow Diagrams</div>
+        <div class="ta">test apis</div>
+        <div class="ta">Write tickets</div>
+        <div class="ta">Develop a project report</div>
+        <!--        <div class="tb"></div>-->
+        <!--        <div class="tc"></div>-->
+    </div>
+    <div class="step">
+        <div class="title">Implementation</div>
+        <div class="ta">Create page</div>
+        <div class="ta">Connect to api and display</div>
+        <div class="ta">Build environment</div>
+        <!--        <div class="tb"></div>-->
+        <!--        <div class="tc"></div>-->
+    </div>
+    <div class="step">
+        <div class="title">Beautify and optimize</div>
+        <div class="ta">adjust css</div>
+        <div class="ta">Adaptive</div>
+        <div class="ta">js adaptation</div>
+        <!--        <div class="tb"></div>-->
+        <!--        <div class="tc"></div>-->
+    </div>
+    <div class="step">
+        <div class="title">Test and deploy</div>
+        <div class="ta">wireframes and prototype elements</div>
+        <div class="ta">Data Flow Diagrams</div>
+        <div class="ta">test apis</div>
+        <!--        <div class="tb"></div>-->
+        <!--        <div class="tc"></div>-->
+    </div>
+</div>
+<div class="timeline"></div>
 </body>
 </html>
