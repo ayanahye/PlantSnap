@@ -6,6 +6,8 @@ to identify plants.
 
 ### doc
 https://docs.google.com/document/d/1DlVDQSg9P5B4akBwGmD20Acq0VpjXfX40P7dgoObh1c/edit?usp=sharing 
+### WBS Detailed Document
+https://docs.google.com/document/d/1s-LXTF7a9rHfaA2wmBGtz8l9fUeXtsVD30UTJ6HAnkw/edit?usp=sharing
 ### Image Identification
 https://my.plantnet.org/doc/openapi 
 ### plant data
