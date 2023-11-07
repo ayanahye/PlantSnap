@@ -20,7 +20,7 @@ This project was planned, designed, and implemented by:
    ```bash
    npm install
    ```
-   in project folder to auto install  dependencies.
+   in the terminal for the project to auto install dependencies.
 3. To start the development server, please use the command
    ```bash
    npm run dev
@@ -40,7 +40,7 @@ https://perenual.com/docs/api \
 ### Next.js Documentation
 https://nextjs.org/ 
 
-# dependencies
+# Dependencies
 typescript 5\
 react.js 18\
 next.js 14.0.1\
