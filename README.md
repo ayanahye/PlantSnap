@@ -20,7 +20,7 @@ This project was planned, designed, and implemented by:
 ```bash
 npm install
 ```
-in project folder to auto install  dependencies.
+in project folder to auto install  dependencies.\
 4. To start the development server, please use the command
 ```bash
 npm run dev
