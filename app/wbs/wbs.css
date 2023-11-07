@@ -1,0 +1,199 @@
+.kanban, .timeline {
+    border: #ddd 3px solid;
+    border-radius: 0.5em;
+    overflow-x: auto;
+    margin: 1.2em;
+    display: grid;
+}
+
+.kanban {
+    grid-gap: 0.3em;
+    grid-template-columns: repeat(5, 13em);
+    padding: 0 0.3em;
+}
+
+.kanban .step-group > div {
+    border-radius: 0.4em;
+    padding: 0.5em;
+    margin: 0.3em 0;
+    cursor: pointer;
+}
+
+.kanban .step {
+    background: #60bbff;
+    text-align: center;
+    font-weight: bolder;
+    white-space: nowrap;
+}
+
+.kanban .title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.kanban .time {
+    text-align: right;
+    font-weight: bold;
+    color: #444;
+}
+
+.kanban b {
+    color: #444;
+}
+
+.kanban .check {
+    background-image: url("/check.svg");
+    background-position: bottom right;
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+
+.kanban .la {
+    background-color: #b3fc72;
+}
+
+.kanban .lb {
+    background-color: #fcda5e;
+    margin-left: 1em !important;
+}
+
+.kanban .lc {
+    background-color: #f9ab81;
+    margin-left: 2em !important;
+}
+
+.timeline {
+    grid-gap: 0.15em;
+    grid-template-columns: repeat(39, 2em);
+    padding: 0.3em;
+    grid-auto-flow: dense;
+}
+
+.timeline div {
+    border-radius: 0.3em;
+    white-space: nowrap;
+    overflow: hidden;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #aaaaaa;
+    padding: 0 0.2em;
+    cursor: pointer;
+}
+
+.timeline .check {
+    border-color: #78ff4e;
+}
+
+.timeline div:hover {
+    overflow: initial;
+    z-index: 100;
+    color: #ddd;
+    text-shadow: 1px 1px 1px #000;
+}
+.timeline div:hover b{
+    color: #bbb;
+}
+
+.timeline .day {
+    text-align: center;
+    background: #aaa;
+}
+
+.timeline b {
+    color: #444;
+}
+
+input {
+    border-width: 2px;
+    border-radius: 0.5em;
+}
+
+.editform {
+    position: fixed;
+    top: 0;
+    background: #0005;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+
+.editform.show {
+    display: flex;
+}
+
+.editform > form {
+    min-width: 50%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background: rgb(var(--background-end-rgb));
+    padding: 2em;
+    border-radius: 2em;
+    grid-gap: 0.5em;
+}
+
+.editform h1 {
+    font-weight: bolder;
+    text-align: center;
+}
+
+label {
+    text-align: right;
+}
+
+button {
+    border: #aaa 2px solid;
+    border-radius: 0.5em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ddd !important;
+}
+
+button:active {
+    background-color: #ccc !important;
+}
+
+.menu {
+    position: fixed;
+    background: rgb(var(--background-end-rgb));
+    padding: 0.5em;
+    border-radius: 0.5em;
+    display: none;
+    grid-template-columns: 1fr;
+    grid-gap: 0.3em;
+    box-shadow: 1px 1px 6px #0005;
+}
+.menu.show{
+    display: grid;
+}
+
+.menu div {
+    padding: 0.2em;
+    border-radius: 0.2em;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.menu div:hover {
+    background-color: #ddd
+}
+
+.menu div:active {
+    background-color: #ccc
+}
+
+.menu .la {
+    background-color: #b3fc72;
+}
+
+.menu .lb {
+    background-color: #fcda5e;
+}
+
+.menu .lc {
+    background-color: #f9ab81;
+}

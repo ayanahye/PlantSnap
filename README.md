@@ -17,11 +17,11 @@ This project was planned, designed, and implemented by:
 # Setup Instructions
 1. Please ensure you have Node.js installed with version 18 or higher and npm. Here is a link to download them [nodejs.org](https://nodejs.org/).
 2. Once this repository has been cloned to your local machine please cd into the repository.
-3. Now you will need to install the dependencies in the terminal by running:
-> npm install 
-5. To start the development server, please use the command
-> npm run dev.
-6. You can stop the development server using Ctrl + C.
+3. To start the development server, please use the command
+```bash
+npm run dev
+```
+4. You can stop the development server using Ctrl + C.
 
 # Useful Links and Resources
 
@@ -36,7 +36,10 @@ https://perenual.com/docs/api \
 ### Next.js Documentation
 https://nextjs.org/ 
 
-
-
-
+# dependencies
+typescript 5\
+react.js 18\
+next.js 14.0.1\
+prisma,prisma/client 5.5.2\
+bootstrap 5.3.2
 
