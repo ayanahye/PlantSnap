@@ -17,14 +17,14 @@ This project was planned, designed, and implemented by:
 # Setup Instructions
 1. Please ensure you have Node.js installed with version 18 or higher and npm. Here is a link to download them [nodejs.org](https://nodejs.org/).
 2. Use command
-```bash
-npm install
-```
-in project folder to auto install  dependencies.\
-4. To start the development server, please use the command
-```bash
-npm run dev
-```
+   ```bash
+   npm install
+   ```
+   in project folder to auto install  dependencies.
+3. To start the development server, please use the command
+   ```bash
+   npm run dev
+   ```
 4. You can stop the development server using Ctrl + C.
 
 # Useful Links and Resources
