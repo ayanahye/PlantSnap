@@ -1,7 +1,7 @@
 'use server'
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
     let a = "example"
     //get string in .env
     let string = process.env.PLANTNET_KEY;
