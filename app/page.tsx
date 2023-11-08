@@ -1,13 +1,25 @@
-'use server'
-import Link from "next/link";
+'use client'
+import 'bootstrap/dist/css/bootstrap.css'
+import { useEffect } from "react";
 
-export default async function Home() {
+
+import React from 'react';
+
+import Filtering from './pages/filtering.js';
+import Listings from './pages/listings.js';
+import './styles/App.css';
+import Nav from './components/nav.jsx';
+
+export default function Home() {
+
     let a = "example"
     //get string in .env
     let string = process.env.PLANTNET_KEY;
     //make sure file is use server if it contains api operation
-    return <main>
-        <Link href={`/detail/${a}`}>detail page example</Link>
-        <div>TODO:home_page</div>
-    </main>
+    return (
+        <div>
+          <Nav />
+          <Filtering />
+        </div>
+    );
 }

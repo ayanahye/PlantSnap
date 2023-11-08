@@ -1,0 +1,26 @@
+{
+    "names": {
+      "id": 5257,
+      "common_name": "Swiss cheese plant",
+      "scientific_name": ["Monstera deliciosa"],
+      "other_name": []
+    },
+    "Care Reqs": {
+      "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+      "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry"
+    },
+    "Images": {
+      "default_image": {
+        "license": 451,
+        "license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+        "thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+      }
+    }
+  }
+  

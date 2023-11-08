@@ -22,10 +22,6 @@ export default function RootLayout({children,}: {
         <html lang="en">
         <body className={inter.className}>
         <div className="navbar">
-            <div>TODO:navbar</div>
-            <Link href="/">home</Link>
-            <Link href="/search">search</Link>
-            <Link href="/list">list</Link>
         </div>
         {children}
         </body>
