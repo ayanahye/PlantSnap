@@ -42,7 +42,7 @@
 }
 
 .kanban .check {
-    background-image: url("/check.svg");
+    background-image: url("/images/check.svg");
     background-position: bottom right;
     background-size: 50%;
     background-repeat: no-repeat;

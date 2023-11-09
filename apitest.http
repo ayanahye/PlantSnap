@@ -1,0 +1,50 @@
+
+
+###2b10hXhrQ83oqDn4qN2zVROe
+
+POST https://my-api.plantnet.org/v2/identify/all?include-related-images=true&no-reject=false&lang=en&api-key=2b10hXhrQ83oqDn4qN2zVROe
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="images"; filename="img.jpg"
+Content-Type: image/jpeg
+
+< img.jpg
+
+--WebAppBoundary
+Content-Disposition: form-data; name="organs"
+
+auto
+--WebAppBoundary--
+
+
+###sk-koJX6534658bd876d2628
+
+GET https://perenual.com/api/species-list?key=sk-koJX6534658bd876d2628&q=Averrhoa carambola
+
+###
+
+GET https://perenual.com/api/species/details/1154?key=sk-koJX6534658bd876d2628
+
+###
+GET https://perenual.com/api/pest-disease-list?key=sk-koJX6534658bd876d2628&id=1154
+
+###Epdnqg4M_XaoGZMr5_fvYchLIfFS8vdTvKu5P9VJWas
+
+GET http://trefle.io/api/v1/kingdoms?token=Epdnqg4M_XaoGZMr5_fvYchLIfFS8vdTvKu5P9VJWas
+
+###
+
+GET http://trefle.io/api/v1/families?token=Epdnqg4M_XaoGZMr5_fvYchLIfFS8vdTvKu5P9VJWas
+
+###
+
+GET http://trefle.io/api/v1/plants/search?token=Epdnqg4M_XaoGZMr5_fvYchLIfFS8vdTvKu5P9VJWas&q=Averrhoa carambola
+
+###
+
+GET http://trefle.io/api/v1/plants/149306?token=Epdnqg4M_XaoGZMr5_fvYchLIfFS8vdTvKu5P9VJWas
+
+###
+
+GET http://trefle.io/api/v1/distributions/jaw?token=Epdnqg4M_XaoGZMr5_fvYchLIfFS8vdTvKu5P9VJWas
