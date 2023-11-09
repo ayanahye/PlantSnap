@@ -30,9 +30,18 @@ function page() {
     }, []);
 
     */
+
+    const keysArray = Object.keys(SampleData)
     
     return (
-        <div>{true && <div>{JSON.stringify(SampleData)}</div>}</div>
+        <div>
+          <h3>Keys from the API response:</h3>
+          <ul>
+            {keysArray.map((key) => (
+              <li key={key}>{key}</li>
+            ))}
+          </ul>
+        </div>
     )
 }
 
