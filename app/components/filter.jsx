@@ -61,12 +61,22 @@ export default function Filter(props) {
     
     return (
         <main>
-            <div className="filterBlock">
-                <Dropdown data={dataOption1} name="Names" onOptionChange={handleOptionChange} id="option1"/>
-                <Dropdown data={dataOption2} name="Care Reqs" onOptionChange={handleOptionChange} id="option2"/>
-                <Dropdown data={dataOption3} name="Images" onOptionChange={handleOptionChange} id="option3"/>
+            <div className="filterPart">
+                <div className="images">
+                    <h2 className="right-align">Images here</h2>
+                </div>
+                    <div class="filterFullArea">
+                        <div className="filterBlock">
+                            <h2 className="right-align">Filters:</h2>
+                            <div className="dropdowns">
+                                <Dropdown data={dataOption1} name="Names" onOptionChange={handleOptionChange} id="option1"/>
+                                <Dropdown data={dataOption2} name="Care Reqs" onOptionChange={handleOptionChange} id="option2"/>
+                                <Dropdown data={dataOption3} name="Images" onOptionChange={handleOptionChange} id="option3"/>
+                            </div>
+                        </div>
+                    </div>
             </div>
-            <div className="databox">
+            <div className="information">
                 <p>{optionsArray.length > 0 ? optionsArray : <strong>Please use the filters to select the data you want.</strong>} </p>
             </div>
         </main>

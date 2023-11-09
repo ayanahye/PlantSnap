@@ -5,7 +5,15 @@ main{
     justify-content: center;
     background-color: rgb(71, 199, 123);
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
+}
+
+.filterPart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vh;
 }
 
 .dropdown {
@@ -20,6 +28,13 @@ main{
 
 }
 
+.filterFullArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .dropdown-item-custom {
     display: flex;
@@ -29,7 +44,7 @@ main{
 .databox {
     background-color: white;
     display: flex;
-    width: 80%;
+    width: 100%;
     margin-top: 20px;
     padding-top: 20px;
     overflow: auto;
@@ -42,14 +57,29 @@ h3 {
 }
 
 .filterBlock {
-    width: 25%;
-
+    width: 100%;
+    background-color: lightgreen;
+    padding: 0 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     padding-top: 25px;
    
 }
 
+.right-align {
+    text-align: start;
+    font-size: 20px;
+}
 
+.images {
+    background-color: lightgreen;
+    width: 25%;
+}
+
+.information {
+    background-color: white;
+    width: 90%;
+    margin-top: 50px;
+    padding-top: 20px;
+}

@@ -31,7 +31,7 @@ export default function Dropdown(props) {
                             >
                                 
                             </input>
-                            <label for="option1">{props.data[0]}</label>
+                            <label htmlFor="option1">{props.data[0]}</label>
                         </div>
            
                     </li>
@@ -45,7 +45,7 @@ export default function Dropdown(props) {
                                 onChange={handleCheckboxChange}
                             >
                             </input>
-                            <label for="option1">{props.data[1]}</label>
+                            <label htmlFor="option1">{props.data[1]}</label>
                         </div>
            
                     </li>
@@ -59,7 +59,7 @@ export default function Dropdown(props) {
                             onChange={handleCheckboxChange}
                             >
                             </input>
-                            <label for="option1">{props.data[2]}</label>
+                            <label htmlFor="option1">{props.data[2]}</label>
                         </div>
                     </li>
                 </ul>
