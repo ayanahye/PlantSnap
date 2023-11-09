@@ -149,24 +149,28 @@ export default function Filter(props) {
                         </div>
                     </div>
             </div>
+            
             <div className="information">
                 {optionValues.length > 0 ? (
                     optionValues.map((valueOption, index) => (
-                    <div key={index}>
-                        <p>
-                        <strong>{valueOption}:</strong>{" "}
-                        {props.speciesList[valueOption]
-                        ? typeof props.speciesList[valueOption] === "object" 
-                            ? Object.values(props.speciesList[valueOption]).join(", ")
-                            : props.speciesList[valueOption]
-                        : "No data yet"}
-                        </p>
-                    </div>
+                        <div key={index}>
+                            <p>
+                                <strong>{valueOption}:</strong>{" "}
+                                {props.speciesList[valueOption] !== undefined && props.speciesList[valueOption] !== null ? (
+                                    typeof props.speciesList[valueOption] === "object"
+                                        ? Object.values(props.speciesList[valueOption]).join(", ")
+                                        : props.speciesList[valueOption]
+                                ) : (
+                                    "False"
+                                )}
+                            </p>
+                        </div>
                     ))
                 ) : (
                     <strong>Please use the filters to select the data you want.</strong>
                 )}
             </div>
+
 
         </main>
     );
