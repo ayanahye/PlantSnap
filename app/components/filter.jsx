@@ -65,7 +65,7 @@ export default function Filter(props) {
                 <div className="images">
                     <h2 className="right-align">Images here</h2>
                 </div>
-                    <div class="filterFullArea">
+                    <div className="filterFullArea">
                         <div className="filterBlock">
                             <h2 className="right-align">Filters:</h2>
                             <div className="dropdowns">

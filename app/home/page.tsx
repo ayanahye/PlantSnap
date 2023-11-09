@@ -4,9 +4,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import React from 'react';
 
-import Filtering from '../pages/filtering.js';
 import '../styles/App.css';
-import Nav from '../components/nav.jsx';
+
 import Link from "next/link";
 
 export default function Home() {

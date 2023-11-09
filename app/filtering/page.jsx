@@ -1,5 +1,4 @@
 'use client'
-import Nav from '../components/nav';
 import { useEffect } from "react";
 
 import React from 'react'
