@@ -62,6 +62,19 @@ export default function Dropdown(props) {
                             <label htmlFor="option1">{props.data[2]}</label>
                         </div>
                     </li>
+                    <li>
+                        <div className="dropdown-item-custom">
+                            <input 
+                            type="checkbox" 
+                            id={`checkbox-${props.id}-${props.data[3]}`}
+                            name={props.data[3]}
+                            value={props.data[3]}
+                            onChange={handleCheckboxChange}
+                            >
+                            </input>
+                            <label htmlFor="option1">{props.data[3]}</label>
+                        </div>
+                    </li>
                 </ul>
             </div>
     )

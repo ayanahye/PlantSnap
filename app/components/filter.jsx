@@ -6,23 +6,79 @@ import Dropdown from './dropdown';
 
 const values = 
 {
-    "id": 5257,
-    "common_name": "Swiss cheese plant",
-    "scientific_name": ["Monstera deliciosa"],
-    "other_name": [],
 
-    "cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
-    "watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
-    "sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
-   
-    "default_image": "https://perenual.com/storage/image/upgrade_access.jpg"
 }
 
 
 export default function Filter(props) {
-    const dataOption1 = ["id", "common_name", "scientific_name", "other_name"]
-    const dataOption2 = ["cycle", "watering", "sunlight"];
-    const dataOption3 = ["default_image"];
+
+    const dataNames = [
+        'id',
+        'common_name',
+        'scientific_name',
+        'other_name',
+        'family'
+    ];
+
+    const dataSizes = [
+        'origin',
+        'type',
+        'dimension',
+        'dimensions'
+    ];
+
+    const dataCareReqs = [ 'cycle',
+        'attracts',
+        'propagation',
+        'hardiness',
+        'hardiness_location',
+        'watering',
+        'depth_water_requirement',
+        'volume_water_requirement',
+        'watering_period',
+        'watering_general_benchmark',
+        'sunlight',
+        'care-guides',
+        'soil',
+        'indoor'
+    ];
+
+    const dataGeneral = [
+        'pruning_month',
+        'pruning_count',
+        'seeds',
+        'maintenance',
+        'growth_rate',
+        'drought_tolerant',
+        'salt_tolerant',
+        'thorny',
+        'invasive',
+        'tropical',
+        'pest_susceptibility'
+    ]
+
+    const dataEdible = [
+        'flowers',
+        'flowering_season',
+        'flower_color',
+        'cones',
+        'fruits',
+        'edible_fruit',
+        'edible_fruit_taste_profile',
+        'fruit_nutritional_value',
+        'fruit_color',
+        'harvest_season',
+        'leaf',
+        'leaf_color',
+        'edible_leaf',
+        'cuisine'
+    ]
+
+    const dataPoisonous = [
+        'medicinal',
+        'poisonous_to_humans',
+        'poisonous_to_pets'
+    ]
     
     
     const [selectedOptionNames, setSelectedOptionNames] = useState({});
@@ -44,10 +100,13 @@ export default function Filter(props) {
         })
     }
     
-    
-    const optionsArray = Object.keys(selectedOptionNames).map(id => (
-        <div key={id}>
-          <p><strong>{selectedOptionNames[id]}:</strong> {values[selectedOptionNames[id]]}</p>
+    const optionValues = Object.values(selectedOptionNames);
+
+    const optionsArray = optionValues.map(valueOption => (
+        
+        <div key={valueOption}>
+
+          <p><strong>{valueOption}:</strong> {props.speciesList.valueOption}</p>
         </div>
       ));
 
@@ -58,6 +117,8 @@ export default function Filter(props) {
         }
     }
     */
+
+    
     
     return (
         <main>
@@ -69,16 +130,31 @@ export default function Filter(props) {
                         <div className="filterBlock">
                             <h2 className="right-align">Filters:</h2>
                             <div className="dropdowns">
-                                <Dropdown data={dataOption1} name="Names" onOptionChange={handleOptionChange} id="option1"/>
-                                <Dropdown data={dataOption2} name="Care Reqs" onOptionChange={handleOptionChange} id="option2"/>
-                                <Dropdown data={dataOption3} name="Images" onOptionChange={handleOptionChange} id="option3"/>
+                                <Dropdown data={dataNames} name="Names" onOptionChange={handleOptionChange} id="option1"/>
+                                <Dropdown data={dataSizes} name="Care Reqs" onOptionChange={handleOptionChange} id="option2"/>
+                                <Dropdown data={dataGeneral} name="General" onOptionChange={handleOptionChange} id="option3"/>
+                                <Dropdown data={dataEdible} name="Edible" onOptionChange={handleOptionChange} id="option3"/>
+                                <Dropdown data={dataPoisonous} name="Poisonous" onOptionChange={handleOptionChange} id="option3"/>
                             </div>
                         </div>
                     </div>
             </div>
             <div className="information">
-                <p>{optionsArray.length > 0 ? optionsArray : <strong>Please use the filters to select the data you want.</strong>} </p>
+                <p>
+                {optionValues.length > 0 ? (
+                    optionValues.map((value, index) => (
+                    <ul key={index}>
+                        <p>
+                        <strong>{value}:</strong> {props.speciesList[value]}
+                        </p>
+                    </ul>
+                    ))
+                ) : (
+                    <strong>Please use the filters to select the data you want.</strong>
+                )}{" "}
+                </p>
             </div>
+
         </main>
     );
 }

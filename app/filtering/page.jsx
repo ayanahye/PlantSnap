@@ -1,9 +1,9 @@
 'use client'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import React from 'react'
 import Filter from '../components/filter';
-import Data from '../values.json';
+import Data from '../SampleData.json';
 import '../styles/App.css';
 
 function filtering() {
@@ -11,9 +11,11 @@ function filtering() {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
 
+  const [speciesList, setSpeciesList] = useState(Data);
+
   return (
     <div className="App">
-        <Filter speciesList={JSON.stringify(Data)}/>
+        <Filter speciesList={speciesList} />
     </div>
 
 

@@ -32,6 +32,7 @@ function page() {
     */
 
     const keysArray = Object.keys(SampleData)
+    console.log(keysArray);
     
     return (
         <div>
