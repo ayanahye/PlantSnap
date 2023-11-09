@@ -20,61 +20,20 @@ export default function Dropdown(props) {
                     <span className="visually-hidden"></span>
                 </button>
                 <ul className="dropdown-menu">
-                    <li>
-                        <div className="dropdown-item-custom">
-                            <input 
-                                type="checkbox" 
-                                id={`checkbox-${props.id}-${props.data[0]}`}
-                                name={props.data[0]}
-                                value={props.data[0]}
-                                onChange={handleCheckboxChange}
-                            >
-                                
-                            </input>
-                            <label htmlFor="option1">{props.data[0]}</label>
-                        </div>
-           
-                    </li>
-                    <li>
-                        <div className="dropdown-item-custom">
-                            <input 
-                                type="checkbox" 
-                                id={`checkbox-${props.id}-${props.data[1]}`}
-                                name={props.data[1]} 
-                                value={props.data[1]}
-                                onChange={handleCheckboxChange}
-                            >
-                            </input>
-                            <label htmlFor="option1">{props.data[1]}</label>
-                        </div>
-           
-                    </li>
-                    <li>
-                        <div className="dropdown-item-custom">
-                            <input 
-                            type="checkbox" 
-                            id={`checkbox-${props.id}-${props.data[2]}`}
-                            name={props.data[2]}
-                            value={props.data[2]}
-                            onChange={handleCheckboxChange}
-                            >
-                            </input>
-                            <label htmlFor="option1">{props.data[2]}</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div className="dropdown-item-custom">
-                            <input 
-                            type="checkbox" 
-                            id={`checkbox-${props.id}-${props.data[3]}`}
-                            name={props.data[3]}
-                            value={props.data[3]}
-                            onChange={handleCheckboxChange}
-                            >
-                            </input>
-                            <label htmlFor="option1">{props.data[3]}</label>
-                        </div>
-                    </li>
+                    {props.data.map((item, index) => (
+                        <li key={index}>
+                            <div className="dropdown-item-custom">
+                                <input 
+                                    type="checkbox" 
+                                    id={`checkbox-${props.id}-${item}`}
+                                    name={item}
+                                    value={item}
+                                    onChange={handleCheckboxChange}
+                                />
+                                <label htmlFor={`checkbox-${props.id}-${item}`}>{item}</label>
+                            </div>
+                        </li>
+                    ))}
                 </ul>
             </div>
     )

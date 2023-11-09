@@ -24,26 +24,28 @@ export default function Filter(props) {
         'origin',
         'type',
         'dimension',
-        'dimensions'
+        'dimensions',
+        'seeds'
     ];
 
-    const dataCareReqs = [ 'cycle',
-        'attracts',
-        'propagation',
-        'hardiness',
-        'hardiness_location',
+    const dataCareReqs = [ 
+        'cycle',
         'watering',
-        'depth_water_requirement',
-        'volume_water_requirement',
         'watering_period',
-        'watering_general_benchmark',
         'sunlight',
         'care-guides',
-        'soil',
+        'depth_water_requirement',
+        'volume_water_requirement',
+        'watering_general_benchmark',
+        'volume_water_requirement',
         'indoor'
     ];
 
-    const dataGeneral = [
+    const dataMaintenance = [
+        'propagation',
+        'hardiness',
+        'hardiness_location',
+        'soil',
         'pruning_month',
         'pruning_count',
         'seeds',
@@ -51,23 +53,25 @@ export default function Filter(props) {
         'growth_rate',
         'drought_tolerant',
         'salt_tolerant',
-        'thorny',
         'invasive',
         'tropical',
-        'pest_susceptibility'
+        'harvest_season'
     ]
 
     const dataEdible = [
-        'flowers',
-        'flowering_season',
-        'flower_color',
-        'cones',
         'fruits',
         'edible_fruit',
         'edible_fruit_taste_profile',
         'fruit_nutritional_value',
         'fruit_color',
-        'harvest_season',
+    ]
+
+    const dataFlowerandLeafInfo = [
+        'flowers',
+        'flowering_season',
+        'flower_color',
+        'cones',
+        'thorny',
         'leaf',
         'leaf_color',
         'edible_leaf',
@@ -77,8 +81,12 @@ export default function Filter(props) {
     const dataPoisonous = [
         'medicinal',
         'poisonous_to_humans',
-        'poisonous_to_pets'
+        'poisonous_to_pets',
+        'thorny',
+        'pest_susceptibility'
     ]
+
+
     
     
     const [selectedOptionNames, setSelectedOptionNames] = useState({});
@@ -131,10 +139,11 @@ export default function Filter(props) {
                             <h2 className="right-align">Filters:</h2>
                             <div className="dropdowns">
                                 <Dropdown data={dataNames} name="Names" onOptionChange={handleOptionChange} id="option1"/>
-                                <Dropdown data={dataSizes} name="Care Reqs" onOptionChange={handleOptionChange} id="option2"/>
-                                <Dropdown data={dataGeneral} name="General" onOptionChange={handleOptionChange} id="option3"/>
+                                <Dropdown data={dataSizes} name="Sizes" onOptionChange={handleOptionChange} id="option2"/>
                                 <Dropdown data={dataEdible} name="Edible" onOptionChange={handleOptionChange} id="option3"/>
-                                <Dropdown data={dataPoisonous} name="Poisonous" onOptionChange={handleOptionChange} id="option3"/>
+                                <Dropdown data={dataMaintenance} name="Maintenance" onOptionChange={handleOptionChange} id="option4"/>
+                                <Dropdown data={dataCareReqs} name="Care Reqs" onOptionChange={handleOptionChange} id="option5"/>
+                                <Dropdown data={dataPoisonous} name="Poisonous" onOptionChange={handleOptionChange} id="option6"/>
                             </div>
                         </div>
                     </div>
