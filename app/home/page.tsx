@@ -1,20 +1,15 @@
 'use client'
 import 'bootstrap/dist/css/bootstrap.css'
-import { useEffect } from "react";
 
 
 import React from 'react';
 
-import Filtering from './pages/filtering.js';
-import './styles/App.css';
-import Nav from './components/nav.jsx';
+import Filtering from '../pages/filtering.js';
+import '../styles/App.css';
+import Nav from '../components/nav.jsx';
 import Link from "next/link";
 
 export default function Home() {
-
-    useEffect(() => {
-        require("bootstrap/dist/js/bootstrap.bundle.min.js");
-    }, []);
 
     let a = "example"
     //get string in .env

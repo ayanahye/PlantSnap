@@ -1,10 +1,11 @@
 import type {Metadata} from 'next'
 import {Inter} from 'next/font/google'
 import './globals.css'
+import Script from "next/script";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React from "react";
-import Script from "next/script";
 import Image from "next/image";
+import Link from 'next/link';
 
 const inter = Inter({subsets: ['latin']})
 
@@ -26,7 +27,6 @@ export default function RootLayout({children,}: {
     //bootstrap has been referenced globally, do not import it again.
     return (
         <html lang="en">
-        <Script src='/bootstrap/bootstrap.bundle.min.js'></Script>
         <body className={inter.className}>
         <nav className="navbar navbar-expand-lg bg-body-tertiary w-100 position-sticky top-0 z-3">
             <div className="container-fluid mx-lg-5 mx-3">
@@ -41,13 +41,16 @@ export default function RootLayout({children,}: {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link" aria-current="page" href="/">Home</a>
+                            <Link className="nav-link" aria-current="page" href="/home">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" aria-current="page" href="/">Search</a>
+                            <Link className="nav-link" aria-current="page" href="/search">Search</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" aria-current="page" href="/">AboutUs</a>
+                            <Link className="nav-link" aria-current="page" href="/">AboutUs</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" aria-current="page" href="/filtering">Filtering</Link>
                         </li>
                     </ul>
                     <form className="d-flex" role="search" action={searchSubmit}>
