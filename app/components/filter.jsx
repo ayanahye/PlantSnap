@@ -130,6 +130,7 @@ export default function Filter(props) {
     
     return (
         <main>
+            <h3 style={{paddingBottom: '15px'}}>Current plant = {props.speciesList.common_name || "No name yet"}</h3>
             <div className="filterPart">
                 <div className="images">
                     <h2 className="right-align">Images here</h2>
