@@ -161,7 +161,7 @@ export default function Filter(props) {
                                         ? Object.values(props.speciesList[valueOption]).join(", ")
                                         : props.speciesList[valueOption]
                                 ) : (
-                                    "False"
+                                    "No data yet"
                                 )}
                             </p>
                         </div>
