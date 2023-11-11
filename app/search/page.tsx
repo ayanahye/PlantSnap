@@ -1,5 +1,5 @@
 export default function Page() {
     return <main>
-        <div>TODO:Search</div>
+        <div>TO DO:Search</div>
     </main>
 }

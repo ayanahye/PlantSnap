@@ -3,7 +3,7 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(71, 199, 123);
+    background-color:white;
     width: 100vw;
     height: 90vh;
 }
@@ -56,26 +56,73 @@ h3 {
     font-size: 20px;
 }
 
+
+
 .filterBlock {
-    width: 100%;
-    background-color: lightgreen;
-    padding: 0 40px;
+    width: 500px;
+    background-color: rgb(235, 249, 235);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 25px;
+    padding-top: 100px;
+    border: 2px solid black;
+    outline: #4CAF50 solid 10px;
+    margin: auto;  
+    padding: 50px;
+    text-align: center;
    
 }
+
+p {
+    border: 2px solid black;
+    outline: #4CAF50 solid 10px;
+    margin: auto;  
+    padding: 20px;
+    text-align: center;
+  }
 
 .right-align {
     text-align: start;
     font-size: 20px;
 }
 
-.images {
+/* .images {
     background-color: lightgreen;
     width: 25%;
+} */
+
+
+
+#plantimgs img {
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: initial;
 }
+
+.imagesborderbackground{
+    width: 100%;
+    background-color:purple;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
+    padding-top: 50px;
+   
+}
+
+
+/* .Imageborderblock {
+    width: 100%;
+    background-color: purple;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-left: 35px;
+   
+} */
+
+
 
 .information {
     background-color: white;
@@ -83,3 +130,9 @@ h3 {
     margin-top: 50px;
     padding-top: 20px;
 }
+
+.logo-text {
+    color: rgb(67, 222, 136);
+    padding-right: 10px;
+  }
+  

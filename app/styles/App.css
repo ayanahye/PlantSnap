@@ -27,7 +27,7 @@ h1 {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(53, 136, 86);
 }
 
 .App-link {
@@ -66,9 +66,9 @@ h1 {
   text-align: center;
 }
 
-.centre {
+/*.centre {
   
-}
+}*/
 
 .links {
   padding-right: 10px;
@@ -76,7 +76,7 @@ h1 {
 }
 
 .logo-text {
-  color: rgb(67, 222, 136);
+  color: purple;
   padding-left: 10px;
 }
 
