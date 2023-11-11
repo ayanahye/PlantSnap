@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 import React from 'react'
-import Filter from '../components/filter';
+import Filter from './filter';
 import Data from '../SampleData.json';
 import '../styles/App.css';
 

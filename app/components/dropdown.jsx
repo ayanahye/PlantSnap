@@ -1,5 +1,5 @@
 import React from 'react';
-import "../styles/Filter.css";
+import "../filtering/Filter.css";
 
 export default function Dropdown(props) {
 

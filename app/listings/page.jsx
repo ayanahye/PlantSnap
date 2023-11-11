@@ -1,6 +1,7 @@
 'use client'
 import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
+import {useEffect} from 'react';
 import Image from 'next/image'; 
 import flowerImage from './temp-flower.jpg'; 
 import './Listings.css';
@@ -49,6 +50,11 @@ const cardData = [
 ];
 
 function filtering() {
+
+  useEffect(() => {
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
+
   return (
     <div className="container-custom">
       <p>Image search result: {cardData.length} results</p>

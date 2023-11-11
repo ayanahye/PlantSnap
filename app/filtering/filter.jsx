@@ -1,8 +1,8 @@
 
 import React, {useState} from 'react';
-import "../styles/Filter.css";
+import "./Filter.css";
 
-import Dropdown from './dropdown';
+import Dropdown from '../components/dropdown';
 
 const values = 
 {
@@ -114,7 +114,7 @@ export default function Filter(props) {
         
         <div key={valueOption}>
 
-          <p><strong>{valueOption}:</strong> {props.speciesList.valueOption}</p>
+          <p className="p-border"><strong>{valueOption}:</strong> {props.speciesList.valueOption}</p>
         </div>
       ));
 
@@ -154,7 +154,7 @@ export default function Filter(props) {
                 {optionValues.length > 0 ? (
                     optionValues.map((valueOption, index) => (
                         <div key={index}>
-                            <p>
+                            <p className="p-border">
                                 <strong>{valueOption}:</strong>{" "}
                                 {props.speciesList[valueOption] !== undefined && props.speciesList[valueOption] !== null ? (
                                     typeof props.speciesList[valueOption] === "object"
