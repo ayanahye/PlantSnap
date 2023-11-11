@@ -2,11 +2,11 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-
     flex-grow: 1; 
     max-height: 100vh;
     overflow-y: auto;
     background-color: rgb(71, 199, 123);
+    padding: 20px;
 }
 
 .filterPart {
@@ -15,6 +15,7 @@ main{
     align-items: center;
     justify-content: space-around;
     width: 100vh;
+    padding: 20px;
 }
 
 .dropdown {
@@ -87,18 +88,7 @@ p {
     font-size: 20px;
 }
 
-::-webkit-scrollbar{
-    width: 15px
-}
 
-::-webkit-scrollbar-track{
-    background: rgb(53, 136, 86);
-}
-
-::-webkit-scrollbar-thumb{
-    background: linear-gradient(90CF8E, C6EDC3);
-    border-radius: 30px;
-}
 /* .images {
     background-color: lightgreen;
     width: 25%;
@@ -140,7 +130,7 @@ p {
     background-color: white;
     width: 90%;
     margin-top: 50px;
-    padding-top: 20px;
+
     margin-bottom: 50px;
 }
 
