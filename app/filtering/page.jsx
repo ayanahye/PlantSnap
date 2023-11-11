@@ -6,7 +6,7 @@ import Filter from './filter';
 import Data from '../SampleData.json';
 import '../styles/App.css';
 
-function filtering() {
+function Filtering() {
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
@@ -22,4 +22,4 @@ function filtering() {
   )
 }
 
-export default filtering
+export default Filtering
