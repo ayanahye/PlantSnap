@@ -1,0 +1,11 @@
+.test {
+
+}
+
+.test .abc {
+    background: #f0f;
+}
+
+.test .bcd {
+    background: #0f0;
+}

@@ -1,10 +1,11 @@
 'use client'
 import 'bootstrap/dist/css/bootstrap.css'
-import { useEffect } from "react";
+import {useEffect} from "react";
 
 
 import React from 'react';
 import './styles/App.css';
+import styles from "./styles/test.module.css"
 import Link from "next/link";
 
 export default function Home() {
@@ -21,6 +22,17 @@ export default function Home() {
         <div style={{height: "200vh"}}>
             <div>TODO:home</div>
             <Link href={"/detail/Averrhoa carambola"}>tmp link to test detail:Averrhoa carambola</Link>
+            <div className={styles.test}>
+                <div className={styles.abc}>
+                    aaaa
+                </div>
+                <div className={styles.bcd}>
+                    bbbb
+                </div>
+            </div>
+            <div className={styles.bcd}>
+                bbbb
+            </div>
         </div>
     );
 }
