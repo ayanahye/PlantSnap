@@ -1,0 +1,69 @@
+.index {
+    display: flex;
+    height: 90vh;
+    width: 100%;
+    background: #0008;
+    overflow: hidden;
+    position: absolute;
+    z-index: 10;
+}
+
+.index a {
+    flex: 1 1 0;
+    overflow: hidden;
+    transform: skewX(-15deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 -2px;
+    transition: flex 0.3s ease, background 0.3s ease;
+}
+
+.index svg {
+    transform: skewX(15deg);
+    width: 10vmin;
+    min-width: 100px;
+}
+
+.index path {
+    transition: fill 0.3s ease;
+    fill: #fff8;
+}
+
+.index a:hover {
+    flex: 1.2 1.2 0;
+    background: #0008;
+}
+
+.index a:hover path {
+    fill: #fffe
+}
+
+@media screen and (max-width: 1000px) {
+    .index {
+        flex-direction: column;
+    }
+
+    .index * {
+        transform: initial !important;
+        margin: -2px 0 !important;
+    }
+}
+
+#indexbg {
+    z-index: 5;
+    height: 90vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+#indexbg img {
+    height: max(95vh, 56.25vw);
+    width: max(168.8vh, 100vw);
+}
+
+.carousel-item {
+    justify-content: center;
+    display: flex!important;
+}

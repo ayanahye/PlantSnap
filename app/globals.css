@@ -74,3 +74,7 @@
 }
 
 /*Global css, please make sure it will not affect other pages before adding to it.*/
+
+.layout-navbar{
+  z-index: 1000;
+}
