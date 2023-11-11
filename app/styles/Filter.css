@@ -2,18 +2,11 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-<<<<<<< HEAD
+
     flex-grow: 1; 
     max-height: 100vh;
     overflow-y: auto;
     background-color: rgb(71, 199, 123);
-
-=======
-    justify-content: center;
-    background-color:white;
-    width: 100vw;
-    height: 90vh;
->>>>>>> b501a497d135d08b5ca2ad95a2f0fc770944638a
 }
 
 .filterPart {
