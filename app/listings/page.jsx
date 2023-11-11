@@ -6,10 +6,13 @@ import Image from 'next/image';
 import defaultImg from "./placeholder-img.jpg"
 import './Listings.css';
 
-// import dataObject from "../SampleList.json";
+import dataObject from "../SampleList.json";
+
 
 
 function Filtering() {
+
+    /*
 
     useEffect(() => {
         require("bootstrap/dist/js/bootstrap.bundle.min.js");
@@ -34,7 +37,11 @@ function Filtering() {
         fetchData();
     }, []);
 
+    */
+
     const displayedData = dataObject?.data?.slice(0, 8) || [];
+
+    
 
     return (
         <div className="container-custom">
@@ -43,13 +50,13 @@ function Filtering() {
                 <div className="row row-cols-1 row-cols-md-4">
                     {displayedData.map((item, index) => (
                         <div className="col mb-4" key={item.id}>
-                            <div className="card h-100">
+                            <div className="card h-100 card-hover">
                                 {item.default_image ? (
-                                    <Image src={item.default_image.regular_url} width={500} height={200}
-                                           className="card-img-top" alt={item.common_name}/>
+                                    <button className="button-to-plant"><Image src={item.default_image.regular_url} width={500} height={200}
+                                           className="card-img-top" alt={item.common_name}/></button>
                                 ) : (
-                                    <Image src={defaultImg} width={500} height={200} className="card-img-top"
-                                           alt={item.common_name}/>
+                                    <button className="button-to-plant"><Image src={defaultImg} width={500} height={200} className="card-img-top"
+                                           alt={item.common_name}/></button>
                                 )}
                                 <div className="card-body">
                                     <h5 className="card-title">{item.common_name}</h5>
