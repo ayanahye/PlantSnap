@@ -2,11 +2,18 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+<<<<<<< HEAD
     flex-grow: 1; 
     max-height: 100vh;
     overflow-y: auto;
     background-color: rgb(71, 199, 123);
 
+=======
+    justify-content: center;
+    background-color:white;
+    width: 100vw;
+    height: 90vh;
+>>>>>>> b501a497d135d08b5ca2ad95a2f0fc770944638a
 }
 
 .filterPart {
@@ -57,26 +64,84 @@ h3 {
     font-size: 20px;
 }
 
+
+
 .filterBlock {
-    width: 100%;
-    background-color: lightgreen;
-    padding: 0 40px;
+    width: 500px;
+    background-color: rgb(235, 249, 235);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 25px;
+    padding-top: 100px;
+    border: 2px solid black;
+    outline: #4CAF50 solid 10px;
+    margin: auto;  
+    padding: 50px;
+    text-align: center;
    
 }
+
+p {
+    border: 2px solid black;
+    outline: #4CAF50 solid 10px;
+    margin: auto;  
+    padding: 20px;
+    text-align: center;
+  }
 
 .right-align {
     text-align: start;
     font-size: 20px;
 }
 
-.images {
+::-webkit-scrollbar{
+    width: 15px
+}
+
+::-webkit-scrollbar-track{
+    background: rgb(53, 136, 86);
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(90CF8E, C6EDC3);
+    border-radius: 30px;
+}
+/* .images {
     background-color: lightgreen;
     width: 25%;
+} */
+
+
+#plantimgs img {
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: initial;
 }
+
+.imagesborderbackground{
+    width: 100%;
+    background-color:purple;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
+    padding-top: 50px;
+   
+}
+
+
+/* .Imageborderblock {
+    width: 100%;
+    background-color: purple;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-left: 35px;
+   
+} */
+
+
 
 .information {
     background-color: white;
@@ -85,3 +150,9 @@ h3 {
     padding-top: 20px;
     margin-bottom: 50px;
 }
+
+.logo-text {
+    color: rgb(67, 222, 136);
+    padding-right: 10px;
+  }
+  
