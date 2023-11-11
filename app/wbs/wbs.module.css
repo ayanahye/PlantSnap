@@ -12,7 +12,7 @@
     padding: 0 0.3em;
 }
 
-.kanban .step-group > div {
+.kanban .stepgroup > div {
     border-radius: 0.4em;
     padding: 0.5em;
     margin: 0.3em 0;
@@ -103,10 +103,10 @@
     color: #444;
 }
 
-input {
-    border-width: 2px;
-    border-radius: 0.5em;
-}
+/*input {*/
+/*    border-width: 2px;*/
+/*    border-radius: 0.5em;*/
+/*}*/
 
 .editform {
     position: fixed;
@@ -138,23 +138,23 @@ input {
     text-align: center;
 }
 
-label {
-    text-align: right;
-}
+/*label {*/
+/*    text-align: right;*/
+/*}*/
 
-button {
-    border: #aaa 2px solid;
-    border-radius: 0.5em;
-    transition: background-color 0.3s ease;
-}
+/*button {*/
+/*    border: #aaa 2px solid;*/
+/*    border-radius: 0.5em;*/
+/*    transition: background-color 0.3s ease;*/
+/*}*/
 
-button:hover {
-    background-color: #ddd !important;
-}
+/*button:hover {*/
+/*    background-color: #ddd !important;*/
+/*}*/
 
-button:active {
-    background-color: #ccc !important;
-}
+/*button:active {*/
+/*    background-color: #ccc !important;*/
+/*}*/
 
 .menu {
     position: fixed;
