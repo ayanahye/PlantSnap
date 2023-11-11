@@ -86,11 +86,22 @@ p {
     font-size: 20px;
 }
 
+::-webkit-scrollbar{
+    width: 15px
+}
+
+::-webkit-scrollbar-track{
+    background: rgb(53, 136, 86);
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(90CF8E, C6EDC3);
+    border-radius: 30px;
+}
 /* .images {
     background-color: lightgreen;
     width: 25%;
 } */
-
 
 
 #plantimgs img {
