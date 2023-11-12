@@ -22,6 +22,7 @@ main{
     margin-bottom: 20px;
     width: 100%;
     display: flex;
+    color:rgb(235, 249, 235)
 }
 
 #full-width {
@@ -40,7 +41,7 @@ main{
 
 .dropdown-item-custom {
     display: flex;
-    justify-content: space-around;
+    justify-content: left;
 }
 
 .databox {
@@ -54,9 +55,9 @@ main{
 
 }
 
-h3 {
+/* h3 {
     font-size: 20px;
-}
+} */
 
 
 
@@ -106,7 +107,7 @@ h3 {
     border-radius: 20px 0px 0px 20px;
     margin: auto;  
     padding: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 .logo-text {
