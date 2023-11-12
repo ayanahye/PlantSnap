@@ -4,13 +4,19 @@ import React from 'react';
 import {useEffect, useState} from 'react';
 import Image from 'next/image';
 import defaultImg from "./placeholder-img.jpg"
-import './Listings.css';
+import './Listings-text.css';
 
 import dataObject from "../SampleList.json";
 
 
+function Listings() {
 
-function Filtering() {
+    useEffect(() => {
+        require("bootstrap/dist/js/bootstrap.bundle.min.js");
+    }, []);
+
+    // https://stackoverflow.com/questions/72221255/how-to-pass-data-from-one-page-to-another-page-in-next-js
+
 
     /*
 
@@ -73,4 +79,4 @@ function Filtering() {
     );
 }
 
-export default Filtering;
+export default Listings;
