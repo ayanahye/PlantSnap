@@ -67,11 +67,10 @@ export default function Listings() {
   */
 
   return (
-    <div>
+    <div className="container-custom">
       {data && data.results.length > 0 && (
         <div>
           <p>Image search result: {data.results.length} results</p>
-          <div className="container-custom">
             <div className="row row-cols-1 row-cols-md-4">
               {data.results.map((result, index) => (
                 <div className="col mb-4" key={index}>
@@ -90,7 +89,7 @@ export default function Listings() {
                       )}
                     </div>
                     <div className="card-body">
-                      <h5>Common name: {result.species.commonNames.join(', ')}</h5>
+                      <h5>{result.species.commonNames.join(', ')}</h5>
                       <p>Confidence: {result.score}</p>
                     </div>
                   </div>
@@ -98,7 +97,6 @@ export default function Listings() {
               ))}
             </div>
           </div>
-        </div>
       )}
     </div>
   );
