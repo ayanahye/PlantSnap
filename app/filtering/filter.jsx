@@ -131,6 +131,7 @@ export default function Filter(props) {
     return (
         <main>
             <h3 style={{paddingBottom: '15px'}}>Current plant = {props.speciesList.common_name || "No name yet"}</h3>
+            
             <div className="filterPart">
                 <div className="images">
                     <h2 className="right-align">Images here</h2>
@@ -151,10 +152,13 @@ export default function Filter(props) {
             </div>
             
             <div className="information">
+                
+                {/* <div className = scroll></div> */}
+                {/* <div style= "height: 100px; overflow-y: scroll;"> */}
                 {optionValues.length > 0 ? (
                     optionValues.map((valueOption, index) => (
                         <div key={index}>
-                            <p className="p-border">
+                           
                                 <strong>{valueOption}:</strong>{" "}
                                 {props.speciesList[valueOption] !== undefined && props.speciesList[valueOption] !== null ? (
                                     typeof props.speciesList[valueOption] === "object"
@@ -163,8 +167,10 @@ export default function Filter(props) {
                                 ) : (
                                     "No data yet"
                                 )}
-                            </p>
+                               
+                           
                         </div>
+            
                     ))
                 ) : (
                     <strong>Please use the filters to select the data you want.</strong>
@@ -173,5 +179,6 @@ export default function Filter(props) {
 
 
         </main>
+        
     );
 }
