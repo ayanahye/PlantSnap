@@ -15,6 +15,7 @@ export default function Listings() {
       require("bootstrap/dist/js/bootstrap.bundle.min.js");
     }, []);
 
+    
     /*
     const [data, setData] = useState(null);
 
@@ -38,7 +39,7 @@ export default function Listings() {
     formData.append('organs', 'auto');
     formData.append('images', selectedFile);
 
-    const url = `${baseURL}/v2/identify/${project}?api-key=${apiKey}`;
+    const url = `${baseURL}/v2/identify/${project}?include-related-images=true&no-reject=false&lang=en&api-key=${apiKey}`;
 
     try {
       const response = await axios.post(url, formData);
@@ -54,12 +55,15 @@ export default function Listings() {
       console.error('Error fetching data:', error);
     }
   };
+  /*
 
+  add right below the div 
 
-    <form onSubmit={handleSubmit}>
-        <input type="file" accept="image/*" onChange={handleFileChange} />
-        <button type="submit">Submit</button>
-    </form>
+          <form onSubmit={handleSubmit}>
+            <input type="file" accept="image/*" onChange={handleFileChange} />
+            <button type="submit">Submit</button>
+        </form>
+
   */
 
   return (
@@ -75,8 +79,6 @@ export default function Listings() {
                     <div>
                       {result.images && result.images.length > 0 && (
                         <div>
-                            {console.log('result.images[0]:', result.images[0])}
-                          <p>{result.images[0].url.m}</p>
                           <Image
                             src={result.images[0].url.m}
                             width={500}
@@ -87,9 +89,8 @@ export default function Listings() {
                         </div>
                       )}
                     </div>
-                    <div>
-                      <h3>Result {index + 1}</h3>
-                      <p>Common name: {result.species.commonNames.join(', ')}</p>
+                    <div className="card-body">
+                      <h5>Common name: {result.species.commonNames.join(', ')}</h5>
                       <p>Confidence: {result.score}</p>
                     </div>
                   </div>
