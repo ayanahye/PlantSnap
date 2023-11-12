@@ -7,13 +7,15 @@ import FormData from 'form-data';
 import Image from 'next/image';
 import defaultImg from "./placeholder-img.jpg"
 import './Listings-image.css';
+import data from "../SampleList-Plantnet.json";
 
 
-function Listings() {
+export default function Listings() {
     useEffect(() => {
       require("bootstrap/dist/js/bootstrap.bundle.min.js");
     }, []);
 
+    /*
     const [data, setData] = useState(null);
 
     const [selectedFile, setSelectedFile] = useState(null);
@@ -28,7 +30,7 @@ function Listings() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const apiKey = '2b10nDPkGVdtuyo4UrvEkBHO'; 
+    const apiKey = ''; 
     const baseURL = 'https://my-api.plantnet.org';
     const project = 'all';
 
@@ -53,27 +55,52 @@ function Listings() {
     }
   };
 
-  return (
-    <div>
-      <form onSubmit={handleSubmit}>
+
+    <form onSubmit={handleSubmit}>
         <input type="file" accept="image/*" onChange={handleFileChange} />
         <button type="submit">Submit</button>
-      </form>
+    </form>
+  */
+
+  return (
+    <div>
       {data && data.results.length > 0 && (
         <div>
-          <h2>Identification Results</h2>
-          {data.results.map((result, index) => (
-            <div key={index}>
-              <h3>Result {index + 1}</h3>
-              <p>Common name: {result.species.commonNames.join(', ')}</p>
-              <p>Scientific name: {result.species.scientificName}</p>
-              
+          <p>Image search result: {data.results.length} results</p>
+          <div className="container-custom">
+            <div className="row row-cols-1 row-cols-md-4">
+              {data.results.map((result, index) => (
+                <div className="col mb-4" key={index}>
+                  <div className="card h-100 card-hover">
+                    <div>
+                      {result.images && result.images.length > 0 && (
+                        <div>
+                            {console.log('result.images[0]:', result.images[0])}
+                          <p>{result.images[0].url.m}</p>
+                          <Image
+                            src={result.images[0].url.m}
+                            width={500}
+                            height={200}
+                            className="card-img-top"
+                            alt={result.species.commonNames.join(', ')}
+                          />
+                        </div>
+                      )}
+                    </div>
+                    <div>
+                      <h3>Result {index + 1}</h3>
+                      <p>Common name: {result.species.commonNames.join(', ')}</p>
+                      <p>Confidence: {result.score}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       )}
     </div>
   );
-}  
 
-export default Listings;
+}
+
