@@ -140,8 +140,8 @@ export default function Page() {
     }
 
     return <main>
-        <div className={`${styles.imageIn} ${showinput && styles.show}`}>
-            <form action={formSubmit} className="row row-cols-6"
+        <div className={`${styles.imageIn} ${showinput && styles.show} p-5`}>
+            <form action={formSubmit} className="row row-cols-2 row-cols-md-3 row-cols-lg-6 justify-content-end"
                   id="form">
                 {pvList.map((pv, i) => {
                     return <div className="col p-3" key={i} onClick={() => pvClick(pv.id)}>
@@ -187,34 +187,34 @@ export default function Page() {
                         <h5 className="modal-title">Part?</h5>
                     </div>
                     <div className="modal-body">
-                        <div>
-                            <div>
-                                <button type="button" className="btn btn-primary"
+                        <div className="row row-cols-1 row-cols-sm-6 justify-content-center">
+                            <div className="col p-1 col-sm-auto">
+                                <button type="button" className="w-100 btn btn-primary"
                                         onClick={() => setType(typeImage.leaf)} data-bs-dismiss="modal">leaf
                                 </button>
                             </div>
-                            <div>
-                                <button type="button" className="btn btn-primary"
+                            <div className="col p-1 col-sm-auto">
+                                <button type="button" className="w-100 btn btn-primary"
                                         onClick={() => setType(typeImage.flower)} data-bs-dismiss="modal">flower
                                 </button>
                             </div>
-                            <div>
-                                <button type="button" className="btn btn-primary"
+                            <div className="col p-1 col-sm-auto">
+                                <button type="button" className="w-100 btn btn-primary"
                                         onClick={() => setType(typeImage.fruit)} data-bs-dismiss="modal">fruit
                                 </button>
                             </div>
-                            <div>
-                                <button type="button" className="btn btn-primary"
+                            <div className="col p-1 col-sm-auto">
+                                <button type="button" className="w-100 btn btn-primary"
                                         onClick={() => setType(typeImage.bark)} data-bs-dismiss="modal">bark
                                 </button>
                             </div>
-                            <div>
-                                <button type="button" className="btn btn-primary"
+                            <div className="col p-1 col-sm-auto">
+                                <button type="button" className="w-100 btn btn-primary"
                                         onClick={() => setType(typeImage.auto)} data-bs-dismiss="modal">auto
                                 </button>
                             </div>
-                            <div>
-                                <button type="button" className="btn btn-secondary"
+                            <div className="col p-1 col-sm-auto">
+                                <button type="button" className="w-100 btn btn-secondary"
                                         onClick={() => setType(null)} data-bs-dismiss="modal">Reselect
                                 </button>
                             </div>
@@ -225,6 +225,18 @@ export default function Page() {
         </div>
         <div className={`${styles.load} ${showload && styles.show}`}>
             <div className="spinner-grow text-primary" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+            <div className="spinner-grow text-secondary" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+            <div className="spinner-grow text-success" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+            <div className="spinner-grow text-danger" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+            <div className="spinner-grow text-warning" role="status">
                 <span className="visually-hidden">Loading...</span>
             </div>
 
