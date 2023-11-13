@@ -27,7 +27,7 @@ export default function Home() {
                     aaaa
                 </div>
                 <div className={styles.bcd}>
-                    bbbb
+                    bbbbc
                 </div>
             </div>
             <div className={styles.bcd}>
