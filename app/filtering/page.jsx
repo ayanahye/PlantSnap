@@ -3,10 +3,17 @@ import { useEffect, useState } from "react";
 
 import React from 'react'
 import Filter from './filter';
-import speciesData from '../SampleData.json';
+import Data from '../SampleData.json';
 import '../styles/App.css';
 
 function Filtering() {
+
+  useEffect(() => {
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
+
+  const [speciesList, setSpeciesList] = useState(Data);
+
 
   /*
 
@@ -41,7 +48,7 @@ function Filtering() {
 
   return (
     <div className="App">
-        <Filter speciesList={speciesData} />
+        <Filter speciesList={speciesList} />
     </div>
 
 
