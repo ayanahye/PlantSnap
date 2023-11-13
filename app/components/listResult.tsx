@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import styles from "./component.module.css"
 
 export type result = {
     image?: { url: string, alt: string }
@@ -18,7 +19,7 @@ export default function ListResult(ctx: { data: result[] }) {
                                     src={result.image.url}
                                     width={500}
                                     height={200}
-                                    className="card-img-top"
+                                    className={`${styles.img} card-img-top`}
                                     alt={result.image.alt}
                                 />
                             </div>
