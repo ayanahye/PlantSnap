@@ -26,9 +26,18 @@ main{
 }
 
 #full-width {
-    background-color: black;
+    background-color: rgb(235, 249, 235);
+    color:black;
     flex: 1;
+    text-align: left;
+    border:none;
+    padding:0;
 
+}
+
+#full-width2{
+    background-color: rgb(235, 249, 235);
+    color: black;
 }
 
 .filterFullArea {
