@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, fireEvent} from '@testing-library/react';
+import {render, fireEvent, screen} from '@testing-library/react';
 import Dropdown from '../dropdown';
 
 describe('Dropdown Component', () => {
@@ -15,7 +15,7 @@ describe('Dropdown Component', () => {
             />
         );
 
-        const checkbox = getByLabelText('origin');
+        const checkbox = screen.getByLabelText('origin');
 
         expect(checkbox).not.toBeChecked();
 
@@ -27,4 +27,4 @@ describe('Dropdown Component', () => {
     });
 })
 
-// run test using npm test -- --testPathPattern="components/__tests__" ?
+// run test using npm test -- --testPathPattern="components/__tests__" 
