@@ -25,10 +25,13 @@ export default function RootLayout({children,}: {
 
     //This is the layout, the master of the page, which appears as the outer border on each page.
     //bootstrap has been referenced globally, do not import it again.
+
+    //do not delete this bootstrap js plz!!!!!
     return (
         <html lang="en">
+        <Script src='/bootstrap/bootstrap.bundle.min.js'></Script>
         <body className={inter.className}>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary w-100 position-sticky top-0 z-3">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary w-100 position-sticky top-0">
             <div className="container-fluid mx-lg-5 mx-3">
                 <a className="navbar-brand" href="/">
                     <Image src="/images/plantsnaplogo.svg" width="255" height="30" alt="logo"/>
@@ -45,6 +48,9 @@ export default function RootLayout({children,}: {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" aria-current="page" href="/search">Search</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" aria-current="page" href="/identify">Identify</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" aria-current="page" href="/">AboutUs</Link>
