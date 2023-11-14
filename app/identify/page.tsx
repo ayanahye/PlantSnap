@@ -73,7 +73,8 @@ export default function Page() {
                 tmp.push({
                     name: r.species.commonNames.join(", "),
                     image: {url: r.images[0].url.m, alt: r.species.commonNames.join(", ")},
-                    score: r.score
+                    score: r.score,
+                    sciName: r.species.scientificNameWithoutAuthor
                 })
             }
             set_resultlst(tmp)

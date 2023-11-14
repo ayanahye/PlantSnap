@@ -27,7 +27,6 @@ export async function postSearch(form: FormData, adv: boolean): Promise<perenual
         if ("" != Indoor) query += `&indoor=${Indoor}`
         query += `&hardiness=${hdmin}-${hdmax}`
     }
-    console.log(query)
     let res = await fetch("https://perenual.com/api/species-list?" + query)
     return await res.json()
 }

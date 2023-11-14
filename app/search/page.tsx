@@ -69,16 +69,18 @@ export default function Page() {
             </nav>)
             set_pagetext(`display${r.per_page}/${r.total} page#${r.current_page}/${r.last_page}`)
             let tmp: result[] = []
-            for (let plant of r.data) {
-                let di = plant.default_image
-                let url = di ? di.regular_url ? di.regular_url : di.original_url : ""
-                if (!url) url = "/images/phi.jpg"
-                tmp.push({
-                    image: {url: url, alt: plant.common_name},
-                    name: plant.common_name,
-                    sciName: plant.scientific_name[0]
-                })
-            }
+            if (r.data)
+                for (let plant of r.data) {
+                    if (plant.cycle == "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry") continue
+                    let di = plant.default_image
+                    let url = di ? di.regular_url ? di.regular_url : di.original_url : ""
+                    if (!url) url = "/images/phi.jpg"
+                    tmp.push({
+                        image: {url: url, alt: plant.common_name},
+                        name: plant.common_name,
+                        sciName: plant.scientific_name[0]
+                    })
+                }
             set_resultlst(tmp)
             set_showresult(true)
         })

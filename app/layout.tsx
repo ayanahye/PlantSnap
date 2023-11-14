@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import React from "react";
 import Image from "next/image";
 import Link from 'next/link';
+import {redirect} from "next/navigation";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -19,7 +20,7 @@ export default function RootLayout({children,}: {
 }) {
     async function searchSubmit(form: FormData) {
         "use server"
-        console.dir(form)
+        redirect("/search?q=" + form.get("inputq"))
         //TODO:quick search
     }
 
@@ -58,7 +59,7 @@ export default function RootLayout({children,}: {
                     </ul>
                     <form className="d-flex" role="search" action={searchSubmit}>
                         <input className="form-control me-2" type="search" placeholder="Search"
-                               aria-label="Search"/>
+                               aria-label="Search" name="inputq"/>
                         <button className="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>

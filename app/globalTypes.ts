@@ -197,13 +197,13 @@ export type trefle_detail = {
             "edible_part": string | null,
             "edible": false,
             "images": {
-                "fruit": trefle_img[],
-                "leaf": trefle_img[],
-                "bark": trefle_img[],
-                "flower": trefle_img[],
-                "habit": trefle_img[],
-                "other": trefle_img[],
-                "": trefle_img[],
+                "fruit"?: trefle_img[],
+                "leaf"?: trefle_img[],
+                "bark"?: trefle_img[],
+                "flower"?: trefle_img[],
+                "habit"?: trefle_img[],
+                "other"?: trefle_img[],
+                ""?: trefle_img[],
             },
             "common_names": {
                 "deu": string[],
@@ -480,7 +480,7 @@ export type plantnet = {
     "results": {
         "score": number,
         "species": {
-            "scientificNameWithoutAuthor": string | null,
+            "scientificNameWithoutAuthor": string,
             "scientificNameAuthorship": string | null,
             "genus": {
                 "scientificNameWithoutAuthor": string | null,
@@ -715,4 +715,5 @@ export const plantnet_test_value: plantnet = {
     "version": "2023-09-12 (7.1)",
     "remainingIdentificationRequests": 496
 }
+
 
