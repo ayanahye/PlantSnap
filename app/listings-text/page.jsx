@@ -17,11 +17,6 @@ function Listings() {
     // https://stackoverflow.com/questions/72221255/how-to-pass-data-from-one-page-to-another-page-in-next-js
 
 
-
-    useEffect(() => {
-        require("bootstrap/dist/js/bootstrap.bundle.min.js");
-    }, []);
-
     const [dataObject, setData] = useState(null);
 
     const handleSearch = async () => {

@@ -4,13 +4,8 @@ import { useEffect, useState } from "react";
 import React from 'react'
 import Filter from './filter';
 import {perenual_detail_test_value as Data} from "../globalTypes";
-import '../styles/App.css';
 
 function Filtering() {
-
-  useEffect(() => {
-    require("bootstrap/dist/js/bootstrap.bundle.min.js");
-  }, []);
 
   const [speciesList, setSpeciesList] = useState(Data);
 

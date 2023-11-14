@@ -10,9 +10,6 @@ import Image from "next/image";
 import Script from "next/script";
 
 export default function Home() {
-    useEffect(() => {
-        require("bootstrap/dist/js/bootstrap.bundle.min.js");
-    }, []);
     return (
         <main>
             <div className={styles.index}>

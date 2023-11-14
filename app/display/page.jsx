@@ -3,11 +3,7 @@ import React, {useEffect, useState} from 'react'
 
 
 
-function display() {
-
-    useEffect(() => {
-        require("bootstrap/dist/js/bootstrap.bundle.min.js");
-    }, []);
+function Display() {
 
     const [prevSearchQuery, setPrevSearchQuery] = useState("");
 
@@ -31,4 +27,4 @@ function display() {
   )
 }
 
-export default display;
+export default Display;

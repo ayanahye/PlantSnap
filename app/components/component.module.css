@@ -8,3 +8,13 @@
     aspect-ratio: 1/1;
     overflow: hidden;
 }
+.dropdown {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    color:rgb(235, 249, 235)
+}
+.dropdown-item-custom {
+    display: flex;
+    justify-content: left;
+}

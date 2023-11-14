@@ -1,21 +1,13 @@
 'use client'
 import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
-import {useEffect, useState} from 'react';
-import axios from 'axios';
-import FormData from 'form-data';
 import Image from 'next/image';
-import defaultImg from "./placeholder-img.jpg"
 import './Listings-image.css';
 import {plantnet_test_value as data} from "../globalTypes";
 
 
 export default function Listings() {
-    useEffect(() => {
-      require("bootstrap/dist/js/bootstrap.bundle.min.js");
-    }, []);
 
-    
     /*
     const [data, setData] = useState(null);
 
