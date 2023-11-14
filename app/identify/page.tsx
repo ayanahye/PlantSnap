@@ -22,9 +22,6 @@ const typeImage = {
 }
 
 export default function Page() {
-    useEffect(() => {
-        require("bootstrap/dist/js/bootstrap.bundle.min.js");
-    }, []);
     let a: preview[] = [], b: string[] = [], c: result[] = []
     const [pvList, setpvList] = useState(a)
 
@@ -71,7 +68,7 @@ export default function Page() {
             let tmp: result[] = []
             for (let r of data.results) {
                 tmp.push({
-                    name: r.species.commonNames.join(", "),
+                    name: r.species.commonNames.length > 0 ? r.species.commonNames.join(", ") : r.species.scientificNameWithoutAuthor,
                     image: {url: r.images[0].url.m, alt: r.species.commonNames.join(", ")},
                     score: r.score,
                     sciName: r.species.scientificNameWithoutAuthor
@@ -165,19 +162,19 @@ export default function Page() {
                 </div>
                 <div className="col p-3">
                     <div className={styles.preview}>
-                        <button type="submit" className="btn btn-success">&gt;</button>
+                        <button type="submit" className="btn btn-secondary">&gt;</button>
                     </div>
                 </div>
                 <div id="input_holder" className="d-none">
-                    <input className="upImg" name="upImg1" type="file" accept="image/*" id="img1"
+                    <input className="upImg" name="upImg1" type="file" accept="image/jpeg,image/png" id="img1"
                            onChange={onFileChange}/>
-                    <input className="upImg" name="upImg2" type="file" accept="image/*" id="img2"
+                    <input className="upImg" name="upImg2" type="file" accept="image/jpeg,image/png" id="img2"
                            onChange={onFileChange}/>
-                    <input className="upImg" name="upImg3" type="file" accept="image/*" id="img3"
+                    <input className="upImg" name="upImg3" type="file" accept="image/jpeg,image/png" id="img3"
                            onChange={onFileChange}/>
-                    <input className="upImg" name="upImg4" type="file" accept="image/*" id="img4"
+                    <input className="upImg" name="upImg4" type="file" accept="image/jpeg,image/png" id="img4"
                            onChange={onFileChange}/>
-                    <input className="upImg" name="upImg5" type="file" accept="image/*" id="img5"
+                    <input className="upImg" name="upImg5" type="file" accept="image/jpeg,image/png" id="img5"
                            onChange={onFileChange}/>
                     <input type="text" name="organs" value={typeValue} readOnly={true}/>
                 </div>

@@ -21,7 +21,6 @@ export default function RootLayout({children,}: {
     async function searchSubmit(form: FormData) {
         "use server"
         redirect("/search?q=" + form.get("inputq"))
-        //TODO:quick search
     }
 
     //This is the layout, the master of the page, which appears as the outer border on each page.
@@ -52,9 +51,6 @@ export default function RootLayout({children,}: {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" aria-current="page" href="/identify">Identify</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" aria-current="page" href="/filtering">Filtering</Link>
                         </li>
                     </ul>
                     <form className="d-flex" role="search" action={searchSubmit}>

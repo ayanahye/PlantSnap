@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { useEffect, useState } from 'react';
-import dataObject from "../SampleList.json";
+import {perenual_search_test_value as dataObject} from "@/app/globalTypes";
 
 
 export default function page() {

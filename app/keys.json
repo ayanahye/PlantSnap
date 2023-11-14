@@ -1,5 +1,0 @@
-{
-  "names": ["id", "common_name", "scientific_name", "other_name"],
-  "Care Reqs": ["cycle", "watering", "sunlight"],
-  "Images": ["default_image"]
-}

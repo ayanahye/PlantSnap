@@ -1,11 +1,10 @@
 'use client'
-import 'home.css';
+import styles from '@/app/home.module.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import {useEffect} from "react";
 
 
 import React from 'react';
-import './styles/App.css';
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
@@ -16,7 +15,7 @@ export default function Home() {
     }, []);
     return (
         <main>
-            <div className="index">
+            <div className={styles.index}>
                 <Link href="/search">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <path
@@ -36,7 +35,7 @@ export default function Home() {
                     </svg>
                 </Link>
             </div>
-            <div id="indexbg" className="carousel slide carousel-fade">
+            <div id="indexbg" className={styles.indexbg + " carousel slide carousel-fade"}>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <Image src="/images/bg1.webp" width={1920} height={1080} loading="eager" alt="bg1"/>

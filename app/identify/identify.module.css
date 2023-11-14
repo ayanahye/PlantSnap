@@ -1,5 +1,5 @@
 .imageIn {
-    background: #ccc;
+    background: #eee;
     transform: translateY(-100%);
     transition: transform 0.5s ease;
     position: absolute;
@@ -25,11 +25,12 @@
 
 .preview {
     aspect-ratio: 1/1;
-    background: #78ff4e;
+    border: 3px solid #aaa;
     overflow: hidden;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    border-radius: 1em;
 }
 
 .preview > button {

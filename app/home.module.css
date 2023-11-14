@@ -50,7 +50,7 @@
     }
 }
 
-#indexbg {
+.indexbg {
     z-index: 5;
     height: 90vh;
     overflow: hidden;
@@ -58,12 +58,12 @@
     align-items: center;
 }
 
-#indexbg img {
+.indexbg img {
     height: max(95vh, 56.25vw);
     width: max(168.8vh, 100vw);
 }
 
-.carousel-item {
+.indexbg > div > div {
     justify-content: center;
-    display: flex!important;
+    display: flex !important;
 }

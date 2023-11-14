@@ -7,7 +7,7 @@ import FormData from 'form-data';
 import Image from 'next/image';
 import defaultImg from "./placeholder-img.jpg"
 import './Listings-image.css';
-import data from "../SampleList-Plantnet.json";
+import {plantnet_test_value as data} from "../globalTypes";
 
 
 export default function Listings() {

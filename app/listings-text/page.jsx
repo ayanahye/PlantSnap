@@ -7,7 +7,6 @@ import defaultImg from "./placeholder-img.jpg"
 import './Listings-text.css';
 import Link from 'next/link';
 
-//import dataObject from "../SampleList.json";
 
 
 function Listings() {
