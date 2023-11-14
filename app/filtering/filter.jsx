@@ -152,9 +152,9 @@ export default function Filter(props) {
             </div>
             
             <div className="information">
-                
-                {/* <div className = scroll></div> */}
-                {/* <div style= "height: 100px; overflow-y: scroll;"> */}
+                <div class = "scroll-object1">
+
+
                 {optionValues.length > 0 ? (
                     optionValues.map((valueOption, index) => (
                         <div key={index}>
@@ -176,9 +176,30 @@ export default function Filter(props) {
                     <strong>Please use the filters to select the data you want.</strong>
                 )}
             </div>
+            </div>
 
+            {/* <div class = "scroll-bg"> */}
+                {/* <div class = "information">
+                    <div class = "scroll-object">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
+                    </div>
+            </div> */}
+
+            {/* sample code for scroll bar functionality */}
+            {/* <div class = "scroll-bg">
+                <div class = "scroll-div">
+                    <div class = "scroll-object">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
+                    </div>
+                </div>
+            </div> */}
 
         </main>
         
     );
+   
 }
