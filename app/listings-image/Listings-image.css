@@ -12,6 +12,28 @@
 
 }
 
+.selected-images {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: black;
+}
+
+.image-preview {
+    background-color: black;
+}
+
+.image-container {
+    background-color: black;
+    display: inline;
+    margin-left: 20px;
+}
+
+.buttonDelete {
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 0;
+  }
+
 .button-to-plant {
     border: none;
     margin: 0;
