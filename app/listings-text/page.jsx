@@ -5,6 +5,7 @@ import {useEffect, useState} from 'react';
 import Image from 'next/image';
 import defaultImg from "./placeholder-img.jpg"
 import './Listings-text.css';
+import Link from 'next/link';
 
 //import dataObject from "../SampleList.json";
 
@@ -35,6 +36,8 @@ function Listings() {
             const response = await fetch(url);
             const jsonData = await response.json();
             setData(jsonData);
+
+            localStorage.setItem('lastSearchQuery', searchQuery);
         } catch (error) {
             console.log("Error fetching data:", error);
         } finally {
@@ -62,20 +65,26 @@ function Listings() {
                 <div className="row row-cols-1 row-cols-md-4">
                     {displayedData.map((item, index) => (
                         <div className="col mb-4" key={item.id}>
-                            <div className="card h-100 card-hover">
-                                {item.default_image ? (
-                                    <button className="button-to-plant"><Image src={item.default_image.regular_url} width={500} height={200}
-                                           className="card-img-top" alt={item.common_name}/></button>
-                                ) : (
-                                    <button className="button-to-plant"><Image src={defaultImg} width={500} height={200} className="card-img-top"
-                                           alt={item.common_name}/></button>
-                                )}
-                                <div className="card-body">
-                                    <h5 className="card-title">{item.common_name}</h5>
-                                    <p className="card-text">ID: {item.id}</p>
-                                </div>
+                        <div className="card h-100 ">
+                            <button style={{border: 'none'}}className="card-hover">
+                            
+
+                                    {item.default_image ? (
+                                        <Image src={item.default_image.regular_url} width={500} height={200}
+                                            className="card-img-top" alt={item.common_name}/>
+                                    ) : (
+                                        <Image src={defaultImg} width={500} height={200} className="card-img-top"
+                                            alt={item.common_name}/>
+                                    )}
+                         
+                            </button>
+                            <div className="card-body">
+                                <h5 className="card-title">{item.common_name}</h5>
+                                <p className="card-text">ID: {item.id}</p>
+                                <Link href='/display'>View more</Link>
                             </div>
                         </div>
+                    </div>
                     ))}
                 </div>
             ) : (
