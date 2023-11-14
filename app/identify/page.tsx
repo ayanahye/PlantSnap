@@ -1,6 +1,6 @@
 'use client'
 import styles from "./identify.module.css"
-import React, {useState} from "react";
+import React, {startTransition, useEffect, useOptimistic, useState, useTransition} from "react";
 import Image from "next/image";
 import {postData} from "@/app/identify/connection";
 import ListResult, {result} from "@/app/components/listResult";
@@ -22,6 +22,9 @@ const typeImage = {
 }
 
 export default function Page() {
+    useEffect(() => {
+        require("bootstrap/dist/js/bootstrap.bundle.min.js");
+    }, []);
     let a: preview[] = [], b: string[] = [], c: result[] = []
     const [pvList, setpvList] = useState(a)
 
@@ -30,7 +33,8 @@ export default function Page() {
 
     const [d_input, set_d_input] = useState(true)
     const [showinput, set_showinput] = useState(true)
-    const [showload, set_showload] = useState(false)
+    const [showinputo, set_showinputo] = useOptimistic(true)
+    const [showload, set_showload] = useOptimistic(false)
     const [showresult, set_showresult] = useState(false)
 
     let lastInput: HTMLInputElement | null = null;
@@ -62,6 +66,7 @@ export default function Page() {
         if (pvList.length == 0) return
         set_showinput(false)
         set_showload(true)
+        set_showinputo(false)
         postData(form).then(data => {
             let tmp: result[] = []
             for (let r of data.results) {
@@ -72,7 +77,6 @@ export default function Page() {
                 })
             }
             set_resultlst(tmp)
-            set_showload(false)
             set_showresult(true)
         })
     }
@@ -140,7 +144,7 @@ export default function Page() {
     }
 
     return <main>
-        <div className={`${styles.imageIn} ${showinput && styles.show} p-5`}>
+        <div className={`${styles.imageIn} ${(showinput && showinputo) && styles.show} p-5`}>
             <form action={formSubmit} className="row row-cols-2 row-cols-md-3 row-cols-lg-6 justify-content-end"
                   id="form">
                 {pvList.map((pv, i) => {
@@ -177,7 +181,8 @@ export default function Page() {
                     <input type="text" name="organs" value={typeValue} readOnly={true}/>
                 </div>
             </form>
-            <div className="btn btn-secondary" onClick={() => set_showinput(true)}>v</div>
+            <div className="btn btn-secondary" onClick={() => set_showinput(!showinput)}>v
+            </div>
         </div>
         <button type="button" className="d-none" data-bs-toggle="modal" data-bs-target="#select_type" id="showSelect"/>
         <div className="modal" data-bs-backdrop="static" id="select_type">
