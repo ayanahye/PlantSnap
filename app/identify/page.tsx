@@ -1,6 +1,6 @@
 'use client'
 import styles from "./identify.module.css"
-import React, {startTransition, useEffect, useOptimistic, useState, useTransition} from "react";
+import React, {useOptimistic, useState} from "react";
 import Image from "next/image";
 import {postData} from "@/app/identify/connection";
 import ListResult, {result} from "@/app/components/listResult";

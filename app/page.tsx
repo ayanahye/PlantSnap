@@ -1,7 +1,6 @@
 'use client'
 import styles from '@/app/home.module.css';
 import 'bootstrap/dist/css/bootstrap.css'
-import {useEffect} from "react";
 
 
 import React from 'react';
