@@ -47,7 +47,7 @@ export default function RootLayout({children,}: {
                             <Link className="nav-link" aria-current="page" href="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" aria-current="page" href="/">Search</Link>
+                            <Link className="nav-link" aria-current="page" href="/search">Search</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" aria-current="page" href="/identify">Identify</Link>

@@ -1,0 +1,85 @@
+.input {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    padding: 2em 1em;
+    background-color: #fff0;
+    transition: background-color 0.5s ease;
+}
+
+.input > form {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 2.4em;
+    overflow: hidden;
+    transition: height 0.5s ease;
+}
+
+.input > form > div {
+    width: 100%;
+}
+
+.input button {
+    width: 4em;
+}
+
+.input.adv > form {
+    height: 13em;
+}
+
+@media (min-width: 768px) {
+    .input.adv > form {
+        height: 7.65em;
+    }
+}
+
+
+.input.adv {
+    background-color: #fff;
+}
+
+.simple {
+    display: flex;
+}
+
+.advance {
+
+}
+
+.loading {
+    position: fixed;
+    z-index: 5;
+    overflow: hidden;
+    height: 0;
+    width: 100%;
+    transition: height 0.5s ease,opacity 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    opacity: 0;
+}
+
+.loading.show {
+    height: 90vh;
+    opacity: 1;
+}
+
+.result {
+    z-index: 0;
+    padding: 3.5em 4em 4em 4em;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.result.show {
+    opacity: 1;
+}
+
+.pagetext {
+    font-weight: bolder;
+    font-size: large;
+    padding: 1em 0;
+    color: #444444;
+}

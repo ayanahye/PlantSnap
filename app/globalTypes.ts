@@ -2,7 +2,7 @@
 export type perenual_search = {
     data: {
         id: number,
-        common_name: string | null,
+        common_name: string,
         scientific_name: string[],
         other_name: string[],
         cycle: string | null,
@@ -17,7 +17,7 @@ export type perenual_search = {
             "medium_url": string | null,
             "small_url": string | null,
             "thumbnail": string | null
-        }
+        } | null
     }[],
     to: number,
     per_page: number,
