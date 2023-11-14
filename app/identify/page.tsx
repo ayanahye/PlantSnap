@@ -220,7 +220,7 @@ export default function Page() {
                             </div>
                             <div className="col p-1 col-sm-auto">
                                 <button type="button" className="w-100 btn btn-secondary"
-                                        onClick={() => setType(null)} data-bs-dismiss="modal">Reselect
+                                        onClick={() => setType(null)} data-bs-dismiss="modal">Delete
                                 </button>
                             </div>
                         </div>

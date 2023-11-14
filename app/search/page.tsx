@@ -5,7 +5,7 @@ import {useEffect} from "react";
 
 
 import React from 'react';
-import './styles/App.css';
+import '../styles/App.css';
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";

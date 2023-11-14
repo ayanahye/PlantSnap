@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Home from '@/app/page'
+import Home from '@/app/search/page'
 // to write more tests wrap in describe
 
 describe('Home', () => {

@@ -12,9 +12,7 @@ import './Listings-text.css';
 function Listings() {
     
     const [searchQuery, setSearchQuery] = useState('');
-    useEffect(() => {
-        require("bootstrap/dist/js/bootstrap.bundle.min.js");
-    }, []);
+    const [loading, setLoading] = useState(false);
 
     // https://stackoverflow.com/questions/72221255/how-to-pass-data-from-one-page-to-another-page-in-next-js
 
@@ -27,6 +25,8 @@ function Listings() {
     const [dataObject, setData] = useState(null);
 
     const handleSearch = async () => {
+
+        setLoading(true)
        
         const apiKey = 'sk-sZxb6546cce0783d62824';
         const url = `https://perenual.com/api/species-list?key=${apiKey}&q=${searchQuery}&page=1}`;
@@ -37,6 +37,8 @@ function Listings() {
             setData(jsonData);
         } catch (error) {
             console.log("Error fetching data:", error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -55,6 +57,7 @@ function Listings() {
                 onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button onClick={handleSearch}>Search</button>
+            {loading && <p>Loading...</p>}
             {dataObject ? (
                 <div className="row row-cols-1 row-cols-md-4">
                     {displayedData.map((item, index) => (
