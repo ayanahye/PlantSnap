@@ -467,3 +467,252 @@ export type trefle_detail = {
     }
 }
 
+export type plantnet = {
+    "query": {
+        "project": string | null,
+        "images": string[],
+        "organs": string[],
+        "includeRelatedImages": boolean
+    },
+    "language": string | null,
+    "preferedReferential": string | null,
+    "bestMatch": string | null,
+    "results": {
+        "score": number,
+        "species": {
+            "scientificNameWithoutAuthor": string | null,
+            "scientificNameAuthorship": string | null,
+            "genus": {
+                "scientificNameWithoutAuthor": string | null,
+                "scientificNameAuthorship": string | null,
+                "scientificName": string | null
+            },
+            "family": {
+                "scientificNameWithoutAuthor": string | null,
+                "scientificNameAuthorship": string | null,
+                "scientificName": string | null
+            },
+            "commonNames": string[],
+            "scientificName": string | null
+        },
+        "images": {
+            "organ": string | null,
+            "author": string | null,
+            "license": string | null,
+            "date": {
+                "timestamp": number,
+                "string": string | null
+            },
+            "url": {
+                "o": string,
+                "m": string,
+                "s": string
+            },
+            "citation": string | null
+        }[]
+
+        "gbif"?: {
+            "id": string | null
+        } | null,
+        "powo"?: {
+            "id": string | null
+        } | null,
+        "iucn"?: {
+            "id": string | null,
+            "category": string | null
+        }
+    }[]
+    "version": string | null,
+    "remainingIdentificationRequests": number
+}
+
+export const plantnet_test_value: plantnet = {
+    query: {
+        "project": "all",
+        "images": [
+            "eb616e74618ae5f080748d090748c319"
+        ],
+        "organs": [
+            "auto"
+        ],
+        "includeRelatedImages": true
+    },
+    "language": "en",
+    "preferedReferential": "k-world-flora",
+    "bestMatch": "Zea mays L.",
+    "results": [
+        {
+            "score": 0.90408,
+            "species": {
+                "scientificNameWithoutAuthor": "Zea mays",
+                "scientificNameAuthorship": "L.",
+                "genus": {
+                    "scientificNameWithoutAuthor": "Zea",
+                    "scientificNameAuthorship": "",
+                    "scientificName": "Zea"
+                },
+                "family": {
+                    "scientificNameWithoutAuthor": "Poaceae",
+                    "scientificNameAuthorship": "",
+                    "scientificName": "Poaceae"
+                },
+                "commonNames": [
+                    "Corn",
+                    "Sweet Corn",
+                    "Maize"
+                ],
+                "scientificName": "Zea mays L."
+            },
+            "images": [
+                {
+                    "organ": "fruit",
+                    "author": "#MaryKingfishers",
+                    "license": "cc-by-sa",
+                    "date": {
+                        "timestamp": 1655459830138,
+                        "string": "June 17, 2022"
+                    },
+                    "url": {
+                        "o": "https://bs.plantnet.org/image/o/285c8b2fdc87e93d4e6411e690b50283257540c3",
+                        "m": "https://bs.plantnet.org/image/m/285c8b2fdc87e93d4e6411e690b50283257540c3",
+                        "s": "https://bs.plantnet.org/image/s/285c8b2fdc87e93d4e6411e690b50283257540c3"
+                    },
+                    "citation": "#MaryKingfishers / Pl@ntNet, cc-by-sa"
+                },
+                {
+                    "organ": "fruit",
+                    "author": "BadBõyHalo TRÂŠHGÄNG GotRōRoGøTLIT20743",
+                    "license": "cc-by-sa",
+                    "date": {
+                        "timestamp": 1612471462872,
+                        "string": "February 4, 2021"
+                    },
+                    "url": {
+                        "o": "https://bs.plantnet.org/image/o/20d119b53f1229df37bb317b7f4d456df96d3c9f",
+                        "m": "https://bs.plantnet.org/image/m/20d119b53f1229df37bb317b7f4d456df96d3c9f",
+                        "s": "https://bs.plantnet.org/image/s/20d119b53f1229df37bb317b7f4d456df96d3c9f"
+                    },
+                    "citation": "BadBõyHalo TRÂŠHGÄNG GotRōRoGøTLIT20743 / Pl@ntNet, cc-by-sa"
+                },
+                {
+                    "organ": "fruit",
+                    "author": "Sambin",
+                    "license": "cc-by-sa",
+                    "date": {
+                        "timestamp": 1586103460816,
+                        "string": "April 5, 2020"
+                    },
+                    "url": {
+                        "o": "https://bs.plantnet.org/image/o/52019f45189455f923c603862a701e1babe8cd59",
+                        "m": "https://bs.plantnet.org/image/m/52019f45189455f923c603862a701e1babe8cd59",
+                        "s": "https://bs.plantnet.org/image/s/52019f45189455f923c603862a701e1babe8cd59"
+                    },
+                    "citation": "Sambin / Pl@ntNet, cc-by-sa"
+                },
+                {
+                    "organ": "fruit",
+                    "author": "HUMBERTO N.D.SANTOS FILHO",
+                    "license": "cc-by-sa",
+                    "date": {
+                        "timestamp": 1627835911919,
+                        "string": "August 1, 2021"
+                    },
+                    "url": {
+                        "o": "https://bs.plantnet.org/image/o/6bc396a72801605d9596b703194de766d15cf9e8",
+                        "m": "https://bs.plantnet.org/image/m/6bc396a72801605d9596b703194de766d15cf9e8",
+                        "s": "https://bs.plantnet.org/image/s/6bc396a72801605d9596b703194de766d15cf9e8"
+                    },
+                    "citation": "HUMBERTO N.D.SANTOS FILHO / Pl@ntNet, cc-by-sa"
+                },
+                {
+                    "organ": "fruit",
+                    "author": "Martinho Stopeira Andres Luis...",
+                    "license": "cc-by-sa",
+                    "date": {
+                        "timestamp": 1561248179011,
+                        "string": "June 23, 2019"
+                    },
+                    "url": {
+                        "o": "https://bs.plantnet.org/image/o/1c53159087352bbb88dfee9d7061c83ea34823e3",
+                        "m": "https://bs.plantnet.org/image/m/1c53159087352bbb88dfee9d7061c83ea34823e3",
+                        "s": "https://bs.plantnet.org/image/s/1c53159087352bbb88dfee9d7061c83ea34823e3"
+                    },
+                    "citation": "Martinho Stopeira Andres Luis... / Pl@ntNet, cc-by-sa"
+                },
+                {
+                    "organ": "fruit",
+                    "author": "Tela Botanica − Coimbra JOAO",
+                    "license": "cc-by-sa",
+                    "date": {
+                        "timestamp": 1363114525000,
+                        "string": "March 12, 2013"
+                    },
+                    "url": {
+                        "o": "https://bs.plantnet.org/image/o/661f1a76593f8919d182af558eee20dcb7369ea6",
+                        "m": "https://bs.plantnet.org/image/m/661f1a76593f8919d182af558eee20dcb7369ea6",
+                        "s": "https://bs.plantnet.org/image/s/661f1a76593f8919d182af558eee20dcb7369ea6"
+                    },
+                    "citation": "Tela Botanica − Coimbra JOAO / Pl@ntNet, cc-by-sa"
+                }
+            ],
+            "gbif": {
+                "id": "5290052"
+            },
+            "powo": {
+                "id": "426810-1"
+            },
+            "iucn": {
+                "id": "77726273",
+                "category": "LC"
+            }
+        },
+        {
+            "score": 0.01349,
+            "species": {
+                "scientificNameWithoutAuthor": "Zea mexicana",
+                "scientificNameAuthorship": "(Schrad.) Kuntze",
+                "genus": {
+                    "scientificNameWithoutAuthor": "Zea",
+                    "scientificNameAuthorship": "",
+                    "scientificName": "Zea"
+                },
+                "family": {
+                    "scientificNameWithoutAuthor": "Poaceae",
+                    "scientificNameAuthorship": "",
+                    "scientificName": "Poaceae"
+                },
+                "commonNames": [
+                    "Mexican teosinte",
+                    "Corn"
+                ],
+                "scientificName": "Zea mexicana (Schrad.) Kuntze"
+            },
+            "images": [
+                {
+                    "organ": "fruit",
+                    "author": "alfa oscar",
+                    "license": "cc-by-sa",
+                    "date": {
+                        "timestamp": 1567059173721,
+                        "string": "August 29, 2019"
+                    },
+                    "url": {
+                        "o": "https://bs.plantnet.org/image/o/e93afd3c3b4d48c2f5d054ce87aba23ec9e49abe",
+                        "m": "https://bs.plantnet.org/image/m/e93afd3c3b4d48c2f5d054ce87aba23ec9e49abe",
+                        "s": "https://bs.plantnet.org/image/s/e93afd3c3b4d48c2f5d054ce87aba23ec9e49abe"
+                    },
+                    "citation": "alfa oscar / Pl@ntNet, cc-by-sa"
+                }
+            ],
+            "gbif": {
+                "id": "5290049"
+            },
+            "powo": {
+                "id": "270868-2"
+            }
+        }
+    ],
+    "version": "2023-09-12 (7.1)",
+    "remainingIdentificationRequests": 496
+}
+

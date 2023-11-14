@@ -1,8 +1,8 @@
 
 import React, {useState} from 'react';
-import "../styles/Filter.css";
+import "./Filter.css";
 
-import Dropdown from './dropdown';
+import Dropdown from '../components/dropdown';
 
 const values = 
 {
@@ -114,7 +114,7 @@ export default function Filter(props) {
         
         <div key={valueOption}>
 
-          <p><strong>{valueOption}:</strong> {props.speciesList.valueOption}</p>
+          <p className="p-border"><strong>{valueOption}:</strong> {props.speciesList.valueOption}</p>
         </div>
       ));
 
@@ -131,6 +131,7 @@ export default function Filter(props) {
     return (
         <main>
             <h3 style={{paddingBottom: '15px'}}>Current plant = {props.speciesList.common_name || "No name yet"}</h3>
+            
             <div className="filterPart">
                 <div className="images">
                     <h2 className="right-align">Images here</h2>
@@ -151,27 +152,54 @@ export default function Filter(props) {
             </div>
             
             <div className="information">
+                <div class = "scroll-object1">
+
+
                 {optionValues.length > 0 ? (
                     optionValues.map((valueOption, index) => (
                         <div key={index}>
-                            <p>
+                           
                                 <strong>{valueOption}:</strong>{" "}
                                 {props.speciesList[valueOption] !== undefined && props.speciesList[valueOption] !== null ? (
                                     typeof props.speciesList[valueOption] === "object"
                                         ? Object.values(props.speciesList[valueOption]).join(", ")
                                         : props.speciesList[valueOption]
                                 ) : (
-                                    "False"
+                                    "No data yet"
                                 )}
-                            </p>
+                               
+                           
                         </div>
+            
                     ))
                 ) : (
                     <strong>Please use the filters to select the data you want.</strong>
                 )}
             </div>
+            </div>
 
+            {/* <div class = "scroll-bg"> */}
+                {/* <div class = "information">
+                    <div class = "scroll-object">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
+                    </div>
+            </div> */}
+
+            {/* sample code for scroll bar functionality */}
+            {/* <div class = "scroll-bg">
+                <div class = "scroll-div">
+                    <div class = "scroll-object">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
+                    </div>
+                </div>
+            </div> */}
 
         </main>
+        
     );
+   
 }

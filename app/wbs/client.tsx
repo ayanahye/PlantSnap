@@ -1,6 +1,6 @@
 'use client'
 import {deleteTask, updateTask} from '@/prisma/database'
-import "./wbs.css"
+import styles from "./wbs.module.css"
 import React, {useState} from "react";
 import {task} from "@/app/wbs/page";
 
@@ -45,7 +45,7 @@ const empTask: task = {
     start: null,
     end: null
 }
-const levelClass = ["la", "lb", "lc"]
+const levelClass = [styles.la, styles.lb, styles.lc]
 const color = [
     "#4fb5ff",
     "#4fdfff",
@@ -53,6 +53,7 @@ const color = [
     "#c4ff4f",
     "#fff04f",
     "#ff784f"]
+const show = styles.show
 
 export default function ClientPage(ctx: { tasks: task[] }) {
     const [curTask, setTask] = useState(empTask)
@@ -66,18 +67,18 @@ export default function ClientPage(ctx: { tasks: task[] }) {
     function taskClick(event: React.MouseEvent<HTMLDivElement>, task: task) {
         event.stopPropagation()
         setTask(task)
-        setShowForm("show")
+        setShowForm(show)
     }
 
     function openMenu(event: React.MouseEvent<HTMLDivElement>, task: task) {
         event.preventDefault()
         setTask({...empTask, id: task.id, order: task.order + 0.01, step: task.step})
-        setShowMenu({x: event.clientX, y: event.clientY, sh: "show"})
+        setShowMenu({x: event.clientX, y: event.clientY, sh: show})
     }
 
     function openCreate(lv: number) {
         setTask({...curTask, level: lv, id: -1})
-        setShowForm("show")
+        setShowForm(show)
     }
 
     function deleteClick() {
@@ -86,27 +87,27 @@ export default function ClientPage(ctx: { tasks: task[] }) {
 
     return (
         <main onClick={() => setShowMenu({x: 0, y: 0, sh: ""})}>
-            <div className="kanban">
-                {kanban_step.map((step) => <div className="step-group" key={kanban_step.indexOf(step)}>
-                    <div className="step">{step}</div>
+            <div className={styles.kanban}>
+                {kanban_step.map((step) => <div className={styles.stepgroup} key={kanban_step.indexOf(step)}>
+                    <div className={styles.step}>{step}</div>
                     {ctx.tasks.map(task => {
                         if (step != task.step) return null
                         return <div key={task.id}
-                                    className={["task", task.completed ? "check" : "", levelClass[task.level]].join(" ")}
+                                    className={[styles.task, task.completed ? styles.check : "", levelClass[task.level]].join(" ")}
                                     onClick={(event) => taskClick(event, task)}
                                     onContextMenu={(event) => openMenu(event, task)}>
-                            <div className="title">{task.title}</div>
+                            <div className={styles.title}>{task.title}</div>
                             {task.assignd &&
                                 <>
                                     <div className="text-nowrap">Assign:<b>{task.assignd}</b></div>
                                     <div className="text-nowrap">Complete:<b>{task.completed}</b></div>
-                                    <div className="time">{task.acthour}/{task.esthour}Hours</div>
+                                    <div className={styles.time}>{task.acthour}/{task.esthour}Hours</div>
                                 </>}
                         </div>
                     })}
                 </div>)}
             </div>
-            <div className="timeline">
+            <div className={styles.timeline}>
                 {milestone.map(task => {
                     return <div key={task.i} style={{
                         gridColumnStart: task.st,
@@ -116,13 +117,13 @@ export default function ClientPage(ctx: { tasks: task[] }) {
                     </div>;
                 })}
                 {days.map((day => {
-                    return <div key={day.i} className="day">{day.day}</div>;
+                    return <div key={day.i} className={styles.day}>{day.day}</div>;
                 }))}
                 {timeline_step.map((step) =>
                     ctx.tasks.map(task => {
                         if (step != task.step || task.start == null || task.end == null) return null
                         return <div key={task.id}
-                                    className={task.completed ? "check" : ""}
+                                    className={task.completed ? styles.check : ""}
                                     style={{
                                         gridColumnStart: task.start,
                                         gridColumnEnd: task.end,
@@ -135,7 +136,7 @@ export default function ClientPage(ctx: { tasks: task[] }) {
                 {ctx.tasks.map(task => {
                     if ("Event" != task.step || task.start == null || task.end == null) return null
                     return <div key={task.id}
-                                className={task.completed ? "check" : ""}
+                                className={task.completed ? styles.check : ""}
                                 style={{
                                     gridColumnStart: task.start,
                                     gridColumnEnd: task.end,
@@ -147,9 +148,9 @@ export default function ClientPage(ctx: { tasks: task[] }) {
                     </div>
                 })}
             </div>
-            <div className={"editform " + showForm}>
+            <div className={`${styles.editform} ${showForm}`}>
                 <form action={updateTask} key={curTask.id}>
-                    <h1 style={{gridColumnStart: 1, gridColumnEnd: 3}}>Create/Update task</h1>
+                    <h3 style={{gridColumnStart: 1, gridColumnEnd: 3}}>Create/Update task</h3>
                     <input type="hidden" defaultValue={curTask.id} name="id"/>
                     <input type="hidden" defaultValue={curTask.step} name="step"/>
                     <input type="hidden" defaultValue={curTask.order} name="order"/>
@@ -176,19 +177,19 @@ export default function ClientPage(ctx: { tasks: task[] }) {
                     <input type="text" name="acthour" id="acthour"
                            defaultValue={curTask.acthour ? curTask.acthour : ""}/>
 
-                    <h1 style={{gridColumnStart: 1, gridColumnEnd: 3}}>Leave blank to not show on timeline</h1>
+                    <h5 style={{gridColumnStart: 1, gridColumnEnd: 3}}>Leave blank to not show on timeline</h5>
                     <label htmlFor="start">start day</label>
                     <input type="number" name="start" id="start" defaultValue={curTask.start ? curTask.start : ""}/>
 
                     <label htmlFor="end">end day</label>
                     <input type="number" name="end" id="end" defaultValue={curTask.end ? curTask.end : ""}/>
 
-                    <button type="submit" style={{gridColumnStart: 1, gridColumnEnd: 3}}
+                    <button type="submit" style={{gridColumnStart: 1, gridColumnEnd: 3}} className="btn btn-secondary"
                             onClick={() => {
                                 setShowForm("")
                             }}>Save
                     </button>
-                    <button type="reset" className="bg-danger" style={{gridColumnStart: 1, gridColumnEnd: 3}}
+                    <button type="reset" className="btn btn-danger" style={{gridColumnStart: 1, gridColumnEnd: 3}}
                             onClick={() => {
                                 setShowForm("")
                                 setTask(empTask)
@@ -196,11 +197,11 @@ export default function ClientPage(ctx: { tasks: task[] }) {
                     </button>
                 </form>
             </div>
-            <div className={"menu " + showMenu.sh} style={{top: showMenu.y + "px", left: showMenu.x + "px"}}>
-                <h1>add task under</h1>
-                <div className="la" onClick={() => openCreate(0)}>add lv0 task</div>
-                <div className="lb" onClick={() => openCreate(1)}>add lv1 task</div>
-                <div className="lc" onClick={() => openCreate(2)}>add lv2 task</div>
+            <div className={`${styles.menu} ${showMenu.sh}`} style={{top: showMenu.y + "px", left: showMenu.x + "px"}}>
+                <h5>add task under</h5>
+                <div className={styles.la} onClick={() => openCreate(0)}>add lv0 task</div>
+                <div className={styles.lb} onClick={() => openCreate(1)}>add lv1 task</div>
+                <div className={styles.lc} onClick={() => openCreate(2)}>add lv2 task</div>
                 <div className="bg-danger" onClick={deleteClick}>delete task</div>
             </div>
         </main>

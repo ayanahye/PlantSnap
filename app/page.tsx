@@ -1,6 +1,13 @@
 'use client'
 import React from 'react';
 import 'home.css';
+import 'bootstrap/dist/css/bootstrap.css'
+import {useEffect} from "react";
+
+
+import React from 'react';
+import './styles/App.css';
+import styles from "./styles/test.module.css"
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
@@ -94,6 +101,7 @@ export default function Home() {
                     - Ayana Hussain</p>
 
             </div>
+            <Link href={"/detail/Averrhoa carambola"}>tmp link to test detail:Averrhoa carambola</Link>
             <Script src="/clientjs/home.js"/>
         </main>
 

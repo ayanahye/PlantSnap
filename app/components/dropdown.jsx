@@ -1,5 +1,6 @@
+
 import React from 'react';
-import "../styles/Filter.css";
+import "../filtering/Filter.css";
 
 export default function Dropdown(props) {
 
@@ -16,7 +17,7 @@ export default function Dropdown(props) {
                 <button id="full-width" className="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {props.name}
                 </button>
-                <button type="button" className="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                <button id="full-width2" type="button" className="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
                     <span className="visually-hidden"></span>
                 </button>
                 <ul className="dropdown-menu">
@@ -38,3 +39,5 @@ export default function Dropdown(props) {
             </div>
     )
 }
+
+// checkbox-option1-1

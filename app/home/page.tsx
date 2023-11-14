@@ -15,9 +15,10 @@ export default function Home() {
     let string = process.env.PLANTNET_KEY;
     //make sure file is use server if it contains api operation
     return (
-        <div style={{height: "200vh"}}>
+        <div style={{height: "200vh", display:"flex", flexDirection:"column"}}>
             <div>TODO:home</div>
             <Link href={"/detail/Averrhoa carambola"}>tmp link to test detail:Averrhoa carambola</Link>
+            <Link href={"../listings"}>Results Page</Link>
         </div>
     );
 }
