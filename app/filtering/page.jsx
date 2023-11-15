@@ -28,7 +28,7 @@ function Filtering(props) {
             }
         }
         getData();
-    }, []);
+    }, [plantId]);
   
 
 
