@@ -4,9 +4,6 @@ import FilterPage from '../../../filtering/page';
 
 export default function Page({ params }: { params: { name: string } }) {
 
-    useEffect(() => {
-        require("bootstrap/dist/js/bootstrap.bundle.min.js");
-    }, []);
     
     const id = decodeURIComponent(params.name);
     const P_KEY = process.env.PERENUAL_KEY;

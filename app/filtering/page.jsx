@@ -6,9 +6,6 @@ import Filter from './filter';
 import "./Filter.css";
 
 function Filtering(props) {
-  useEffect(() => {
-    require("bootstrap/dist/js/bootstrap.bundle.min.js");
-}, []);
 
   //const plantId = localStorage.getItem('plantId');
 
