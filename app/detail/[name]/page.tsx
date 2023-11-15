@@ -12,6 +12,7 @@ export default async function Page({ params }: {
         name: string
     }
 }) {
+
     let name = decodeURIComponent(params.name);
     let P_KEY = process.env.PERENUAL_KEY;
 
@@ -100,7 +101,7 @@ export default async function Page({ params }: {
                             </div>
                             <div className="row justify-content-center py-3">
                                 <div className="col col-auto">
-                                    <Link className="btn btn-light border border-secondary" href={`/detail/${name}/filter`}>View
+                                    <Link className="btn btn-light border border-secondary" href={`/detail/${plantDetail.id}/filter`}>View
                                         More&gt;&gt;&gt;</Link>
                                 </div>
                             </div>
