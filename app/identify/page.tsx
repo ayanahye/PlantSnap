@@ -71,7 +71,7 @@ export default function Page() {
             let tmp: result[] = []
             for (let r of data.results) {
                 tmp.push({
-                    name: r.species.commonNames.length > 0 ? r.species.commonNames.join(", ") : r.species.scientificNameWithoutAuthor,
+                    name: r.species.commonNames.length > 0 ? r.species.scientificNameWithoutAuthor : r.species.scientificNameWithoutAuthor,
                     image: {url: r.images[0].url.m, alt: r.species.commonNames.join(", ")},
                     score: r.score,
                     sciName: r.species.scientificNameWithoutAuthor
