@@ -3,15 +3,18 @@ import { useEffect, useState } from "react";
 
 import React from 'react'
 import Filter from './filter';
+import "./Filter.css";
 
-function Filtering() {
+function Filtering(props) {
+  useEffect(() => {
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+}, []);
 
+  //const plantId = localStorage.getItem('plantId');
 
-  const plantId = localStorage.getItem('plantId');
-
+  const plantId = props.id;
   const [speciesData, setSpeciesData] = useState(null);
 
-  if (plantId) {
     useEffect(() => {
         const getData = async () => {
             
@@ -29,7 +32,7 @@ function Filtering() {
         }
         getData();
     }, []);
-  }
+  
 
 
   // const [speciesList, setSpeciesList] = useState(Data);
@@ -38,7 +41,6 @@ function Filtering() {
     <div className="App">
         <Filter speciesList={speciesData} />
     </div>
-
 
   )
 }

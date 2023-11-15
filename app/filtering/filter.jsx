@@ -6,8 +6,8 @@ import Dropdown from '../components/dropdown';
 
 
 export default function Filter(props) {
-
     //console.log(props.speciesList);
+    const [selectedOptionNames, setSelectedOptionNames] = useState({});
 
     if (!props.speciesList) {
         return (
@@ -93,7 +93,6 @@ export default function Filter(props) {
         'pest_susceptibility'
     ]
     
-    const [selectedOptionNames, setSelectedOptionNames] = useState({});
     
     const handleOptionChange = (id, option, isChecked) => {
         setSelectedOptionNames(prevOptionNames => {
