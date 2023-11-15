@@ -13,6 +13,7 @@ type preview = {
 type typeimg = { img: string, name: string }
 
 //TODO: ico for type
+//icon on top of preview image
 const typeImage = {
     leaf: {img: "/images/leaf.svg", name: "leaf"},
     flower: {img: "/images/leaf.svg", name: "flower"},
@@ -59,9 +60,11 @@ export default function Page() {
         set_typeValue(tv)
     }
 
+    //call on submit button click
     function formSubmit(form: FormData) {
-        if (pvList.length == 0) return
+        if (pvList.length == 0) return//no image selected
         set_showinput(false)
+        //same as search page
         set_showload(true)
         set_showinputo(false)
         postData(form).then(data => {
@@ -102,6 +105,7 @@ export default function Page() {
         }
     }
 
+    //call when click on preview image
     function pvClick(id: string) {
         let input = document.querySelector("#" + id)
         let selector = document.querySelector("#showSelect");
@@ -112,14 +116,18 @@ export default function Page() {
         }
     }
 
+    //call when click buttons in modal
     function setType(type: typeimg | null) {
         if (lastInput && lastInput.files) {
+            //delete button
             if (type == null) {
                 lastInput.value = "";
                 removeImage(lastInput.id)
                 return
             }
             let tmp = pvList.slice()
+
+            //just change if not new image
             for (let preview of tmp) {
                 if (preview.id == lastInput.id) {
                     preview.type = type
@@ -128,6 +136,7 @@ export default function Page() {
                     return
                 }
             }
+
             let reader = new FileReader();
             reader.onload = e => {
                 if (lastInput && lastInput.files) {

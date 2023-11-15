@@ -2,14 +2,16 @@
 
 import {perenual_search} from "@/app/globalTypes";
 
+// :something is used for define data type, ignore them if you don't understand
 export async function postSearch(form: FormData, adv: boolean): Promise<perenual_search> {
     let P_KEY = process.env.PERENUAL_KEY
 
     let q = form.get("q")
     let page = form.get("page")
     let order = form.get("order")
-
+    //default query
     let query = `key=${P_KEY}&q=${q}&page=${page}&order=${order}`
+    //add if advance search bar is open
     if (adv) {
         let Edible = form.get("edible")
         let Poisonous = form.get("poisonous")

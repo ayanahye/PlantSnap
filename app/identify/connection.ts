@@ -3,7 +3,7 @@
 import {plantnet, plantnet_test_value} from "@/app/globalTypes";
 
 export async function postData(form: FormData): Promise<plantnet> {
-    // console.dir(form)
+    //see .env file in root folder
     let P_KEY = process.env.PLANTNET_KEY
     let data = new FormData()
     let organs = form.get("organs") as string

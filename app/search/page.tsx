@@ -18,6 +18,8 @@ export default function Page() {
     const [pagetext, set_pagetext] = useState("")
 
 
+    //after page load, check if there is a q in url
+    //if yes click search button
     useEffect(() => {
         if (params.has("q")) {
             let btn = document.querySelector("#submitSearch") as HTMLButtonElement
@@ -25,6 +27,9 @@ export default function Page() {
         }
     }, [params]);
 
+
+    //call when page bar click
+    //set page and click search button
     function pageClick(i: number) {
         if (i < 1 || i > lastpage) return
         page = i
@@ -32,12 +37,18 @@ export default function Page() {
         btn.click()
     }
 
+    //call when search button click
     function postForm(form: FormData) {
+        //this is the loading anim
+        //useOptimistic will set value immediately and clear after page refresh (after postSearch.then
         set_showload(true)
+        //hide result when loading
         set_showresult(false)
         form.append("page", page.toString())
+        //this func is in connection.ts
         postSearch(form, adv).then(r => {
             lastpage = r.last_page
+            //range of the page bar
             let l = page - 2, m = page + 2
             if (l < 1) {
                 m += 1 - l
@@ -48,6 +59,7 @@ export default function Page() {
                 m = lastpage
             }
             l = l < 1 ? 1 : l;
+            //tabs in page bar
             let pagetab: React.JSX.Element[] = []
             for (let i = l; i <= m; i++) {
                 pagetab.push(
@@ -56,6 +68,7 @@ export default function Page() {
                     </li>
                 )
             }
+            //page bar element
             set_pagination(<nav aria-label="...">
                 <ul className="pagination">
                     <li className="page-item">
@@ -67,14 +80,19 @@ export default function Page() {
                     </li>
                 </ul>
             </nav>)
+            //text on top
             set_pagetext(`display${r.per_page}/${r.total} page#${r.current_page}/${r.last_page}`)
+
             let tmp: result[] = []
             if (r.data)
                 for (let plant of r.data) {
+                    //skip if it is a paid data
                     if (plant.cycle == "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry") continue
+                    //make sure url is not null
                     let di = plant.default_image
                     let url = di ? di.regular_url ? di.regular_url : di.original_url : ""
                     if (!url) url = "/images/phi.jpg"
+                    //for <ListResult>
                     tmp.push({
                         image: {url: url, alt: plant.common_name},
                         name: plant.common_name,
