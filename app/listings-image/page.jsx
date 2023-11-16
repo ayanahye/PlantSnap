@@ -2,7 +2,9 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import Image from 'next/image';
+import {useState} from 'react';
 import './Listings-image.css';
+import axios from 'axios'
 //import {plantnet_test_value as data} from "../globalTypes";
 
 
@@ -23,7 +25,7 @@ export default function Listings() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const apiKey = ''; 
+    const apiKey = '2b10MirhMEvzZjE0ioI36wqLGe'; 
     const baseURL = 'https://my-api.plantnet.org';
     const project = 'all';
 
@@ -59,7 +61,12 @@ export default function Listings() {
   */
 
   return (
+    
     <div className="container-custom">
+        <form onSubmit={handleSubmit}>
+            <input type="file" accept="image/*" onChange={handleFileChange} />
+            <button type="submit">Submit</button>
+        </form>
       {data && data.results.length > 0 && (
         <div>
           <p>Image search result: {data.results.length} results</p>
