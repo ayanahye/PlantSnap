@@ -113,6 +113,7 @@ export default function Filter(props) {
     
     const optionValues = Object.values(selectedOptionNames);
 
+    /*
     const optionsArray = optionValues.map(valueOption => (
         
         <div key={valueOption}>
@@ -120,6 +121,7 @@ export default function Filter(props) {
           <p className="p-border"><strong>{valueOption}:</strong> {props.speciesList.valueOption}</p>
         </div>
       ));
+    */
 
     /*
     for (value in values) {
@@ -142,7 +144,7 @@ export default function Filter(props) {
                         <div className="filterBlock">
                             <h2 className="right-align">Filters:</h2>
                             <div className="dropdowns">
-                                <Dropdown data={dataNames} name="Names" onOptionChange={handleOptionChange} id="option1"/>
+                                <Dropdown data={dataNames} name="Names" onOptionChange={handleOptionChange} id="option1" />
                                 <Dropdown data={dataSizes} name="Sizes" onOptionChange={handleOptionChange} id="option2"/>
                                 <Dropdown data={dataEdible} name="Edible" onOptionChange={handleOptionChange} id="option3"/>
                                 <Dropdown data={dataMaintenance} name="Maintenance" onOptionChange={handleOptionChange} id="option4"/>
@@ -153,14 +155,14 @@ export default function Filter(props) {
                     </div>
             </div>
             <div className="information">
-                <div class = "scroll-object1">
+                <div className = "scroll-object1" data-testid='scroll-object1'>
 
 
                 {optionValues.length > 0 ? (
                     optionValues.map((valueOption, index) => (
                         <div key={index}>
                            
-                                <strong>{valueOption}:</strong>{" "}
+                                {valueOption}:{" "}
                                 {props.speciesList[valueOption] !== undefined && props.speciesList[valueOption] !== null ? (
                                     typeof props.speciesList[valueOption] === "object"
                                         ? Object.values(props.speciesList[valueOption]).join(", ")

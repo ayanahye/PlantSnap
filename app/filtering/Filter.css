@@ -71,7 +71,6 @@
 
 .filterBlock {
     height: 400px;
-    width:350%;
     background-color: rgb(235, 249, 235);
     display: flex;
     flex-direction: column;
@@ -125,7 +124,6 @@
 .scroll-object1{
     height: 300px;
     background-color:  rgb(235, 249, 235);
-    width:2250px;
     margin-top: 50px;
     margin-bottom: 50px;
     border: 2px solid black;

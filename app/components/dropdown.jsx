@@ -31,6 +31,7 @@ export default function Dropdown(props) {
                                 name={item}
                                 value={item}
                                 onChange={handleCheckboxChange}
+                                data-testid={`checkbox-${props.id}-${item}`}
                             />
                             <label htmlFor={`checkbox-${props.id}-${item}`}>{item}</label>
                         </div>
