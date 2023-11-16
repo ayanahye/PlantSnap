@@ -9,9 +9,9 @@ describe("Options shows in display div", () => {
             common_name: 'Yellow Flower'
         }
 
-        const { getByText, getByTestId } = render(<Filter speciesList={speciesList} />);
+        render(<Filter speciesList={speciesList} />);
 
-        const checkBox = getByTestId('checkbox-option1-common_name');
+        const checkBox = screen.getByTestId('checkbox-option1-common_name');
         fireEvent.click(checkBox);
 
         const informationContainer = screen.getByTestId('scroll-object1');
