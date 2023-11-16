@@ -10,7 +10,7 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "postinstall": "prisma generate",
-    "deploy": "prod"
+    "deploy:prod": "npm run build"
   },
   "dependencies": {
     "@prisma/client": "^5.5.2",
