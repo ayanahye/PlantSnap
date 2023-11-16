@@ -3,12 +3,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import Image from 'next/image';
 import './Listings-image.css';
-import {plantnet_test_value as data} from "../globalTypes";
+//import {plantnet_test_value as data} from "../globalTypes";
 
 
 export default function Listings() {
 
-    /*
+    
     const [data, setData] = useState(null);
 
     const [selectedFile, setSelectedFile] = useState(null);

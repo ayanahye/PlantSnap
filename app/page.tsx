@@ -51,49 +51,71 @@ export default function Home() {
                 </div>
             </div>
             <div className="container w-75 py-5">
-                <div><Link href={"/detail/Averrhoa carambola"}>tmp link to test detail:Averrhoa carambola</Link></div>
-                <h1>Objectives</h1>
-                <p>
-                    PlantSnap: Data and Care is a comprehensive plant care and identification tool designed to
-                    meet the needs of students, gardening enthusiasts, professors, and other researchers in an
-                    all-in-one application. Users would be able to search for specific plants using Perenual Plant API
-                    and acquire data or have the option to utilize an AI image recognition tool called Pl@ntNet API to
-                    identify plants. The data returned includes: care guide specifications related to water, sunlight
-                    and indoor requirements, and keywords which will be displayed as icons indicating the severity of
-                    interacting with this plant. Our project aims to offer a wider range of features compared to
-                    existing plant search tools. This will enable researchers, gardening enthusiasts, and other users to
-                    find plant data, comparable plants, and other information without needing to search around
-                    additional websites.
-                </p>
-                <h1>Tech Stack</h1>
-                <p>
-                    Our group chose to program the project in Next.js, a popular React framework, and style/structure
-                    the pages in HTML and CSS. For the designing components of the site, we will utilize Bootstrap to
-                    assist with making the design mobile-friendly and responsive. Similarly, we will use the icons and
-                    other
-                    helpful visuals from Material UI. We chose Next.js because it promotes the creation of components
-                    that are reusable and smaller compared to using only JavaScript and retaining large files of code.
-                    Moreover, we chose Next.js rather than using only React.js because it requires less code to be
-                    written. For example, to create pages in Next.js, a folder needs to be created for each page with a
-                    corresponding
-                    page file. However, in React.js, routes to pages need to be added to the router which adds
-                    complexity. Furthermore, in Next.js the UI gets generated in advance from the server, unlike
-                    React.js that uses Client Side Rendering. For the testing aspect of our project, we are leaning
-                    towards using Jest
-                    because it is a popular testing framework for React. Additionally, we would like to use Github
-                    Actions as the CI/CD Pipeline since we are all familiar with the GitHub website. For more
-                    information about the
-                    tech stack please refer to the project report. <br/>
-
-                    Reference: <a
-                    href="https://www.freecodecamp.org/news/next-vs-react/">https://www.freecodecamp.org/news/next-vs-react/</a>
-                </p>
-                <h1>Contributors</h1>
-                <p> This project was planned, designed, and implemented by:<br/>
-                    - Layan Barrieshee<br/>
-                    - Dony Wang<br/>
-                    - Haoran Miao<br/>
-                    - Ayana Hussain</p>
+                <h1 style={{textAlign:'center'}}>Tips</h1>
+                
+                <div style={{marginTop: '30px'}}className="card">
+                    <div className="card-header">
+                        Recognition
+                    </div>
+                    <div className="card-body">
+                        <blockquote className="blockquote mb-0">
+                        <p>Upload images of  flowers, trees, grasses, ferns, vines, wild salads, cacti, and many more and get <strong>FAST</strong> results</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <div style={{marginTop: '50px'}}className="card">
+                    <div className="card-header">
+                        Search
+                    </div>
+                    <div className="card-body">
+                        <blockquote className="blockquote mb-0">
+                        <p>Search using scientific or common name.</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <div style={{marginTop: '50px'}}className="card">
+                    <div className="card-header">
+                        Icons
+                    </div>
+                    <div id="icons" className="card-body">
+                        <blockquote className="blockquote mb-0">
+                        <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
+                            <p>Rare</p>
+                            <img src="/images/leaf.svg"width='50xp'height='50px'></img>
+                        </div>
+                        <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
+                            <p>Medicinal</p>
+                            <img src="/images/leaf.svg"width='50xp'height='50px'></img>
+                        </div>
+                        <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
+                            <p>Indoor</p>
+                            <img src="/images/indoor.svg"width='50xp'height='50px'></img>
+                        </div>
+                        </blockquote>
+                    </div>
+                </div>
+                <div style={{marginTop: '50px'}}className="card">
+                    <div className="card-header">
+                        Care Guides
+                    </div>
+                    <div className="card-body">
+                        <blockquote className="blockquote mb-0">
+                        <p>Use the filters to find specifc care requirements, including, sunlight, watering, maintenance.</p>
+                        </blockquote>
+                    </div>
+                </div>
+                
+                <div>
+                    <h1 style={{marginTop: '30px', marginBottom: '30px', textAlign:'center'}}>Developers</h1>
+                    <div style={{textAlign:'center', marginBottom: '20px'}}> This project was planned, designed, and implemented by:
+                        <p>
+                            - Layan Barrieshee<br/>
+                            - Dony Wang<br/>
+                            - Haoran Miao<br/>
+                            - Ayana Hussain<br/>
+                        </p>
+                    </div>
+                </div>
 
             </div>
             <Script src="/clientjs/home.js"/>

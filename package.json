@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "postinstall": "prisma generate",
+    "deploy:prod": "npm run build"
   },
   "dependencies": {
     "@prisma/client": "^5.5.2",

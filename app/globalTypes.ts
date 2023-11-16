@@ -1,4 +1,4 @@
-//type of returned json from apis
+//type or data structure of returned json from apis
 export type perenual_search = {
     data: {
         id: number,
@@ -526,6 +526,7 @@ export type plantnet = {
     "remainingIdentificationRequests": number
 }
 
+//some test data
 export const plantnet_test_value: plantnet = {
     query: {
         "project": "all",

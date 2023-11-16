@@ -1,16 +1,23 @@
-
+'use client'
 import React, {useState} from 'react';
 import "./Filter.css";
 
 import Dropdown from '../components/dropdown';
 
-const values = 
-{
-
-}
-
 
 export default function Filter(props) {
+    //console.log(props.speciesList);
+    const [selectedOptionNames, setSelectedOptionNames] = useState({});
+
+    if (!props.speciesList) {
+        return (
+            <main className="main-filter">
+                <h3 style={{paddingBottom: '15px'}}>Current plant = No name yet</h3>
+            </main>
+        );
+    }
+
+
 
     const dataNames = [
         'id',
@@ -85,11 +92,7 @@ export default function Filter(props) {
         'thorny',
         'pest_susceptibility'
     ]
-
-
     
-    
-    const [selectedOptionNames, setSelectedOptionNames] = useState({});
     
     const handleOptionChange = (id, option, isChecked) => {
         setSelectedOptionNames(prevOptionNames => {
@@ -131,7 +134,6 @@ export default function Filter(props) {
     return (
         <main className="main-filter">
             <h3 style={{paddingBottom: '15px'}}>Current plant = {props.speciesList.common_name || "No name yet"}</h3>
-            
             <div className="filterPart">
                 <div className="images">
                     <h2 className="right-align">Images here</h2>
