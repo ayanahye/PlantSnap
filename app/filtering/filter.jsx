@@ -150,6 +150,73 @@ export default function Filter(props) {
                         </div>
                     </div>
             </div>
+
+            {/* Filterbox dropdown items */}
+            <div class = "navigationfilterbox"> 
+                <input type="checkbox" id = "menu" />
+                <label for = "menu">&#9776;</label>
+                <div class = "multi-level">
+                    <div class = "itemoptions">
+                        <input type = "checkbox" data={dataNames} name="Names"/> {/*here is where I would add the names, sizes, etc and their associated data*/}
+                        <label for ="Names">Names</label> 
+                        
+                        <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
+                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option1"</a></li>
+                        </ul>
+                    </div>
+
+                    <div class = "itemoptions">
+                        <input type = "checkbox" data={dataNames} name="Sizes"/> {/*here is where I would add the names, sizes, etc and their associated data*/}
+                        <label for ="Sizes">Sizes</label> 
+                        
+                        <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
+                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option2"</a></li>
+                        </ul>
+                    </div>
+
+                    <div class = "itemoptions">
+                        <input type = "checkbox" data={dataNames} name="Edible"/> {/*here is where I would add the names, sizes, etc and their associated data*/}
+                        <label for ="Edible">Edibles</label> 
+                        
+                        <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
+                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option3"</a></li>
+                        </ul>
+                    </div>
+
+                    <div class = "itemoptions">
+                        <input type = "checkbox" data={dataNames} name="Maintenance"/> {/*here is where I would add the names, sizes, etc and their associated data*/}
+                        <label for ="Maintenance">Maintenance</label> 
+                        
+                        <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
+                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option4"</a></li>
+                        </ul>
+                    </div>
+
+                    <div class = "itemoptions">
+                        <input type = "checkbox" data={dataNames} name="Care Reqs"/> {/*here is where I would add the names, sizes, etc and their associated data*/}
+                        <label for ="Care Reqs">Care Reqs</label> 
+                        
+                        <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
+                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option5"</a></li>
+                        </ul>
+                    </div>
+
+                    <div class = "itemoptions">
+                        <input type = "checkbox" data={dataNames} name="Poisonous"/> {/*here is where I would add the names, sizes, etc and their associated data*/}
+                        <label for ="Poisonous">Poisonous</label> 
+                        
+                        <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
+                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option6"</a></li>
+                        </ul>
+                    </div>
+
+
+
+
+
+                </div>
+                </div>
+
             
             <div className="information">
                 <div class = "scroll-object1">
@@ -177,26 +244,6 @@ export default function Filter(props) {
                 )}
             </div>
             </div>
-
-            {/* <div class = "scroll-bg"> */}
-                {/* <div class = "information">
-                    <div class = "scroll-object">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
-                    </div>
-            </div> */}
-
-            {/* sample code for scroll bar functionality */}
-            {/* <div class = "scroll-bg">
-                <div class = "scroll-div">
-                    <div class = "scroll-object">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum, tenetur aut corporis, ratione quod maiores, provident iusto cupiditate aliquid cum quae doloribus repudiandae voluptate! Quas velit maiores facere repellendus!
-                    </div>
-                </div>
-            </div> */}
 
         </main>
         

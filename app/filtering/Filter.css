@@ -141,27 +141,14 @@
     color: rgb(67, 222, 136);
     padding-right: 10px;
   }
+
+/* functionality of the scroll bar options */
+.multi-level, .item ul, nav input [type = "checkbox"]{
+    display: none;   
+}
+
+#menu:checked ~ .multi-level, .item input:checked ~ul{
+    display: block;
+}
   
-  /* sample code for scroll bar */
-
-  /* .scroll-bg{
-    background: green;
-    width: 400px;
-    margin: 10% auto;
-    padding: 10px 20px;
-  } */
-  /* .scroll-div{
-    width: 400px;
-    background: rgb(235, 249, 235) ;
-    height: 300px;
-    overflow: hidden;
-    overflow-y: scroll;
-
-  } */
-  /* .scroll-object{
-    color: purple;
-    font-family: cursive;
-    font-size: 15px;
-    padding: 10px;
-
-  } */
+  
