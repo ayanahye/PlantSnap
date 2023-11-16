@@ -81,15 +81,15 @@ export default function Home() {
                         <blockquote className="blockquote mb-0">
                         <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
                             <p>Rare</p>
-                            <img src="/images/leaf.svg"width='50xp'height='50px'></img>
+                            <img src="/images/leaf.svg"width='50xp'height='50px' alt="flower"></img>
                         </div>
                         <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
                             <p>Medicinal</p>
-                            <img src="/images/leaf.svg"width='50xp'height='50px'></img>
+                            <img src="/images/leaf.svg"width='50xp'height='50px' alt="flower"></img>
                         </div>
                         <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
                             <p>Indoor</p>
-                            <img src="/images/indoor.svg"width='50xp'height='50px'></img>
+                            <img src="/images/indoor.svg"width='50xp'height='50px' alt="flower"></img>
                         </div>
                         </blockquote>
                     </div>
