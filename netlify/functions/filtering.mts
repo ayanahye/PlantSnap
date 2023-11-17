@@ -4,7 +4,7 @@ export default async function filtering(req: Request, ctx: Context) {
     let P_KEY = "sk-sZxb6546cce0783d62824";
     try {
       //const data = await req.json();
-      const params = new URLSearchParams(req.url);
+      const params = new URL(req.url).searchParams;
       const plantId = params.get("q");
   
       const url = `https://perenual.com/api/species/details/${plantId}?key=${P_KEY}`;
