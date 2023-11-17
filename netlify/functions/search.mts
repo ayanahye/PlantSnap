@@ -1,7 +1,7 @@
 import type {Context} from "@netlify/functions"
 
 export default async function search(req: Request, ctx: Context) {
-    let P_KEY = process.env.PERENUAL_KEY
+    let P_KEY = "sk-sZxb6546cce0783d62824"//env not working
 
     let form = await req.formData()
     let q = form.get("q")
