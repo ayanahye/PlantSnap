@@ -29,5 +29,5 @@ export default async function search(req: Request, ctx: Context) {
         query += `&hardiness=${hdmin}-${hdmax}`
     }
     let res = await fetch("https://perenual.com/api/species-list?" + query)
-    return new Response(await res.json())
+    return new Response(res.body)
 }
