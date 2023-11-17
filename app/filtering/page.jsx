@@ -12,15 +12,15 @@ function Filtering(props) {
   const plantId = props.id;
   const [speciesData, setSpeciesData] = useState(null);
 
-  function sendData() {
-    fetch(`/.netlify/functions/filtering?q=${plantId}`)
-      .then((res) => res.json())
-      .then((data) => setSpeciesData(data))
-      .catch((error) => console.error("Error:", error));
-  }
-
-  sendData();
-
+  useEffect(() => {
+    function sendData() {
+      fetch(`/.netlify/functions/filtering?q=${plantId}`)
+        .then((res) => res.json())
+        .then((data) => setSpeciesData(data))
+        .catch((error) => console.error("Error:", error));
+    }
+    sendData();
+  }, [])
 
   // const [speciesList, setSpeciesList] = useState(Data);
 

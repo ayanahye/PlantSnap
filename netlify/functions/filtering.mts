@@ -10,11 +10,7 @@ export default async function filtering(req: Request, ctx: Context) {
       const url = `https://perenual.com/api/species/details/${plantId}?key=${P_KEY}`;
       const res = await fetch(url);
   
-      return new Response(res.body), {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
+      return new Response(res.body);
     } catch (error) {
       console.log("Error fetching data:", error);
     }
