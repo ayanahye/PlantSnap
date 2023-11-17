@@ -3,7 +3,7 @@ import type {Context} from "@netlify/functions"
 export default async function search(req: Request, ctx: Context) {
     let P_KEY = process.env.PERENUAL_KEY
 
-    let form = await req.formData()
+    let form = await req.json()
     let q = form.get("q")
     let page = form.get("page")
     let order = form.get("order")
