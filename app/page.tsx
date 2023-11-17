@@ -86,7 +86,7 @@ export default function Home() {
                             </div>
                             <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
                                 <p>Medicinal</p>
-                                <Image src="/images/leaf.svg" width='50' height='50' alt="flower"></Image>
+                                <Image src="/images/medicinal.svg" width='50' height='50' alt="flower"></Image>
                             </div>
                             <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
                                 <p>Indoor</p>
