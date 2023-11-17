@@ -51,63 +51,66 @@ export default function Home() {
                 </div>
             </div>
             <div className="container w-75 py-5">
-                <h1 style={{textAlign:'center'}}>Tips</h1>
-                
-                <div style={{marginTop: '30px'}}className="card">
+                <h1 style={{textAlign: 'center'}}>Tips</h1>
+
+                <div style={{marginTop: '30px'}} className="card">
                     <div className="card-header">
                         Recognition
                     </div>
                     <div className="card-body">
                         <blockquote className="blockquote mb-0">
-                        <p>Upload images of  flowers, trees, grasses, ferns, vines, wild salads, cacti, and many more and get <strong>FAST</strong> results</p>
+                            <p>Upload images of flowers, trees, grasses, ferns, vines, wild salads, cacti, and many more
+                                and get <strong>FAST</strong> results</p>
                         </blockquote>
                     </div>
                 </div>
-                <div style={{marginTop: '50px'}}className="card">
+                <div style={{marginTop: '50px'}} className="card">
                     <div className="card-header">
                         Search
                     </div>
                     <div className="card-body">
                         <blockquote className="blockquote mb-0">
-                        <p>Search using scientific or common name.</p>
+                            <p>Search using scientific or common name.</p>
                         </blockquote>
                     </div>
                 </div>
-                <div style={{marginTop: '50px'}}className="card">
+                <div style={{marginTop: '50px'}} className="card">
                     <div className="card-header">
                         Icons
                     </div>
                     <div id="icons" className="card-body">
                         <blockquote className="blockquote mb-0">
-                        <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
-                            <p>Rare</p>
-                            <img src="/images/leaf.svg"width='50xp'height='50px' alt="flower"></img>
-                        </div>
-                        <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
-                            <p>Medicinal</p>
-                            <img src="/images/leaf.svg"width='50xp'height='50px' alt="flower"></img>
-                        </div>
-                        <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
-                            <p>Indoor</p>
-                            <img src="/images/indoor.svg"width='50xp'height='50px' alt="flower"></img>
-                        </div>
+                            <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
+                                <p>Rare</p>
+                                <Image src="/images/leaf.svg" width='50' height='50' alt="flower"></Image>
+                            </div>
+                            <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
+                                <p>Medicinal</p>
+                                <Image src="/images/leaf.svg" width='50' height='50' alt="flower"></Image>
+                            </div>
+                            <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
+                                <p>Indoor</p>
+                                <Image src="/images/indoor.svg" width='50' height='50' alt="flower"></Image>
+                            </div>
                         </blockquote>
                     </div>
                 </div>
-                <div style={{marginTop: '50px'}}className="card">
+                <div style={{marginTop: '50px'}} className="card">
                     <div className="card-header">
                         Care Guides
                     </div>
                     <div className="card-body">
                         <blockquote className="blockquote mb-0">
-                        <p>Use the filters to find specifc care requirements, including, sunlight, watering, maintenance.</p>
+                            <p>Use the filters to find specifc care requirements, including, sunlight, watering,
+                                maintenance.</p>
                         </blockquote>
                     </div>
                 </div>
-                
+
                 <div>
-                    <h1 style={{marginTop: '30px', marginBottom: '30px', textAlign:'center'}}>Developers</h1>
-                    <div style={{textAlign:'center', marginBottom: '20px'}}> This project was planned, designed, and implemented by:
+                    <h1 style={{marginTop: '30px', marginBottom: '30px', textAlign: 'center'}}>Developers</h1>
+                    <div style={{textAlign: 'center', marginBottom: '20px'}}> This project was planned, designed, and
+                        implemented by:
                         <p>
                             - Layan Barrieshee<br/>
                             - Dony Wang<br/>

@@ -163,7 +163,7 @@ export default function Filter(props) {
                         <label for ="Names">Names</label> 
                         
                         <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
-                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option1"</a></li>
+                            <li><a href = "#"> onOptionChange={handleOptionChange} id=&quot;option1&quot;</a></li>
                         </ul>
                     </div>
 
@@ -172,7 +172,7 @@ export default function Filter(props) {
                         <label for ="Sizes">Sizes</label> 
                         
                         <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
-                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option2"</a></li>
+                            <li><a href = "#"> onOptionChange={handleOptionChange} id=&quot;option2&quot;</a></li>
                         </ul>
                     </div>
 
@@ -181,7 +181,7 @@ export default function Filter(props) {
                         <label for ="Edible">Edibles</label> 
                         
                         <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
-                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option3"</a></li>
+                            <li><a href = "#"> onOptionChange={handleOptionChange} id=&quot;option3&quot;</a></li>
                         </ul>
                     </div>
 
@@ -190,7 +190,7 @@ export default function Filter(props) {
                         <label for ="Maintenance">Maintenance</label> 
                         
                         <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
-                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option4"</a></li>
+                            <li><a href = "#"> onOptionChange={handleOptionChange} id=&quot;option4&quot;</a></li>
                         </ul>
                     </div>
 
@@ -199,7 +199,7 @@ export default function Filter(props) {
                         <label for ="Care Reqs">Care Reqs</label> 
                         
                         <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
-                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option5"</a></li>
+                            <li><a href = "#"> onOptionChange={handleOptionChange} id=&quot;option5&quot;</a></li>
                         </ul>
                     </div>
 
@@ -208,7 +208,7 @@ export default function Filter(props) {
                         <label for ="Poisonous">Poisonous</label> 
                         
                         <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
-                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option6"</a></li>
+                            <li><a href = "#"> onOptionChange={handleOptionChange} id=&quot;option6&quot;</a></li>
                         </ul>
                     </div>
 
