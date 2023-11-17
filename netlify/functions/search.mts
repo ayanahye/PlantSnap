@@ -3,7 +3,7 @@ import type {Context} from "@netlify/functions"
 export default async function search(req: Request, ctx: Context) {
     let P_KEY = process.env.PERENUAL_KEY
 
-    let form = await req.json()
+    let form = await req.formData()
     let q = form.get("q")
     let page = form.get("page")
     let order = form.get("order")
@@ -29,5 +29,5 @@ export default async function search(req: Request, ctx: Context) {
         query += `&hardiness=${hdmin}-${hdmax}`
     }
     let res = await fetch("https://perenual.com/api/species-list?" + query)
-    return await res.json()
+    return new Response(await res.json())
 }
