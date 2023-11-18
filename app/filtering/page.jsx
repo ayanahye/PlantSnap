@@ -4,13 +4,16 @@ import { useEffect, useState } from "react";
 import React from 'react'
 import Filter from './filter';
 import "./Filter.css";
+import Data from '../SampleData.json'
 
 function Filtering(props) {
 
   //const plantId = localStorage.getItem('plantId');
 
+  /*
   const plantId = props.id;
   const [speciesData, setSpeciesData] = useState(null);
+
 
   useEffect(() => {
     function sendData() {
@@ -23,10 +26,11 @@ function Filtering(props) {
   }, [])
 
   // const [speciesList, setSpeciesList] = useState(Data);
+  */
 
   return (
     <div className="App">
-        <Filter speciesList={speciesData} />
+        <Filter speciesList={Data} />
     </div>
 
   )
