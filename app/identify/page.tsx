@@ -67,18 +67,23 @@ export default function Page() {
         //same as search page
         set_showload(true)
         set_showinputo(false)
-        postData(form).then(data => {
-            let tmp: result[] = []
-            for (let r of data.results) {
-                tmp.push({
-                    name: r.species.commonNames.length > 0 ? r.species.scientificNameWithoutAuthor : r.species.scientificNameWithoutAuthor,
-                    image: {url: r.images[0].url.m, alt: r.species.commonNames.join(", ")},
-                    score: r.score,
-                    sciName: r.species.scientificNameWithoutAuthor
-                })
-            }
-            set_resultlst(tmp)
-            set_showresult(true)
+        fetch("/.netlify/functions/identify", {
+            body: form,
+            method: 'POST',
+        }).then(res => {
+            res.json().then(data => {
+                let tmp: result[] = []
+                for (let r of data.results) {
+                    tmp.push({
+                        name: r.species.commonNames.length > 0 ? r.species.scientificNameWithoutAuthor : r.species.scientificNameWithoutAuthor,
+                        image: {url: r.images[0].url.m, alt: r.species.commonNames.join(", ")},
+                        score: r.score,
+                        sciName: r.species.scientificNameWithoutAuthor
+                    })
+                }
+                set_resultlst(tmp)
+                set_showresult(true)
+            })
         })
     }
 

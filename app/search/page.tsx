@@ -2,8 +2,8 @@
 import styles from "./search.module.css"
 import React, {useEffect, useOptimistic, useState} from "react";
 import ListResult, {result} from "@/app/components/listResult";
-import {postSearch} from "@/app/search/connection";
 import {useSearchParams} from "next/navigation";
+import {perenual_search} from "@/app/globalTypes";
 
 let page = 1, lastpage = 1
 
@@ -45,63 +45,74 @@ export default function Page() {
         //hide result when loading
         set_showresult(false)
         form.append("page", page.toString())
-        //this func is in connection.ts
-        postSearch(form, adv).then(r => {
-            lastpage = r.last_page
-            //range of the page bar
-            let l = page - 2, m = page + 2
-            if (l < 1) {
-                m += 1 - l
-                l = 1
-            }
-            if (m > lastpage) {
-                l -= m - lastpage
-                m = lastpage
-            }
-            l = l < 1 ? 1 : l;
-            //tabs in page bar
-            let pagetab: React.JSX.Element[] = []
-            for (let i = l; i <= m; i++) {
-                pagetab.push(
-                    <li key={i} className={`page-item ${i == page && "active"}`} aria-current="page">
-                        <span className="page-link" onClick={() => pageClick(i)}>{i}</span>
-                    </li>
-                )
-            }
-            //page bar element
-            set_pagination(<nav aria-label="...">
-                <ul className="pagination">
-                    <li className="page-item">
-                        <span className="page-link" onClick={() => pageClick(page - 1)}>Previous</span>
-                    </li>
-                    {pagetab.map(t => t)}
-                    <li className="page-item">
-                        <span className="page-link" onClick={() => pageClick(page + 1)}>Next</span>
-                    </li>
-                </ul>
-            </nav>)
-            //text on top
-            set_pagetext(`display${r.per_page}/${r.total} page#${r.current_page}/${r.last_page}`)
-
-            let tmp: result[] = []
-            if (r.data)
-                for (let plant of r.data) {
-                    //skip if it is a paid data
-                    if (plant.cycle == "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry") continue
-                    //make sure url is not null
-                    let di = plant.default_image
-                    let url = di ? di.regular_url ? di.regular_url : di.original_url : ""
-                    if (!url) url = "/images/phi.jpg"
-                    //for <ListResult>
-                    tmp.push({
-                        image: {url: url, alt: plant.common_name},
-                        name: plant.common_name,
-                        sciName: plant.scientific_name[0]
-                    })
+        form.append("adv", adv.toString())
+        //netlify function url
+        fetch("/.netlify/functions/search", {
+            body: form,
+            method: 'POST',
+        }).then(res => {
+            res.json().then(json => {
+                //change var type
+                let r:perenual_search = json
+                lastpage = r.last_page
+                //range of the page bar
+                let l = page - 2, m = page + 2
+                if (l < 1) {
+                    m += 1 - l
+                    l = 1
                 }
-            set_resultlst(tmp)
-            set_showresult(true)
+                if (m > lastpage) {
+                    l -= m - lastpage
+                    m = lastpage
+                }
+                l = l < 1 ? 1 : l;
+                //tabs in page bar
+                let pagetab: React.JSX.Element[] = []
+                for (let i = l; i <= m; i++) {
+                    pagetab.push(
+                        <li key={i} className={`page-item ${i == page && "active"}`} aria-current="page">
+                            <span className="page-link" onClick={() => pageClick(i)}>{i}</span>
+                        </li>
+                    )
+                }
+                //page bar element
+                set_pagination(<nav aria-label="...">
+                    <ul className="pagination">
+                        <li className="page-item">
+                            <span className="page-link" onClick={() => pageClick(page - 1)}>Previous</span>
+                        </li>
+                        {pagetab.map(t => t)}
+                        <li className="page-item">
+                            <span className="page-link" onClick={() => pageClick(page + 1)}>Next</span>
+                        </li>
+                    </ul>
+                </nav>)
+                //text on top
+                set_pagetext(`display${r.per_page}/${r.total} page#${r.current_page}/${r.last_page}`)
+
+                let tmp: result[] = []
+                if (r.data)
+                    for (let plant of r.data) {
+                        //skip if it is a paid data
+                        if (plant.cycle == "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry") continue
+                        //make sure url is not null
+                        let di = plant.default_image
+                        let url = di ? di.regular_url ? di.regular_url : di.original_url : ""
+                        if (!url) url = "/images/phi.jpg"
+                        //for <ListResult>
+                        tmp.push({
+                            image: {url: url, alt: plant.common_name},
+                            name: plant.common_name,
+                            sciName: plant.scientific_name[0]
+                        })
+                    }
+                set_resultlst(tmp)
+                set_showresult(true)
+            })
+        }, () => {
+            set_pagetext("error on connecting api")
         })
+
     }
 
     return <main>

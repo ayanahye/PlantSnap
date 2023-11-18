@@ -18,6 +18,9 @@ export default function Filter(props) {
     }
 
 
+    const careGuides = [
+        'Care Guide',
+    ];
 
     const dataNames = [
         'id',
@@ -33,19 +36,6 @@ export default function Filter(props) {
         'dimension',
         'dimensions',
         'seeds'
-    ];
-
-    const dataCareReqs = [ 
-        'cycle',
-        'watering',
-        'watering_period',
-        'sunlight',
-        'care-guides',
-        'depth_water_requirement',
-        'volume_water_requirement',
-        'watering_general_benchmark',
-        'volume_water_requirement',
-        'indoor'
     ];
 
     const dataMaintenance = [
@@ -110,9 +100,12 @@ export default function Filter(props) {
             }
         })
     }
-    
+
+    console.log(selectedOptionNames);
+
     const optionValues = Object.values(selectedOptionNames);
 
+    /*
     const optionsArray = optionValues.map(valueOption => (
         
         <div key={valueOption}>
@@ -120,6 +113,9 @@ export default function Filter(props) {
           <p className="p-border"><strong>{valueOption}:</strong> {props.speciesList.valueOption}</p>
         </div>
       ));
+
+    */
+
 
     /*
     for (value in values) {
@@ -161,6 +157,7 @@ export default function Filter(props) {
                             <h2 className="right-align">Filters:</h2>
                             <div className="dropdowns">
 
+                                <Dropdown data={careGuides} name="Care Guides" onOptionChange={handleOptionChange} id="option0"/>
                             <div class = "navigationfilterbox"> 
 
                             {/* filter options */}
@@ -239,32 +236,62 @@ export default function Filter(props) {
                     </div>
             </div>
             
-            <div className="information">
-                <div class = "scroll-object1">
-
-
-                {optionValues.length > 0 ? (
-                    optionValues.map((valueOption, index) => (
-                        <div key={index}>
-                           
-                                <strong>{valueOption}:</strong>{" "}
-                                {props.speciesList[valueOption] !== undefined && props.speciesList[valueOption] !== null ? (
-                                    typeof props.speciesList[valueOption] === "object"
-                                        ? Object.values(props.speciesList[valueOption]).join(", ")
-                                        : props.speciesList[valueOption]
-                                ) : (
-                                    "No data yet"
+                <div className="information">
+                    <div class="scroll-object1">
+                        {optionValues.length > 0 ? (
+                        optionValues.map((valueOption, index) => (
+                            <div key={index}>
+                            {valueOption === "Care Guide" ? (
+                                <p>
+                                {props.speciesList["common_name"] && (
+                                    <span>The {props.speciesList["common_name"]} requires </span>
                                 )}
-                               
-                           
-                        </div>
-            
-                    ))
-                ) : (
-                    <strong>Please use the filters to select the data you want.</strong>
-                )}
-            </div>
-            </div>
+                                {props.speciesList["watering"] && (
+                                    <span>{props.speciesList["watering"].charAt(0).toLowerCase() + props.speciesList["watering"].slice(1)} watering. </span>
+                                )}
+                                {props.speciesList["sunlight"] && (
+                                    <span>The amount of sun the plant needs is {props.speciesList["sunlight"]}. </span>
+                                )}
+                                {props.speciesList["pruning_month"] && (
+                                    <span>The best month to prune the plant is {props.speciesList["pruning_month"]} and </span>
+                                )}
+                                {props.speciesList["maintenance"] && (
+                                    <span>the overall maintenance to care for this plant is {props.speciesList["maintenance"]}. </span>
+                                )}
+                                {props.speciesList["drought_tolerant"] !== null && (
+                                    <span>the plant {props.speciesList["drought_tolerant"] ? "is drought tolerant" : "is not drought tolerant"}. </span>
+                                )}
+                                {props.speciesList["salt_tolerant"] !== null && (
+                                    <span>Additionally, the plant {props.speciesList["drought_tolerant"] ? "is salt tolerant" : "is not salt tolerant"}. </span>
+                                )}
+                                {props.speciesList["fruits"] !== null && (
+                                    <span>Furthermore, the plant {props.speciesList["fruits"] ? "grows fruits" : "does not grow fruits"}. </span>
+                                )}
+                                {props.speciesList["indoor"] !== null && (
+                                    <span>The plant {props.speciesList["indoor"] ? "is an indoor plant" : "is not an indoor plant"}. </span>
+                                )}
+                                {props.speciesList["care_level"] !== null && (
+                                    <span>The overall care level of the plant is said to be {props.speciesList["care_level"].charAt(0).toLowerCase() + props.speciesList["care_level"].slice(1)}. </span>
+                                )}
+                                </p>
+                            ) : (
+                                props.speciesList[valueOption] !== undefined && props.speciesList[valueOption] !== null ? (
+                                typeof props.speciesList[valueOption] === "object"
+                                    ? Object.values(props.speciesList[valueOption]).join(", ")
+                                    : props.speciesList[valueOption]
+                                ) : (
+                                "No data yet"
+                                )
+                            )}
+                            </div>
+                        ))
+                        ) : (
+                        <strong>Please use the filters to select the data you want.</strong>
+                        )}
+                    </div>
+                    </div>
+
+
 
         </main>
         

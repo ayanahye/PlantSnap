@@ -51,7 +51,7 @@ import { useEffect, useState } from "react";
 import React from 'react'
 import Filter from './filter';
 import "./Filter.css";
-import {perenual_detail_test_value as data} from "../globalTypes";
+import Data from '../SampleData.json'
 
 function Filtering(props) {
 
@@ -59,10 +59,35 @@ function Filtering(props) {
 
   //const plantId = localStorage.getItem('plantId');
 
-  /*
+  
   const plantId = props.id;
+  const [speciesData, setSpeciesData] = useState(Data);
+
+
+  useEffect(() => {
+    function sendData() {
+      fetch(`/.netlify/functions/filtering?q=${plantId}`)
+        .then((res) => res.json())
+        .then((data) => setSpeciesData(data))
+        .catch((error) => console.error("Error:", error));
+    }
+    sendData();
+  }, [])
+
+  // const [speciesList, setSpeciesList] = useState(Data);
   
 
+  return (
+    <div className="App">
+        <Filter speciesList={speciesData} />
+    </div>
+
+  )
+}
+
+export default Filtering
+
+  /*
     useEffect(() => {
         const getData = async () => {
             
@@ -80,19 +105,4 @@ function Filtering(props) {
         }
         getData();
     }, [plantId]);
-  
   */
-
-
-
-  // const [speciesList, setSpeciesList] = useState(Data);
-
-  return (
-    <div className="App">
-        <Filter speciesList={speciesData} />
-    </div>
-
-  )
-}
-
-export default Filtering

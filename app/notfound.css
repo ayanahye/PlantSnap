@@ -1,3 +1,26 @@
-background{
-    background-color:wheat;
+.testing {
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items:start;
+    padding-top: 50px;
+    margin-left: 20px;
+}
+
+.return {
+    background-color: rgb(0, 102, 255);
+    border-radius: 20px;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: rgb(212, 188, 188);
+}
+
+.text {
+    margin-left: 20px;
 }

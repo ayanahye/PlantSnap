@@ -13,6 +13,7 @@
     "deploy:prod": "npm run build"
   },
   "dependencies": {
+    "@netlify/functions": "^2.4.0",
     "@prisma/client": "^5.5.2",
     "axios": "^1.6.1",
     "boostrap": "^2.0.0",
