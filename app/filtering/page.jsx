@@ -67,7 +67,7 @@ function Filtering(props) {
         .catch((error) => console.error("Error:", error));
     }
     sendData();
-  }, [])
+  }, [plantId])
 
   // const [speciesList, setSpeciesList] = useState(Data);
   

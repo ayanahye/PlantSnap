@@ -134,19 +134,6 @@ export default function Filter(props) {
                 <div className="images">
                     <h2 className="right-align">Images here</h2>
                     
-                
-                    {/* <div class = "slideshow-container">
-
-                        <div class = "mySlides fade">
-                            <div class = "numbertext">1 / 3</div>
-                            <img src = "Blacktriangle.png" style = "width = 100%"></img>
-                            <div class = "test">Caption text</div>
-    
-                        </div>
-
-                        <a class="prev" onclick="plusSlides(-1)">❮</a>
-                        <a class="next" onclick="plusSlides(1)">❯</a>
-                    </div> */}
 
             
                 </div>
@@ -157,10 +144,9 @@ export default function Filter(props) {
                             <h2 className="right-align">Filters:</h2>
                             <div className="dropdowns">
 
-                                <Dropdown data={careGuides} name="Care Guides" onOptionChange={handleOptionChange} id="option0"/>
                             <div class = "navigationfilterbox"> 
 
-                            {/* filter options */}
+                         
                             <details>
                             <summary>
                             <span class="icon">▶</span>
