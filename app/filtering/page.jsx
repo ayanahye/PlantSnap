@@ -54,12 +54,7 @@ import "./Filter.css";
 import Data from '../SampleData.json'
 
 function Filtering(props) {
-
-  const [speciesData, setSpeciesData] = useState(data);
-
-  //const plantId = localStorage.getItem('plantId');
-
-  
+ 
   const plantId = props.id;
   const [speciesData, setSpeciesData] = useState(Data);
 
