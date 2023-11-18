@@ -1,4 +1,4 @@
-.main-filter{
+/* .main-filter{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +27,7 @@
 }
 
 /* these are the filter categories ex. names,size,edible, etc */
-#full-width {
+/* #full-width {
     background-color: rgb(235, 249, 235);
     color:black;
     flex: 1;
@@ -85,10 +85,10 @@
     overflow: hidden;
     overflow-y: scroll;
    
-}
+} */
 
 
-
+/* 
 .right-align {
     text-align: start;
     font-size: 20px;
@@ -115,7 +115,7 @@
     overflow-y: scroll;
 } */ 
 
-.information {
+/* .information {
     color: black;
     font-size: 20px;
     padding: 20px;
@@ -143,12 +143,251 @@
   }
 
 /* functionality of the scroll bar options */
-.multi-level, .item ul, nav input [type = "checkbox"]{
+/* .multi-level, .item ul, nav input [type = "checkbox"]{
     display: none;   
 }
 
 #menu:checked ~ .multi-level, .item input:checked ~ul{
     display: block;
+}  */
+
+
+
+.main-filter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1; 
+    max-height: 100vh;
+    overflow-y: auto;
+    background-color: rgb(71, 199, 123);
+    padding: 45px;
 }
+.filterPart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vh;
+    padding: 20px;
+    
+}
+.dropdown {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    color:rgb(235, 249, 235)
+}
+/* these are the filter categories ex. names,size,edible, etc */
+#full-width {
+    background-color: rgb(235, 249, 235);
+    color:black;
+    flex: 1;
+    font-size: 20px;
+    text-align: left;
+    border:none;
+    padding:0;
+}
+#full-width2{
+    background-color: rgb(235, 249, 235);
+    color: black;
+}
+.filterFullArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown-item-custom {
+    display: flex;
+    justify-content: left;
+}
+.databox {
+    background-color: white;
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 20px;
+    overflow: auto;
+    justify-content: center;
+}
+.filterBlock {
+    height: 400px;
+    /* width:350%; */
+    background-color: rgb(235, 249, 235);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 20px;
+    border: 2px solid black;
+    border-radius: 20px 0px 0px 20px;
+    margin: auto;  
+    padding: 50px;
+    text-align: center;
+    overflow: hidden;
+    overflow-y: scroll;
+   
+}
+.right-align {
+    text-align: start;
+    font-size: 20px;
+}
+#plantimgs img {
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: initial;
+}
+ 
+.information {
+    color: black;
+    font-size: 20px;
+    padding: 20px;
+    text-align: left;
+}
+.scroll-object1{
+    height: 300px;
+    background-color:  rgb(235, 249, 235);
+    width:2250px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 2px solid black;
+    border-radius: 20px 0px 0px 20px;
+    margin: auto;  
+    padding: 20px;
+    text-align: left;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.logo-text {
+    color: rgb(67, 222, 136);
+    padding-right: 10px;
+  }
+ 
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.multi-level, item ul, .nav{
+    display: none;
+
+
+}
+
+#menu:checked ~ .multi-level, .item input:checked ~ ul{
+    display: block;
+}
+
+/* Arrow */
+/* .arrow{
+    width: 12px;
+    height: 12px;
+    vertical-align: middle;
+    float: left;
+    z-index: 0;
+    margin: 17px 1em 0 2em;
+}
+.item input + .arrow{
+    transform: rotate(-90deg);
+    transition: 0.1s;
+
+}
+
+.item input:checked + .arrow {
+    transform: rotate(0deg);
+    transition: 0.1s;
+} */
+
+/* styles */
+/* label:hover{
+    cursor: pointer;
+
+}
+label{
+    width: 100%;
+    display: black;
+    z-index: 3;
+    position: relative;
+}
+.nav{
+    width: 100%;
+    background-color: white;
+    overflow-x: hidden;
+    border-bottom: 1px solid #CFD8DC;
+}
+
+#nav-icon{
+    font-size: 28px;
+    line-height: 50px;
+    padding-left: 1em;
+    color: black;
+    background-color:gray;
+
+}
+
+.nav ul, .nav li, label {
+    line-height: 50px;
+    margin: 0;
+    padding: 0 2em;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+}
+
+.item ul{
+    padding: 0 0.25em;
+}
+.nav li a{
+    line-height: 50px;
+    margin: 0;
+    padding: 0 4em;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-weight: 100;
+    width: 100%;
+
+}
+
+.navigationfilterbox {
+    align-items: left;
+
+} */
+
+
+/* using new code for filters */
+details {
+    user-select: none;
+  }
   
+  details>summary span.icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s;
+    margin-left:0%;
+  }
   
+  details[open] summary span.icon {
+    transform: rotate(90deg);
+    color:green;
+  }
+  
+  summary {
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+  }
+  
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .focus-capturer:focus-within .collapsible-content {
+    display: block;
+}
+
+/* code for slideshow */
+

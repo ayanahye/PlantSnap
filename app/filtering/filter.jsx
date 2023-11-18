@@ -137,88 +137,107 @@ export default function Filter(props) {
             <div className="filterPart">
                 <div className="images">
                     <h2 className="right-align">Images here</h2>
+                    
+                
+                    {/* <div class = "slideshow-container">
+
+                        <div class = "mySlides fade">
+                            <div class = "numbertext">1 / 3</div>
+                            <img src = "Blacktriangle.png" style = "width = 100%"></img>
+                            <div class = "test">Caption text</div>
+    
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="next" onclick="plusSlides(1)">❯</a>
+                    </div> */}
+
+            
                 </div>
+
+                
                     <div className="filterFullArea">
                         <div className="filterBlock">
                             <h2 className="right-align">Filters:</h2>
                             <div className="dropdowns">
-                                <Dropdown data={dataNames} name="Names" onOptionChange={handleOptionChange} id="option1"/>
+
+                            <div class = "navigationfilterbox"> 
+
+                            {/* filter options */}
+                            <details>
+                            <summary>
+                            <span class="icon">▶</span>
+                            data={dataNames} name="Names"                           
+                            </summary>
+                            <p>option1</p>
+                            </details>
+
+                            <details>
+                            <summary>
+                            <span class="icon">▶</span>
+                            data={dataNames} name="Sizes
+                            </summary>
+                            <p>option2</p>
+                            </details>
+
+                            <details>
+                            <summary>
+                            <span class="icon">▶</span>
+                            data={dataNames} name="Edible"
+                            </summary>
+                            <p>option3</p>
+                            </details>
+
+                            <details>
+                            <summary>
+                            <span class="icon">▶</span>
+                            data={dataNames} name="Maintenance"
+                            </summary>
+                            <p>option4</p>
+                            </details>
+
+                            <details>
+                            <summary>
+                            <span class="icon">▶</span>
+                            data={dataNames} name="Care Reqs"
+                            </summary>
+                            <p>option5</p>
+                            </details>
+
+
+                            <details>
+                            <summary>
+                            <span class="icon">▶</span>
+                            Poisonous
+                            </summary>
+
+                            <label className="container">One
+                            <input type="checkbox"/>
+                            <span className="checkmark"></span>
+                            </label>
+
+                            <label class="container">Two
+                            <input type="checkbox"/>
+                            <span class="checkmark"></span>
+                            </label>
+                            </details>
+
+                        </div>
+
+                                {/*<<Dropdown data={dataNames} name="Names" onOptionChange={handleOptionChange} id="option1"/>
                                 <Dropdown data={dataSizes} name="Sizes" onOptionChange={handleOptionChange} id="option2"/>
                                 <Dropdown data={dataEdible} name="Edible" onOptionChange={handleOptionChange} id="option3"/>
                                 <Dropdown data={dataMaintenance} name="Maintenance" onOptionChange={handleOptionChange} id="option4"/>
                                 <Dropdown data={dataCareReqs} name="Care Reqs" onOptionChange={handleOptionChange} id="option5"/>
-                                <Dropdown data={dataPoisonous} name="Poisonous" onOptionChange={handleOptionChange} id="option6"/>
+    // <Dropdown data={dataPoisonous} name="Poisonous" onOptionChange={handleOptionChange} id="option6"/> */}
+    
+
+
+
                             </div>
                         </div>
                     </div>
             </div>
-
-            {/* Filterbox dropdown items */}
-            <div class = "navigationfilterbox"> 
-                <input type="checkbox" id = "menu" />
-                <label for = "menu">&#9776;</label>
-                <div class = "multi-level">
-                    <div class = "itemoptions">
-                        <input type = "checkbox" data={dataNames} name="Names"/> {/*here is where I would add the names, sizes, etc and their associated data*/}
-                        <label for ="Names">Names</label> 
-                        
-                        <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
-                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option1"</a></li>
-                        </ul>
-                    </div>
-
-                    <div class = "itemoptions">
-                        <input type = "checkbox" data={dataNames} name="Sizes"/> {/*here is where I would add the names, sizes, etc and their associated data*/}
-                        <label for ="Sizes">Sizes</label> 
-                        
-                        <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
-                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option2"</a></li>
-                        </ul>
-                    </div>
-
-                    <div class = "itemoptions">
-                        <input type = "checkbox" data={dataNames} name="Edible"/> {/*here is where I would add the names, sizes, etc and their associated data*/}
-                        <label for ="Edible">Edibles</label> 
-                        
-                        <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
-                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option3"</a></li>
-                        </ul>
-                    </div>
-
-                    <div class = "itemoptions">
-                        <input type = "checkbox" data={dataNames} name="Maintenance"/> {/*here is where I would add the names, sizes, etc and their associated data*/}
-                        <label for ="Maintenance">Maintenance</label> 
-                        
-                        <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
-                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option4"</a></li>
-                        </ul>
-                    </div>
-
-                    <div class = "itemoptions">
-                        <input type = "checkbox" data={dataNames} name="Care Reqs"/> {/*here is where I would add the names, sizes, etc and their associated data*/}
-                        <label for ="Care Reqs">Care Reqs</label> 
-                        
-                        <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
-                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option5"</a></li>
-                        </ul>
-                    </div>
-
-                    <div class = "itemoptions">
-                        <input type = "checkbox" data={dataNames} name="Poisonous"/> {/*here is where I would add the names, sizes, etc and their associated data*/}
-                        <label for ="Poisonous">Poisonous</label> 
-                        
-                        <ul>{/*here is where I would add the sub options such as option1, option2,etc */}
-                            <li><a href = "#"> onOptionChange={handleOptionChange} id="option6"</a></li>
-                        </ul>
-                    </div>
-
-
-
-
-
-                </div>
-                </div>
-
             
             <div className="information">
                 <div class = "scroll-object1">
@@ -252,3 +271,4 @@ export default function Filter(props) {
     );
    
 }
+
