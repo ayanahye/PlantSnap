@@ -10,9 +10,9 @@ function Filtering(props) {
 
   //const plantId = localStorage.getItem('plantId');
 
-  /*
+  
   const plantId = props.id;
-  const [speciesData, setSpeciesData] = useState(null);
+  const [speciesData, setSpeciesData] = useState(Data);
 
 
   useEffect(() => {
@@ -26,11 +26,11 @@ function Filtering(props) {
   }, [])
 
   // const [speciesList, setSpeciesList] = useState(Data);
-  */
+  
 
   return (
     <div className="App">
-        <Filter speciesList={Data} />
+        <Filter speciesList={speciesData} />
     </div>
 
   )
