@@ -207,13 +207,7 @@ export default function Filter(props) {
 
                         </div>
 
-                                {/*<<Dropdown data={dataNames} name="Names" onOptionChange={handleOptionChange} id="option1"/>
-                                <Dropdown data={dataSizes} name="Sizes" onOptionChange={handleOptionChange} id="option2"/>
-                                <Dropdown data={dataEdible} name="Edible" onOptionChange={handleOptionChange} id="option3"/>
-                                <Dropdown data={dataMaintenance} name="Maintenance" onOptionChange={handleOptionChange} id="option4"/>
-                                <Dropdown data={dataCareReqs} name="Care Reqs" onOptionChange={handleOptionChange} id="option5"/>
-    // <Dropdown data={dataPoisonous} name="Poisonous" onOptionChange={handleOptionChange} id="option6"/> */}
-    
+                         
 
 
 
@@ -284,4 +278,12 @@ export default function Filter(props) {
     );
    
 }
+
+       /*<<Dropdown data={dataNames} name="Names" onOptionChange={handleOptionChange} id="option1"/>
+                                <Dropdown data={dataSizes} name="Sizes" onOptionChange={handleOptionChange} id="option2"/>
+                                <Dropdown data={dataEdible} name="Edible" onOptionChange={handleOptionChange} id="option3"/>
+                                <Dropdown data={dataMaintenance} name="Maintenance" onOptionChange={handleOptionChange} id="option4"/>
+                                <Dropdown data={dataCareReqs} name="Care Reqs" onOptionChange={handleOptionChange} id="option5"/>
+    // <Dropdown data={dataPoisonous} name="Poisonous" onOptionChange={handleOptionChange} id="option6"/> */
+    
 
