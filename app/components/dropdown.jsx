@@ -18,10 +18,10 @@ export default function Dropdown(props) {
                 <span className="icon">▶</span>
                 {props.name}
             </summary>
-            <ul className="">
+            <ul className="list-options">
                 {props.data.map((item, index) => (
                     <li key={index}>
-                        <div className=''>
+                        <div className='option-inv'>
                             <input
                                 type="checkbox"
                                 id={`checkbox-${props.id}-${item}`}

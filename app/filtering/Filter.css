@@ -390,4 +390,11 @@ details {
 }
 
 /* code for slideshow */
+.list-options {
+    list-style: none;
 
+}
+
+.option-inv {
+    text-align: left;
+}
