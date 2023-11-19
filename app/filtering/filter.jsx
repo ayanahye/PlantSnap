@@ -148,62 +148,61 @@ export default function Filter(props) {
 
                          
                             <details>
-                            <summary>
-                            <span class="icon">▶</span>
-                            data={dataNames} name="Names"                           
-                            </summary>
-                            <p>option1</p>
+                                <summary>
+                                    <span class="icon">▶</span>
+                                    data={dataNames} name="Names"
+                                </summary>
+                                <p>option1</p>
                             </details>
 
                             <details>
-                            <summary>
-                            <span class="icon">▶</span>
-                            data={dataNames} name="Sizes
-                            </summary>
-                            <p>option2</p>
+                                <summary>
+                                    <span class="icon">▶</span>
+                                    data={dataNames} name="Sizes"
+                                </summary>
+                                <p>option2</p>
                             </details>
 
                             <details>
-                            <summary>
-                            <span class="icon">▶</span>
-                            data={dataNames} name="Edible"
-                            </summary>
-                            <p>option3</p>
+                                <summary>
+                                    <span class="icon">▶</span>
+                                    data={dataNames} name="Edible"
+                                </summary>
+                                <p>option3</p>
                             </details>
 
                             <details>
-                            <summary>
-                            <span class="icon">▶</span>
-                            data={dataNames} name="Maintenance"
-                            </summary>
-                            <p>option4</p>
+                                <summary>
+                                    <span class="icon">▶</span>
+                                    data={dataNames} name="Maintenance"
+                                </summary>
+                                <p>option4</p>
                             </details>
 
                             <details>
-                            <summary>
-                            <span class="icon">▶</span>
-                            data={dataNames} name="Care Reqs"
-                            </summary>
-                            <p>option5</p>
+                                <summary>
+                                    <span class="icon">▶</span>
+                                    data={dataNames} name="Care Reqs"
+                                </summary>
+                                <p>option5</p>
                             </details>
-
 
                             <details>
-                            <summary>
-                            <span class="icon">▶</span>
-                            Poisonous
-                            </summary>
+                                <summary>
+                                    <span class="icon">▶</span>
+                                    Poisonous
+                                </summary>
+                                <label className="container">One
+                                    <input type="checkbox" />
+                                    <span className="checkmark"></span>
+                                </label>
 
-                            <label className="container">One
-                            <input type="checkbox"/>
-                            <span className="checkmark"></span>
-                            </label>
-
-                            <label class="container">Two
-                            <input type="checkbox"/>
-                            <span class="checkmark"></span>
-                            </label>
+                                <label className="container">Two
+                                    <input type="checkbox" />
+                                    <span className="checkmark"></span>
+                                </label>
                             </details>
+
 
                         </div>
 
@@ -211,9 +210,9 @@ export default function Filter(props) {
 
 
 
-                            </div>
                         </div>
                     </div>
+                </div>
             </div>
             
                 <div className="information">
