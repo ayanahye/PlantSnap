@@ -132,9 +132,39 @@ export default function Filter(props) {
             <h3 style={{paddingBottom: '15px'}}>Current plant = {props.speciesList.common_name || "No name yet"}</h3>
             <div className="filterPart">
                 <div className="images">
-                    <h2 className="right-align">Images here</h2>
                     
+                    <h2 className="right-align">Images here</h2>
 
+                    <div className="slideshow-container">
+
+                        <div className="mySlides fade">
+                            <div className="numbertext">1 / 3</div>
+                            <img src="app/filtering/rose.jpg" style={{ width: '100%' }} />
+                            <div className="text">Caption Text</div>
+                        </div>
+
+                        <div className="mySlides fade">
+                            <div className="numbertext">2 / 3</div>
+                            <img src="filtering/rose.jpg" style={{ width: '100%' }} />
+                            <div className="text">Caption Text</div>
+                        </div>
+
+                        <div className="mySlides fade">
+                            <div className="numbertext">3 / 3</div>
+                            <img src="filtering/rose.jpg" style={{ width: '100%' }} />
+                            <div className="text">Caption Text</div>
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="next" onclick="plusSlides(1)">❯</a>
+
+                        {/* <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span> 
+                        <span class="dot" onclick="currentSlide(2)"></span> 
+                        <span class="dot" onclick="currentSlide(3)"></span> 
+                        </div> */}
+
+                    </div>
             
                 </div>
 
@@ -149,49 +179,51 @@ export default function Filter(props) {
                          
                             <details>
                                 <summary>
-                                    <span class="icon">▶</span>
-                                    Names
+                                <span class="icon">▶</span>
+                                Names
                                 </summary>
                                 <p>option1</p>
                             </details>
 
                             <details>
                                 <summary>
-                                    <span class="icon">▶</span>
-                                    Sizes
+                                <span class="icon">▶</span>
+                                Sizes
                                 </summary>
                                 <p>option2</p>
                             </details>
 
                             <details>
                                 <summary>
-                                    <span class="icon">▶</span>
-                                    Edible
+                                <span class="icon">▶</span>
+                                Edible
                                 </summary>
                                 <p>option3</p>
                             </details>
 
                             <details>
                                 <summary>
-                                    <span class="icon">▶</span>
-                                    Maintenance
+                                <span class="icon">▶</span>
+                                Maintenance
                                 </summary>
                                 <p>option4</p>
                             </details>
 
                             <details>
                                 <summary>
-                                    <span class="icon">▶</span>
-                                    Care Reqs
+                                <span class="icon">▶</span>
+                                Care Reqs
                                 </summary>
                                 <p>option5</p>
                             </details>
 
                             <details>
                                 <summary>
-                                    <span class="icon">▶</span>
-                                    Poisonous
+                                <span class="icon">▶</span>
+                                Poisonous
                                 </summary>
+
+                                {/* check mark tests */}
                                 <label className="container">One
                                     <input type="checkbox" />
                                     <span className="checkmark"></span>
@@ -201,13 +233,11 @@ export default function Filter(props) {
                                     <input type="checkbox" />
                                     <span className="checkmark"></span>
                                 </label>
+
                             </details>
 
 
                         </div>
-
-                         
-
 
 
                         </div>

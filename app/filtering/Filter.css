@@ -213,7 +213,7 @@
 }
 .filterBlock {
     height: 400px;
-    /* width:350%; */
+    width:350%;
     background-color: rgb(235, 249, 235);
     display: flex;
     flex-direction: column;
@@ -280,84 +280,6 @@ html, body {
     display: block;
 }
 
-/* Arrow */
-/* .arrow{
-    width: 12px;
-    height: 12px;
-    vertical-align: middle;
-    float: left;
-    z-index: 0;
-    margin: 17px 1em 0 2em;
-}
-.item input + .arrow{
-    transform: rotate(-90deg);
-    transition: 0.1s;
-
-}
-
-.item input:checked + .arrow {
-    transform: rotate(0deg);
-    transition: 0.1s;
-} */
-
-/* styles */
-/* label:hover{
-    cursor: pointer;
-
-}
-label{
-    width: 100%;
-    display: black;
-    z-index: 3;
-    position: relative;
-}
-.nav{
-    width: 100%;
-    background-color: white;
-    overflow-x: hidden;
-    border-bottom: 1px solid #CFD8DC;
-}
-
-#nav-icon{
-    font-size: 28px;
-    line-height: 50px;
-    padding-left: 1em;
-    color: black;
-    background-color:gray;
-
-}
-
-.nav ul, .nav li, label {
-    line-height: 50px;
-    margin: 0;
-    padding: 0 2em;
-    list-style: none;
-    text-decoration: none;
-    color: black;
-    width: 100%;
-}
-
-.item ul{
-    padding: 0 0.25em;
-}
-.nav li a{
-    line-height: 50px;
-    margin: 0;
-    padding: 0 4em;
-    list-style: none;
-    text-decoration: none;
-    color: black;
-    font-weight: 100;
-    width: 100%;
-
-}
-
-.navigationfilterbox {
-    align-items: left;
-
-} */
-
-
 /* using new code for filters */
 details {
     user-select: none;
@@ -389,5 +311,92 @@ details {
     display: block;
 }
 
-/* code for slideshow */
+/* code for slideshow from W3 */
 
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
