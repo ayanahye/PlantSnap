@@ -144,76 +144,24 @@ export default function Filter(props) {
                             <h2 className="right-align">Filters:</h2>
                             <div className="dropdowns">
 
-                            <div class = "navigationfilterbox"> 
-
-                         
-                            <details>
-                                <summary>
-                                    <span class="icon">▶</span>
-                                    Names
-                                </summary>
-                                <p>option1</p>
-                            </details>
-
-                            <details>
-                                <summary>
-                                    <span class="icon">▶</span>
-                                    Sizes
-                                </summary>
-                                <p>option2</p>
-                            </details>
-
-                            <details>
-                                <summary>
-                                    <span class="icon">▶</span>
-                                    Edible
-                                </summary>
-                                <p>option3</p>
-                            </details>
-
-                            <details>
-                                <summary>
-                                    <span class="icon">▶</span>
-                                    Maintenance
-                                </summary>
-                                <p>option4</p>
-                            </details>
-
-                            <details>
-                                <summary>
-                                    <span class="icon">▶</span>
-                                    Care Reqs
-                                </summary>
-                                <p>option5</p>
-                            </details>
-
-                            <details>
-                                <summary>
-                                    <span class="icon">▶</span>
-                                    Poisonous
-                                </summary>
-                                <label className="container">One
-                                    <input type="checkbox" />
-                                    <span className="checkmark"></span>
-                                </label>
-
-                                <label className="container">Two
-                                    <input type="checkbox" />
-                                    <span className="checkmark"></span>
-                                </label>
-                            </details>
-
-
-                        </div>
+                                <div class = "navigationfilterbox"> 
+                                <Dropdown data={careGuides} name="Care Guides" onOptionChange={handleOptionChange} id="option0"/>
+                                <Dropdown data={dataNames} name="Names" onOptionChange={handleOptionChange} id="option1"/>
+                                <Dropdown data={dataSizes} name="Sizes" onOptionChange={handleOptionChange} id="option2"/>
+                                <Dropdown data={dataEdible} name="Edible" onOptionChange={handleOptionChange} id="option3"/>
+                                <Dropdown data={dataMaintenance} name="Maintenance" onOptionChange={handleOptionChange} id="option4"/>
+                                <Dropdown data={dataPoisonous} name="Poisonous" onOptionChange={handleOptionChange} id="option6"/> 
+                            
 
                          
 
 
 
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             
                 <div className="information">
                     <div class="scroll-object1">
@@ -221,7 +169,8 @@ export default function Filter(props) {
                         optionValues.map((valueOption, index) => (
                             <div key={index}>
                             {valueOption === "Care Guide" ? (
-                                <p>
+                                <p> 
+                                <strong style={{display:'block'}}>Care Guides</strong>
                                 {props.speciesList["common_name"] && (
                                     <span>The {props.speciesList["common_name"]} requires </span>
                                 )}
@@ -256,8 +205,8 @@ export default function Filter(props) {
                             ) : (
                                 props.speciesList[valueOption] !== undefined && props.speciesList[valueOption] !== null ? (
                                 typeof props.speciesList[valueOption] === "object"
-                                    ? Object.values(props.speciesList[valueOption]).join(", ")
-                                    : props.speciesList[valueOption]
+                                    ? `${valueOption}: ${Object.values(props.speciesList[valueOption]).join(", ")}`
+                                    : `${valueOption}: ${props.speciesList[valueOption]}`
                                 ) : (
                                 "No data yet"
                                 )

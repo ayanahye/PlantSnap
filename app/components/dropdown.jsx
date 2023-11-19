@@ -12,34 +12,33 @@ export default function Dropdown(props) {
 
 
     return (
-        <div className={styles.dropdown}>
-            <button id="full-width" className="btn btn-secondary" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                {props.name}
-            </button>
-            <button id="full-width2" type="button" className="btn btn-secondary dropdown-toggle dropdown-toggle-split"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                <span className="visually-hidden"></span>
-            </button>
-            <ul className="dropdown-menu">
-                {props.data.map((item, index) => (
-                    <li key={index}>
-                        <div className={styles.dropdownItemCustom}>
-                            <input
-                                type="checkbox"
-                                id={`checkbox-${props.id}-${item}`}
-                                name={item}
-                                value={item}
-                                onChange={handleCheckboxChange}
-                                data-testid={`checkbox-${props.id}-${item}`}
-                            />
-                            <label htmlFor={`checkbox-${props.id}-${item}`}>{item}</label>
-                        </div>
-                    </li>
-                ))}
-            </ul>
+        <div className=''>
+            <details>
+                <summary>
+                    <span className="icon">▶</span>
+                    {props.name}
+                </summary>
+                <ul className="">
+                    {props.data.map((item, index) => (
+                        <li key={index}>
+                            <div className={styles.dropdownItemCustom}>
+                                <input
+                                    type="checkbox"
+                                    id={`checkbox-${props.id}-${item}`}
+                                    name={item}
+                                    value={item}
+                                    onChange={handleCheckboxChange}
+                                    data-testid={`checkbox-${props.id}-${item}`}
+                                />
+                                <label htmlFor={`checkbox-${props.id}-${item}`}>{item}</label>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </details>
         </div>
-    )
+    );
+    
 }
 
 // checkbox-option1-1
