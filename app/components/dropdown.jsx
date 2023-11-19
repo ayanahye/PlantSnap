@@ -12,32 +12,33 @@ export default function Dropdown(props) {
 
 
     return (
-        <div className=''>
-            <details>
-                <summary>
-                    <span className="icon">▶</span>
-                    {props.name}
-                </summary>
-                <ul className="">
-                    {props.data.map((item, index) => (
-                        <li key={index}>
-                            <div className={styles.dropdownItemCustom}>
-                                <input
-                                    type="checkbox"
-                                    id={`checkbox-${props.id}-${item}`}
-                                    name={item}
-                                    value={item}
-                                    onChange={handleCheckboxChange}
-                                    data-testid={`checkbox-${props.id}-${item}`}
-                                />
-                                <label htmlFor={`checkbox-${props.id}-${item}`}>{item}</label>
-                            </div>
-                        </li>
-                    ))}
-                </ul>
-            </details>
-        </div>
-    );
+    <div className=''>
+        <details>
+            <summary>
+                <span className="icon">▶</span>
+                {props.name}
+            </summary>
+            <ul className="">
+                {props.data.map((item, index) => (
+                    <li key={index}>
+                        <div className=''>
+                            <input
+                                type="checkbox"
+                                id={`checkbox-${props.id}-${item}`}
+                                name={item}
+                                value={item}
+                                onChange={handleCheckboxChange}
+                                data-testid={`checkbox-${props.id}-${item}`}
+                            />
+                            <label htmlFor={`checkbox-${props.id}-${item}`}>{item}</label>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </details>
+    </div>
+);
+
     
 }
 
