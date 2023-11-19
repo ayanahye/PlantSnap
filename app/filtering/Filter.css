@@ -398,3 +398,12 @@ details {
 .option-inv {
     text-align: left;
 }
+
+.care {
+    background-color: green;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}

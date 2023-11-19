@@ -162,63 +162,66 @@ export default function Filter(props) {
                         </div>
                     </div>
                 </div>
+                
             
                 <div className="information">
-                    <div data-testid="scroll-object1" class="scroll-object1">
+                    <div data-testid="scroll-object1" className="scroll-object1">
                         {optionValues.length > 0 ? (
-                        optionValues.map((valueOption, index) => (
-                            <div key={index}>
-                            {valueOption === "Care Guide" ? (
-                                <p> 
-                                <strong style={{display:'block'}}>Care Guides</strong>
+                        <>
+                            {optionValues.includes("Care Guide") && (
+                            <div data-testid="care-guides-section" className='care'>
+                                <strong style={{ display: 'block' }}>Care Guides</strong>
                                 {props.speciesList["common_name"] && (
-                                    <span>The {props.speciesList["common_name"]} requires </span>
+                                <span>The {props.speciesList["common_name"]} requires </span>
                                 )}
                                 {props.speciesList["watering"] && (
-                                    <span>{props.speciesList["watering"].charAt(0).toLowerCase() + props.speciesList["watering"].slice(1)} watering. </span>
+                                <span>{props.speciesList["watering"].charAt(0).toLowerCase() + props.speciesList["watering"].slice(1)} watering. </span>
                                 )}
                                 {props.speciesList["sunlight"] && (
-                                    <span>The amount of sun the plant needs is {props.speciesList["sunlight"]}. </span>
+                                <span>The amount of sun the plant needs is {props.speciesList["sunlight"]}. </span>
                                 )}
                                 {props.speciesList["pruning_month"] && (
-                                    <span>The best month to prune the plant is {props.speciesList["pruning_month"]} and </span>
+                                <span>The best month to prune the plant is {props.speciesList["pruning_month"]} and </span>
                                 )}
                                 {props.speciesList["maintenance"] && (
-                                    <span>the overall maintenance to care for this plant is {props.speciesList["maintenance"]}. </span>
+                                <span>the overall maintenance to care for this plant is {props.speciesList["maintenance"]}. </span>
                                 )}
                                 {props.speciesList["drought_tolerant"] !== null && (
-                                    <span>the plant {props.speciesList["drought_tolerant"] ? "is drought tolerant" : "is not drought tolerant"}. </span>
+                                <span>the plant {props.speciesList["drought_tolerant"] ? "is drought tolerant" : "is not drought tolerant"}. </span>
                                 )}
                                 {props.speciesList["salt_tolerant"] !== null && (
-                                    <span>Additionally, the plant {props.speciesList["salt_tolerant"] ? "is salt tolerant" : "is not salt tolerant"}. </span>
+                                <span>Additionally, the plant {props.speciesList["salt_tolerant"] ? "is salt tolerant" : "is not salt tolerant"}. </span>
                                 )}
                                 {props.speciesList["fruits"] !== null && (
-                                    <span>Furthermore, the plant {props.speciesList["fruits"] ? "grows fruits" : "does not grow fruits"}. </span>
+                                <span>Furthermore, the plant {props.speciesList["fruits"] ? "grows fruits" : "does not grow fruits"}. </span>
                                 )}
                                 {props.speciesList["indoor"] !== null && (
-                                    <span>The plant {props.speciesList["indoor"] ? "is an indoor plant" : "is not an indoor plant"}. </span>
+                                <span>The plant {props.speciesList["indoor"] ? "is an indoor plant" : "is not an indoor plant"}. </span>
                                 )}
                                 {props.speciesList["care_level"] !== null && (
-                                    <span>The overall care level of the plant is said to be {props.speciesList["care_level"].charAt(0).toLowerCase() + props.speciesList["care_level"].slice(1)}. </span>
+                                <span>The overall care level of the plant is said to be {props.speciesList["care_level"].charAt(0).toLowerCase() + props.speciesList["care_level"].slice(1)}. </span>
                                 )}
-                                </p>
-                            ) : (
+                            </div>
+                            )}
+                            {optionValues.map((valueOption, index) => (
+                            <div key={index}>
+                                {valueOption !== "Care Guide" && (
                                 props.speciesList[valueOption] !== undefined && props.speciesList[valueOption] !== null ? (
-                                typeof props.speciesList[valueOption] === "object"
+                                    typeof props.speciesList[valueOption] === "object"
                                     ? `${valueOption}: ${Object.values(props.speciesList[valueOption]).join(", ")}`
                                     : `${valueOption}: ${props.speciesList[valueOption]}`
                                 ) : (
-                                "No data yet"
+                                    "No data yet"
                                 )
-                            )}
+                                )}
                             </div>
-                        ))
+                            ))}
+                        </>
                         ) : (
                         <strong>Please use the filters to select the data you want.</strong>
                         )}
                     </div>
                     </div>
-
 
 
         </main>
