@@ -12,6 +12,10 @@ export default async function Page({ params }: {
         name: string
     }
 }) {
+    if (!params) {
+        notFound();
+        return null; 
+    }
 
     let name = decodeURIComponent(params.name);
     let P_KEY = process.env.PERENUAL_KEY;

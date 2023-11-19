@@ -164,7 +164,7 @@ export default function Filter(props) {
                 </div>
             
                 <div className="information">
-                    <div class="scroll-object1">
+                    <div data-testid="scroll-object1" class="scroll-object1">
                         {optionValues.length > 0 ? (
                         optionValues.map((valueOption, index) => (
                             <div key={index}>
@@ -190,7 +190,7 @@ export default function Filter(props) {
                                     <span>the plant {props.speciesList["drought_tolerant"] ? "is drought tolerant" : "is not drought tolerant"}. </span>
                                 )}
                                 {props.speciesList["salt_tolerant"] !== null && (
-                                    <span>Additionally, the plant {props.speciesList["drought_tolerant"] ? "is salt tolerant" : "is not salt tolerant"}. </span>
+                                    <span>Additionally, the plant {props.speciesList["salt_tolerant"] ? "is salt tolerant" : "is not salt tolerant"}. </span>
                                 )}
                                 {props.speciesList["fruits"] !== null && (
                                     <span>Furthermore, the plant {props.speciesList["fruits"] ? "grows fruits" : "does not grow fruits"}. </span>
