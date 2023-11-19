@@ -24,7 +24,7 @@ export default function Home() {
                             d="M149.1 64.8L138.7 96H64C28.7 96 0 124.7 0 160V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H373.3L362.9 64.8C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/>
                     </svg>
                 </Link>
-                <Link href="/">
+                <Link href="https://github.com/ayanahye/PlantSnap" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path
                             d="M80 104a24 24 0 1 0 0-48 24 24 0 1 0 0 48zm80-24c0 32.8-19.7 61-48 73.3v87.8c18.8-10.9 40.7-17.1 64-17.1h96c35.3 0 64-28.7 64-64v-6.7C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V160c0 70.7-57.3 128-128 128H176c-35.3 0-64 28.7-64 64v6.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V352 153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm232 0a24 24 0 1 0 -48 0 24 24 0 1 0 48 0zM80 456a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/>
@@ -34,23 +34,23 @@ export default function Home() {
             <div id="indexbg" className={styles.indexbg + " carousel slide carousel-fade"}>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <Image src="/images/bg1.webp" width={1920} height={1080} loading="eager" alt="bg1"/>
+                        <Image src="/images/img1-new.jpg" width={1920} height={1080} loading="eager" alt="bg1"/>
                     </div>
                     <div className="carousel-item">
-                        <Image src="/images/bg2.webp" width={1920} height={1080} loading="eager" alt="bg2"/>
+                        <Image src="/images/img2-new.jpg" width={1920} height={1080} loading="eager" alt="bg2"/>
                     </div>
                     <div className="carousel-item">
-                        <Image src="/images/bg3.webp" width={1920} height={1080} loading="eager" alt="bg3"/>
+                        <Image src="/images/img3-new.jpg" width={1920} height={1080} loading="eager" alt="bg3"/>
                     </div>
                     <div className="carousel-item">
-                        <Image src="/images/bg4.webp" width={1920} height={1080} loading="eager" alt="bg4"/>
-                    </div>
-                    <div className="carousel-item">
-                        <Image src="/images/bg5.webp" width={1920} height={1080} loading="eager" alt="bg5"/>
+                        <Image src="/images/img4-new.jpg" width={1920} height={1080} loading="eager" alt="bg4"/>
                     </div>
                 </div>
             </div>
             <div className="container w-75 py-5">
+                <h1 style={{textAlign: 'center', marginBottom:'50px', color:'green'}}>PlantSnapify</h1>
+                <p style={{textAlign:'center', marginBottom:'50px'}}>An AI based research tool for plant identification and research.</p>
+
                 <h1 style={{textAlign: 'center'}}>Tips</h1>
 
                 <div style={{marginTop: '30px'}} className="card">
@@ -66,17 +66,47 @@ export default function Home() {
                 </div>
                 <div style={{marginTop: '50px'}} className="card">
                     <div className="card-header">
-                        Search
+                        Confidence
                     </div>
                     <div className="card-body">
                         <blockquote className="blockquote mb-0">
-                            <p>Search using scientific or common name.</p>
+                            <p>Use the built in confidence rates to guide your research</p>
                         </blockquote>
                     </div>
                 </div>
                 <div style={{marginTop: '50px'}} className="card">
                     <div className="card-header">
-                        Icons
+                        Search
+                    </div>
+                    <div className="card-body">
+                        <blockquote className="blockquote mb-0">
+                            <p>Search using keywords such as color/size or scientific and common name</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <div style={{marginTop: '50px'}} className="card">
+                    <div className="card-header">
+                        Display
+                    </div>
+                    <div className="card-body">
+                        <blockquote className="blockquote mb-0">
+                            <p>Click on a plant in the results list to see more information</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <div style={{marginTop: '50px'}} className="card">
+                    <div className="card-header">
+                        Narrow your search
+                    </div>
+                    <div className="card-body">
+                        <blockquote className="blockquote mb-0">
+                            <p>Use the options on the search page to filter through the results</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <div style={{marginTop: '50px'}} className="card">
+                    <div className="card-header">
+                        Plant Icon Legend
                     </div>
                     <div id="icons" className="card-body">
                         <blockquote className="blockquote mb-0">
@@ -109,13 +139,10 @@ export default function Home() {
 
                 <div>
                     <h1 style={{marginTop: '30px', marginBottom: '30px', textAlign: 'center'}}>Developers</h1>
-                    <div style={{textAlign: 'center', marginBottom: '20px'}}> This project was planned, designed, and
-                        implemented by:
+                    <div style={{textAlign: 'center', marginBottom: '20px'}}> 
                         <p>
-                            - Layan Barrieshee<br/>
-                            - Dony Wang<br/>
-                            - Haoran Miao<br/>
-                            - Ayana Hussain<br/>
+                            This project was planned, designed, and
+                            implemented by: Layan Barrieshee, Dony Wang, Haoran Miao, Ayana Hussain.
                         </p>
                     </div>
                 </div>

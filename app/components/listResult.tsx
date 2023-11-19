@@ -30,7 +30,6 @@ export default function ListResult(ctx: { data: result[] }) {
                     <div className="card-body">
                         <h5>{result.name}</h5>
                         {result.score && <p>Confidence: {result.score}</p>}
-                        hi
                     </div>
                 </div>
             </Link>
