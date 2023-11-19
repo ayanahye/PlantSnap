@@ -117,13 +117,13 @@ export default function Filter(props) {
     */
 
 
-    /*
-    for (value in values) {
-        if (key === selectedOptionNames[id]) {
-            // then map the key to the value?
-        }
-    }
-    */
+    
+    // for (value in values) {
+    //     if (key === selectedOptionNames[id]) {
+    //         // then map the key to the value?
+    //     }
+    // }
+    
 
     
     
@@ -150,7 +150,7 @@ export default function Filter(props) {
                             <details>
                                 <summary>
                                     <span class="icon">▶</span>
-                                    data={dataNames} name="Names"
+                                    Names
                                 </summary>
                                 <p>option1</p>
                             </details>
@@ -158,7 +158,7 @@ export default function Filter(props) {
                             <details>
                                 <summary>
                                     <span class="icon">▶</span>
-                                    data={dataNames} name="Sizes"
+                                    Sizes
                                 </summary>
                                 <p>option2</p>
                             </details>
@@ -166,7 +166,7 @@ export default function Filter(props) {
                             <details>
                                 <summary>
                                     <span class="icon">▶</span>
-                                    data={dataNames} name="Edible"
+                                    Edible
                                 </summary>
                                 <p>option3</p>
                             </details>
@@ -174,7 +174,7 @@ export default function Filter(props) {
                             <details>
                                 <summary>
                                     <span class="icon">▶</span>
-                                    data={dataNames} name="Maintenance"
+                                    Maintenance
                                 </summary>
                                 <p>option4</p>
                             </details>
@@ -182,7 +182,7 @@ export default function Filter(props) {
                             <details>
                                 <summary>
                                     <span class="icon">▶</span>
-                                    data={dataNames} name="Care Reqs"
+                                    Care Reqs
                                 </summary>
                                 <p>option5</p>
                             </details>
