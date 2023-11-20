@@ -4,6 +4,7 @@ import React, {useEffect, useOptimistic, useState} from "react";
 import ListResult, {result} from "@/app/components/listResult";
 import {useSearchParams} from "next/navigation";
 import {perenual_search} from "@/app/globalTypes";
+import Pagination from "@/app/components/pagination";
 
 let page = 1, lastpage = 1
 
