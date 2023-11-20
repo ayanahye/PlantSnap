@@ -5,7 +5,8 @@ import Image from "next/image";
 import Carousel from "@/app/components/carousel";
 import React from "react";
 import "./detail.css"
-import defaultImg from "./no-image.jpg"
+import defaultImg from "./no-image.jpg";
+import PlantIcons from '../../components/plantIcons';
 
 export default async function Page({ params }: {
     params: {
@@ -50,26 +51,7 @@ export default async function Page({ params }: {
                                     <Carousel id="plantimgs" elements={carouselImg} />
                                 </div>
                                 <div className="card-body">
-                                    <div className="card-text plantIco">
-                                        {plantDetail.drought_tolerant && (
-                                            <Image src="/images/desert.svg" alt="drought_tolerant" width={55} height={55} />
-                                        )}
-                                        {plantDetail.indoor && (
-                                            <Image src="/images/indoor.svg" alt="drought_tolerant" width={50} height={50} />
-                                        )}
-                                        {plantDetail.flowers && (
-                                            <Image src="/images/flower.svg" alt="drought_tolerant" width={50} height={50} />
-                                        )}
-                                        {plantDetail.leaf && (
-                                            <Image src="/images/leaf.svg" alt="drought_tolerant" width={50} height={50} />
-                                        )}
-                                        {plantDetail.edible_fruit || plantDetail.edible_leaf ? (
-                                            <Image src="/images/apple.svg" alt="drought_tolerant" width={50} height={50} />
-                                        ) : null}
-                                        {plantDetail.medicinal && (
-                                            <Image src="/images/medicinal.svg" alt="drought_tolerant" width={50} height={50} />
-                                        )}
-                                    </div>
+                                    <PlantIcons plantDetail={plantDetail} />
                                 </div>
                             </div>
                         </div>

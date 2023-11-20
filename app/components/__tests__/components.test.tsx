@@ -1,6 +1,7 @@
 import React from 'react';
 import {render, fireEvent, screen} from '@testing-library/react';
 import Dropdown from '../dropdown';
+import PlantIcons from '../plantIcons';
 
 describe('Dropdown Component', () => {
     it('The isChecked property should be updated when the checkbox is clicked', () => {
@@ -25,6 +26,27 @@ describe('Dropdown Component', () => {
 
         expect(mockHandleCheckboxChange).toHaveBeenCalledWith('checkbox-option1-origin', "origin", true);
     });
-})
+});
+
+describe('Planticons display', () => {
+    it("should display the correct icons", () => {
+        const plantDetail = {
+            drought_tolerant: true,
+            indoor: false,
+            flowers: true,
+            leaf: false,
+            edible_fruit: true,
+            edible_leaf: false,
+            medicinal: true,
+        };
+
+        const { getByAltText } = render(<PlantIcons plantDetail={plantDetail} />);
+
+        expect(getByAltText('drought_tolerant')).toBeInTheDocument();
+        expect(getByAltText('flowers')).toBeInTheDocument();
+        expect(getByAltText('edible')).toBeInTheDocument();
+        expect(getByAltText('medicinal')).toBeInTheDocument();
+    })
+});
 
 // run test using npm test -- --testPathPattern="components/__tests__" 
