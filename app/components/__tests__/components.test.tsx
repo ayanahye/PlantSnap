@@ -40,12 +40,12 @@ describe('Planticons display', () => {
             medicinal: true,
         };
 
-        const { getByAltText } = render(<PlantIcons plantDetail={plantDetail} />);
+        render(<PlantIcons plantDetail={plantDetail} />);
 
-        expect(getByAltText('drought_tolerant')).toBeInTheDocument();
-        expect(getByAltText('flowers')).toBeInTheDocument();
-        expect(getByAltText('edible')).toBeInTheDocument();
-        expect(getByAltText('medicinal')).toBeInTheDocument();
+        expect(screen.getByAltText('drought_tolerant')).toBeInTheDocument();
+        expect(screen.getByAltText('flowers')).toBeInTheDocument();
+        expect(screen.getByAltText('edible')).toBeInTheDocument();
+        expect(screen.getByAltText('medicinal')).toBeInTheDocument();
     })
 });
 
