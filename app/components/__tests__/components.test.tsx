@@ -44,6 +44,8 @@ describe('Planticons display', () => {
             edible_fruit: true,
             edible_leaf: false,
             medicinal: true,
+            poisonous_to_humans: true,
+            tropical: false
         };
 
         render(<PlantIcons plantDetail={plantDetail} />);
@@ -52,6 +54,7 @@ describe('Planticons display', () => {
         expect(screen.getByAltText('flowers')).toBeInTheDocument();
         expect(screen.getByAltText('edible')).toBeInTheDocument();
         expect(screen.getByAltText('medicinal')).toBeInTheDocument();
+        expect(screen.getByAltText('danger')).toBeInTheDocument();
     })
 });
 
