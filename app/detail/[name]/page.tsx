@@ -58,6 +58,13 @@ export default async function Page({ params }: {
                         </div>
                         <div className="col-12 col-md-7 plantdetail">
                             <PlantDesc plantDetail={plantDetail} />
+                            <div className="row justify-content-center py-3">
+                                <div className="col col-auto">
+                                    <Link className="btn btn-light border border-secondary" href={`/detail/${plantDetail.id}/filter`}>
+                                    View More&gt;&gt;&gt;
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </main>

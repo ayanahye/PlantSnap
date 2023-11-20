@@ -3,6 +3,7 @@ import {render, fireEvent, screen} from '@testing-library/react';
 import Dropdown from '../dropdown';
 import PlantIcons from '../plantIcons';
 import PlantDetails from '../plantDescandDets';
+import ListResult from '../listResult';
 
 describe('Dropdown Component', () => {
     it('The isChecked property should be updated when the checkbox is clicked', () => {
@@ -76,6 +77,25 @@ describe("Plant details and description display", () => {
         expect(screen.getByText(/perenual/i)).toBeInTheDocument();
         expect(screen.getByText(/frequent/i)).toBeInTheDocument();
         expect(screen.getByText(/full sun/i)).toBeInTheDocument();
+    })
+});
+
+describe("list results display", () => {
+    it("should render the confidence score and name correctly", () => {
+        const plantData = [
+            {
+                image: {url: '', alt: 'somefake-url'},
+                name: 'rose',
+                score: 0.9,
+                sciName: 'rosa',
+            },
+        ];
+
+        render(<ListResult data={plantData} />);
+
+        expect(screen.getByText('rose')).toBeInTheDocument();
+        expect(screen.getByAltText('somefake-url')).toBeInTheDocument();
+        expect(screen.getByText('Confidence: 0.9')).toBeInTheDocument();
     })
 })
 
