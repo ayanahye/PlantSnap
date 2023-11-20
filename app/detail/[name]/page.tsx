@@ -7,6 +7,7 @@ import React from "react";
 import "./detail.css"
 import defaultImg from "./no-image.jpg";
 import PlantIcons from '../../components/plantIcons';
+import PlantDesc from '../../components/plantDescandDets';
 
 export default async function Page({ params }: {
     params: {
@@ -56,41 +57,7 @@ export default async function Page({ params }: {
                             </div>
                         </div>
                         <div className="col-12 col-md-7 plantdetail">
-                            <div className="row align-items-end">
-                                <h3 className="col-auto">{plantDetail ? plantDetail.common_name : ""}</h3>
-                                <h6 className="col-auto">{plantDetail ? plantDetail.scientific_name[0] : ""}</h6>
-                            </div>
-                            <div className="row">
-                                <h5 className="col text-success">Description</h5>
-                            </div>
-                            <div className="row">
-                                <div className="col">
-                                    <p className="border-success border border-2 p-1"
-                                        style={{ backgroundColor: "#E4FDE1" }}>{plantDetail && plantDetail.description}</p>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <h6 className="col text-success">Details</h6>
-                            </div>
-                            <div className="row">
-                                <div className="col">
-                                    <div className="border-success border border-2 p-1"
-                                        style={{ backgroundColor: "#E4FDE1" }}>
-                                        <div>family: {plantDetail ? plantDetail.family : ""}</div>
-                                        <div>type: {plantDetail && plantDetail.type}</div>
-                                        <div>dimension: {plantDetail && plantDetail.dimension}</div>
-                                        <div>cycle: {plantDetail && plantDetail.cycle}</div>
-                                        <div>watering: {plantDetail && plantDetail.watering}</div>
-                                        <div>sunlight: {plantDetail && plantDetail.sunlight.map((s: string) => s + " ")}</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row justify-content-center py-3">
-                                <div className="col col-auto">
-                                    <Link className="btn btn-light border border-secondary" href={`/detail/${plantDetail.id}/filter`}>View
-                                        More&gt;&gt;&gt;</Link>
-                                </div>
-                            </div>
+                            <PlantDesc plantDetail={plantDetail} />
                         </div>
                     </div>
                 </main>
