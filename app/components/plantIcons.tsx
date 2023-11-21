@@ -11,11 +11,16 @@ interface PlantIconsProps {
     edible_fruit: boolean;
     edible_leaf: boolean;
     medicinal: boolean;
+    poisonous_to_humans: boolean;
+    tropical: boolean;
   };
 }
 
 const PlantIcons: React.FC<PlantIconsProps> = ({ plantDetail }) => (
   <div className="card-text plantIco">
+    {plantDetail.poisonous_to_humans && (
+      <Image src="/images/warning-icon.webp" alt="danger" width={50} height={50} />
+    )}
     {plantDetail.drought_tolerant && (
       <Image src="/images/desert.svg" alt="drought_tolerant" width={55} height={55} />
     )}
@@ -33,6 +38,9 @@ const PlantIcons: React.FC<PlantIconsProps> = ({ plantDetail }) => (
     )}
     {plantDetail.medicinal && (
       <Image src="/images/medicinal.svg" alt="medicinal" width={50} height={50} />
+    )}
+    {plantDetail.tropical && (
+      <Image src="/images/rare.webp" alt="rare" width={50} height={50} />
     )}
   </div>
 );

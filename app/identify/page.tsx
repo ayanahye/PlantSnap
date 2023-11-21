@@ -4,6 +4,8 @@ import React, {useOptimistic, useState} from "react";
 import Image from "next/image";
 import {postData} from "@/app/identify/connection";
 import ListResult, {result} from "@/app/components/listResult";
+import uploadPlants from "@/app/components/uploadPlants";
+import UploadInput from "@/app/components/uploadPlants";
 
 type preview = {
     id: string
@@ -180,16 +182,7 @@ export default function Page() {
                     </div>
                 </div>
                 <div id="input_holder" className="d-none">
-                    <input className="upImg" name="upImg1" type="file" accept="image/jpeg,image/png" id="img1"
-                           onChange={onFileChange}/>
-                    <input className="upImg" name="upImg2" type="file" accept="image/jpeg,image/png" id="img2"
-                           onChange={onFileChange}/>
-                    <input className="upImg" name="upImg3" type="file" accept="image/jpeg,image/png" id="img3"
-                           onChange={onFileChange}/>
-                    <input className="upImg" name="upImg4" type="file" accept="image/jpeg,image/png" id="img4"
-                           onChange={onFileChange}/>
-                    <input className="upImg" name="upImg5" type="file" accept="image/jpeg,image/png" id="img5"
-                           onChange={onFileChange}/>
+                    <UploadInput onFileChange={onFileChange} />
                     <input type="text" name="organs" value={typeValue} readOnly={true}/>
                 </div>
             </form>

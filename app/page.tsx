@@ -48,10 +48,13 @@ export default function Home() {
                 </div>
             </div>
             <div className="container w-75 py-5">
-                <h1 style={{textAlign: 'center', marginBottom:'50px', color:'green'}}>PlantSnapify</h1>
-                <p style={{textAlign:'center', marginBottom:'50px'}}>An AI based research tool for plant identification and research.</p>
-
-                <h1 style={{textAlign: 'center'}}>Tips</h1>
+                <div className="jumbotron jumbotron-fluid">
+                    <div className="container">
+                        <h1 style={{textAlign: 'center', marginBottom:'50px', color:'green'}} className="display-4">PlantSnapify</h1>
+                        <p style={{textAlign:'center', marginBottom:'50px'}} className="lead">An AI based research tool for plant identification and research.</p>
+                    </div>
+                </div>
+                <h1 style={{textAlign: 'center', marginBottom:'50px', color:'green'}} className="display-4">Tips</h1>
 
                 <div style={{marginTop: '30px'}} className="card">
                     <div className="card-header">
@@ -111,8 +114,12 @@ export default function Home() {
                     <div id="icons" className="card-body">
                         <blockquote className="blockquote mb-0">
                             <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
-                                <p>Rare</p>
+                                <p>Leaf</p>
                                 <Image src="/images/leaf.svg" width='50' height='50' alt="flower"></Image>
+                            </div>
+                            <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
+                                <p>Danger</p>
+                                <Image src="/images/warning-icon.webp" width='50' height='50' alt="flower"></Image>
                             </div>
                             <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
                                 <p>Medicinal</p>
@@ -121,6 +128,22 @@ export default function Home() {
                             <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
                                 <p>Indoor</p>
                                 <Image src="/images/indoor.svg" width='50' height='50' alt="flower"></Image>
+                            </div>
+                            <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
+                                <p>Edible</p>
+                                <Image src="/images/apple.svg" width='50' height='50' alt="flower"></Image>
+                            </div>
+                            <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
+                                <p>Drought Tolerant</p>
+                                <Image src="/images/desert.svg" width='50' height='50' alt="flower"></Image>
+                            </div>
+                            <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
+                                <p>Flower</p>
+                                <Image src="/images/flower.svg" width='50' height='50' alt="flower"></Image>
+                            </div>
+                            <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
+                                <p>Rare</p>
+                                <Image src="/images/rare.webp" width='50' height='50' alt="flower"></Image>
                             </div>
                         </blockquote>
                     </div>
@@ -138,7 +161,7 @@ export default function Home() {
                 </div>
 
                 <div>
-                    <h1 style={{marginTop: '30px', marginBottom: '30px', textAlign: 'center'}}>Developers</h1>
+                <h1 style={{textAlign: 'center', marginTop: '50px', marginBottom:'50px', color:'green'}} className="display-4">Developers</h1>
                     <div style={{textAlign: 'center', marginBottom: '20px'}}> 
                         <p>
                             This project was planned, designed, and

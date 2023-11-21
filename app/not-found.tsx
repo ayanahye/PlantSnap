@@ -11,7 +11,7 @@ export default function NotFound() {
                 <div className="text">
                     <h1 className="error">404 - Plant Not Found</h1>
                     <p>This is most likely due to our API not returning any reults. This flower does not exist in our APIs database. Please try another search or another image. We apologize for the inconvenience this may have caused.</p>
-                    <button className="return"><Link className="link" href="/">Return Home</Link></button>
+                    <button type="button" className="btn btn-success"><Link className="link" href="/">Return Home</Link></button>
                 </div>
         </main>
     )
