@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import "./Filter.css";
 
 import Dropdown from '../components/dropdown';
+import Image from 'next/image';
 
 
 export default function Filter(props) {
@@ -128,64 +129,59 @@ export default function Filter(props) {
     
     
     return (
+
+        
         <main className="main-filter">
             <h3 style={{paddingBottom: '15px'}}>Current plant = {props.speciesList.common_name || "No name yet"}</h3>
+
+          
             <div className="filterPart">
-                <div className="images">
+                <div className="photo">
                     <h2 className="right-align">Images here</h2>
-
-                    <div className="images">
-                    
-                    <h2 className="right-align">Images here</h2>
-
+                   
                     <div className="slideshow-container">
+                    <div class= "mainimage">
+                    <Image src={props.speciesList.default_image.regular_url} height={200} width={200} style={{ border: '5px solid #000' , borderRadius: '15px' }}/>
+                    </div>
+                    
+
+                    
+
 
                         <div className="mySlides fade">
                             <div className="numbertext">1 / 3</div>
-                            <img src="app/filtering/rose.jpg" style={{ width: '100%' }} />
+                                <Image src={props.speciesList.default_image.regular_url} height={200} width={200} style={{ border: '5px solid #000' , borderRadius: '15px' }}/>
+
                             <div className="text">Caption Text</div>
                         </div>
 
-                        <div className="mySlides fade">
+                        {/* <div className="mySlides fade">
                             <div className="numbertext">2 / 3</div>
-                            <img src="filtering/rose.jpg" style={{ width: '100%' }} />
+                            <Image src={props.speciesList.default_image.regular_url} height={200} width={200} />
                             <div className="text">Caption Text</div>
                         </div>
 
                         <div className="mySlides fade">
                             <div className="numbertext">3 / 3</div>
-                            <img src="filtering/rose.jpg" style={{ width: '100%' }} />
+                            <Image src={props.speciesList.default_image.regular_url} height={200} width={200} />
                             <div className="text">Caption Text</div>
-                        </div>
+                        </div> */}
 
                         <a class="prev" onclick="plusSlides(-1)">❮</a>
                         <a class="next" onclick="plusSlides(1)">❯</a>
 
                         {/* <div style="text-align:center">
-                        <span class="dot" onclick="currentSlide(1)"></span> 
-                        <span class="dot" onclick="currentSlide(2)"></span> 
-                        <span class="dot" onclick="currentSlide(3)"></span> 
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
                         </div> */}
 
+
+                
                     </div>
+                    
             
-                </div>
-
-
-            {/* <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
-
-                <h3 style={{paddingBottom: '15px'}}>Current plant = {props.speciesList.common_name || "No name yet"}</h3>
-
-                <div style={{backgroundColor:'blue'}}className="filterPart">
-
-                    <div style={{backgroundColor:'brown'}}className="images">
-
-                        <h2 className="right-align">Images here</h2>
-
-                        <Image src={props.speciesList.default_image.regular_url} height={200} width={200} />
-                </div> */}
-
-
+            
                     
 
                 </div>
@@ -213,7 +209,7 @@ export default function Filter(props) {
                             </div>
                         </div>
                     </div>
-                </div>
+            </div>
                 
             
                 <div className="information">
@@ -274,6 +270,7 @@ export default function Filter(props) {
                         )}
                     </div>
                     </div>
+    
 
 
         </main>

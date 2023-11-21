@@ -291,7 +291,7 @@ html, body {
 }
 
 /* Arrow */
-/* .arrow{
+.arrow{
     width: 12px;
     height: 12px;
     vertical-align: middle;
@@ -365,7 +365,7 @@ label{
 .navigationfilterbox {
     align-items: left;
 
-} */
+}
 
 
 /* using new code for filters */
@@ -416,4 +416,10 @@ details {
     padding: 20px;
     border-radius: 20px;
     margin-bottom: 20px;
+}
+.mainimage{
+    /* display: flex;
+    justify-content: center; */
+    /* align: left; */
+    /* width: 50vh; */
 }
