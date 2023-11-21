@@ -12,7 +12,7 @@ export type result = {
 export default function ListResult(ctx: { data: result[] }) {
     return <div className="row row-cols-1 row-cols-lg-4 row-cols-md-3">
         {ctx.data.map((result, index) => (
-            <Link href={`/detail/${result.sciName}`} className="col mb-4" key={index} target="_blank">
+            <Link  data-testid="example-plant" href={`/detail/${result.sciName}`} className="col mb-4" key={index} target="_blank">
                 <div className="card h-100 card-hover">
                     <div>
                         {result.image && (
