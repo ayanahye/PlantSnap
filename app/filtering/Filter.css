@@ -168,7 +168,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    width: 100vh;
+    width: 280vh;
     padding: 20px;
     
 }
@@ -183,13 +183,14 @@
     background-color: rgb(235, 249, 235);
     color:black;
     flex: 1;
-    font-size: 20px;
+    font-size: 50px;
     text-align: left;
     border:none;
     padding:0;
 }
+
 #full-width2{
-    background-color: rgb(235, 249, 235);
+    background-color: pink;
     color: black;
 }
 .filterFullArea {
@@ -202,6 +203,8 @@
     display: flex;
     justify-content: left;
 }
+
+/* fixes sizing for text size of Please use the filters to select the data you want. */
 .databox {
     background-color: white;
     display: flex;
@@ -210,14 +213,15 @@
     padding-top: 20px;
     overflow: auto;
     justify-content: center;
+    font-size: 60px;
 }
 .filterBlock {
     height: 400px;
-    /* width:350%; */
+    width: 1000px;
+    justify-content: right;
     background-color: rgb(235, 249, 235);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding-top: 20px;
     border: 2px solid black;
     border-radius: 20px 0px 0px 20px;
@@ -226,11 +230,14 @@
     text-align: center;
     overflow: hidden;
     overflow-y: scroll;
+    font-size: 25px;
    
 }
+
+/* name of filter */
 .right-align {
     text-align: start;
-    font-size: 20px;
+    font-size: 35px;
 }
 #plantimgs img {
     aspect-ratio: 1/1;
@@ -238,16 +245,19 @@
     height: initial;
 }
  
+/* information inside of bottom scroll bar */
 .information {
     color: black;
-    font-size: 20px;
+    font-size: 25px;
     padding: 20px;
     text-align: left;
 }
+
+/* size of the scroll bar */
 .scroll-object1{
     height: 300px;
     background-color:  rgb(235, 249, 235);
-
+    width: 185vh;
     margin-top: 50px;
     margin-bottom: 50px;
     border: 2px solid black;
