@@ -4,7 +4,6 @@ import React, {useEffect, useOptimistic, useState} from "react";
 import ListResult, {result} from "@/app/components/listResult";
 import {useSearchParams} from "next/navigation";
 import {perenual_search} from "@/app/globalTypes";
-import Pagination from "@/app/components/pagination";
 
 let page = 1, lastpage = 1
 
@@ -54,7 +53,7 @@ export default function Page() {
         }).then(res => {
             res.json().then(json => {
                 //change var type
-                let r:perenual_search = json
+                let r: perenual_search = json
                 lastpage = r.last_page
                 //range of the page bar
                 let l = page - 2, m = page + 2
@@ -117,7 +116,7 @@ export default function Page() {
     }
 
     return <main>
-        <div className={`${styles.input} ${adv && styles.adv}`}>
+        <div className={`${styles.input} ${adv && styles.adv}`} data-testid="input">
             <form action={postForm}>
                 <div>
                     <div className={styles.simple}>
@@ -182,8 +181,8 @@ export default function Page() {
                                 </div>
                             </div>
                         </div>
-                        <div className="row g-1 px-1 row-cols-2 row-cols-md-3">
-                            <div className="col">
+                        <div className="row g-1 px-1 row-cols-2">
+                            <div className="col col-md-3">
                                 <div className="input-group">
                                     <span className="input-group-text">Watering</span>
                                     <select name="watering" className='form-select'>
@@ -195,7 +194,7 @@ export default function Page() {
                                     </select>
                                 </div>
                             </div>
-                            <div className="col">
+                            <div className="col col-md-3">
                                 <div className="input-group">
                                     <span className="input-group-text">Sunlight</span>
                                     <select name="sunlight" className='form-select'>
@@ -207,7 +206,7 @@ export default function Page() {
                                     </select>
                                 </div>
                             </div>
-                            <div className="col col-5">
+                            <div className="col col-12 col-md-6">
                                 <div className="input-group">
                                     <span className="input-group-text">Hardiness</span>
                                     <input className="form-control" type="number" min="1" max="13" defaultValue={1}
