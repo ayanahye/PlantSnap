@@ -28,9 +28,14 @@
     height: 13em;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
     .input.adv > form {
         height: 7.65em;
+    }
+}
+@media screen and (max-width: 767px){
+    .advance span:nth-last-child(2){
+        width: 40%;
     }
 }
 
