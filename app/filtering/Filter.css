@@ -1,158 +1,3 @@
-/* .main-filter{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1; 
-    max-height: 100vh;
-    overflow-y: auto;
-    background-color: rgb(71, 199, 123);
-    padding: 45px;
-}
-
-.filterPart {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 100vh;
-    padding: 20px;
-    
-}
-
-.dropdown {
-    margin-bottom: 20px;
-    width: 100%;
-    display: flex;
-    color:rgb(235, 249, 235)
-}
-
-/* these are the filter categories ex. names,size,edible, etc */
-/* #full-width {
-    background-color: rgb(235, 249, 235);
-    color:black;
-    flex: 1;
-    font-size: 20px;
-    text-align: left;
-    border:none;
-    padding:0;
-
-}
-
-
-
-#full-width2{
-    background-color: rgb(235, 249, 235);
-    color: black;
-}
-
-.filterFullArea {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.dropdown-item-custom {
-    display: flex;
-    justify-content: left;
-}
-
-.databox {
-    background-color: white;
-    display: flex;
-    width: 100%;
-    margin-top: 20px;
-    padding-top: 20px;
-    overflow: auto;
-    justify-content: center;
-
-}
-
-.filterBlock {
-    height: 400px;
-    background-color: rgb(235, 249, 235);
-    width: 350%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 20px;
-    border: 2px solid black;
-    border-radius: 20px 0px 0px 20px;
-    margin: auto;  
-    padding: 50px;
-    text-align: center;
-    overflow: hidden;
-    overflow-y: scroll;
-   
-} */
-
-
-/* 
-.right-align {
-    text-align: start;
-    font-size: 20px;
-}
-
-#plantimgs img {
-    aspect-ratio: 1/1;
-    width: 100%;
-    height: initial;
-}
-
-  /* .information {
-    background-color:  rgb(235, 249, 235);
-    width: 90%;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    border: 2px solid black;
-    /* outline: #4CAF50 solid 10px; */
-    /* border-radius: 20px 0px 0px 20px;
-    margin: auto;  
-    padding: 20px;
-    text-align: left;
-    overflow: hidden;
-    overflow-y: scroll;
-} */ 
-
-/* .information {
-    color: black;
-    font-size: 20px;
-    padding: 20px;
-    text-align: left;
-}
-
-.scroll-object1{
-    height: 300px;
-    background-color:  rgb(235, 249, 235);
-    width: 2250px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    border: 2px solid black;
-    border-radius: 20px 0px 0px 20px;
-    margin: auto;  
-    padding: 20px;
-    text-align: left;
-    overflow: hidden;
-    overflow-y: scroll;
-}
-
-.logo-text {
-    color: rgb(67, 222, 136);
-    padding-right: 10px;
-  }
-
-/* functionality of the scroll bar options */
-/* .multi-level, .item ul, nav input [type = "checkbox"]{
-    display: none;   
-}
-
-#menu:checked ~ .multi-level, .item input:checked ~ul{
-    display: block;
-}  */
-
-
-
 .main-filter{
     display: flex;
     flex-direction: column;
@@ -160,24 +5,25 @@
     flex-grow: 1; 
     max-height: 100vh;
     overflow-y: auto;
-    background-color: rgb(71, 199, 123);
-    padding: 45px;
+    background-color: white;
+    padding: 200px;
 }
+
 .filterPart {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 280vh;
+    align-items: left;
+    justify-content: right;
+    /* width: 185vh; */
     padding: 20px;
     
 }
-.dropdown {
+/* .dropdown {
     margin-bottom: 20px;
-    width: 100%;
+    width: 100px;
     display: flex;
     color:rgb(235, 249, 235)
-}
+} */
 /* these are the filter categories ex. names,size,edible, etc */
 #full-width {
     background-color: rgb(235, 249, 235);
@@ -187,18 +33,15 @@
     text-align: left;
     border:none;
     padding:0;
+    
 }
 
-#full-width2{
-    background-color: pink;
-    color: black;
-}
-.filterFullArea {
+/* .filterFullArea {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+    flex-direction: right;
+    align-items: left;
+    justify-content: right;
+} */
 .dropdown-item-custom {
     display: flex;
     justify-content: left;
@@ -225,7 +68,7 @@
     padding-top: 20px;
     border: 2px solid black;
     border-radius: 20px 0px 0px 20px;
-    margin: auto;  
+    margin: right;  
     padding: 50px;
     text-align: center;
     overflow: hidden;
@@ -239,11 +82,7 @@
     text-align: start;
     font-size: 35px;
 }
-#plantimgs img {
-    aspect-ratio: 1/1;
-    width: 100%;
-    height: initial;
-}
+
  
 /* information inside of bottom scroll bar */
 .information {
@@ -257,7 +96,7 @@
 .scroll-object1{
     height: 300px;
     background-color:  rgb(235, 249, 235);
-    width: 185vh;
+    width: 1610px;
     margin-top: 50px;
     margin-bottom: 50px;
     border: 2px solid black;
@@ -268,11 +107,8 @@
     overflow: hidden;
     overflow-y: scroll;
 }
-.logo-text {
-    color: rgb(67, 222, 136);
-    padding-right: 10px;
-  }
- 
+
+/* adjusts page width */
 html, body {
     width: 100%;
     margin: 0;
@@ -309,63 +145,6 @@ html, body {
     transform: rotate(0deg);
     transition: 0.1s;
 } */
-
-/* styles */
-/* label:hover{
-    cursor: pointer;
-
-}
-label{
-    width: 100%;
-    display: black;
-    z-index: 3;
-    position: relative;
-}
-.nav{
-    width: 100%;
-    background-color: white;
-    overflow-x: hidden;
-    border-bottom: 1px solid #CFD8DC;
-}
-
-#nav-icon{
-    font-size: 28px;
-    line-height: 50px;
-    padding-left: 1em;
-    color: black;
-    background-color:gray;
-
-}
-
-.nav ul, .nav li, label {
-    line-height: 50px;
-    margin: 0;
-    padding: 0 2em;
-    list-style: none;
-    text-decoration: none;
-    color: black;
-    width: 100%;
-}
-
-.item ul{
-    padding: 0 0.25em;
-}
-.nav li a{
-    line-height: 50px;
-    margin: 0;
-    padding: 0 4em;
-    list-style: none;
-    text-decoration: none;
-    color: black;
-    font-weight: 100;
-    width: 100%;
-
-}
-
-.navigationfilterbox {
-    align-items: left;
-
-}
 
 
 /* using new code for filters */
@@ -417,9 +196,9 @@ details {
     border-radius: 20px;
     margin-bottom: 20px;
 }
-.mainimage{
-    /* display: flex;
-    justify-content: center; */
-    /* align: left; */
-    /* width: 50vh; */
+
+.container{
+    display: flex;
+    justify-content: space-evenly;
+   
 }
