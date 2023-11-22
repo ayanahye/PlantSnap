@@ -45,7 +45,7 @@ describe("filter page integrates with API", () => {
 
 
 
-/*
+
 describe("Options shows in display div", () => {
   const mockSpeciesList = {
     common_name: 'Test Plant',
@@ -130,6 +130,7 @@ describe("Options shows in display div", () => {
         expect(currentPlantName).toBeInTheDocument();
 
       })
+      /*
 
       it('will show you the next image on the click', () => {
         render(<Filter speciesList={mockSpeciesList} />);
@@ -149,12 +150,10 @@ describe("Options shows in display div", () => {
         //expect(screen.getByText(/Care Guides/i)).toBeInTheDocument();
       });
 
-
+      */
 
 
 
     });
 
 // u can run the tests using this command: npm test -- --testPathPattern="filtering/__tests__" 
-
-*/
