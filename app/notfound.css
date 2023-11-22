@@ -22,3 +22,10 @@
 .text {
     margin-left: 20px;
 }
+
+.notfoundphoto{
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: center;
+
+}

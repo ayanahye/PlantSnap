@@ -88,6 +88,29 @@ describe("Options shows in display div", () => {
         expect(currentPlantName).toBeInTheDocument();
 
       })
+
+      it('will show you the next image on the click', () => {
+        render(<Filter speciesList={mockSpeciesList} />);
+    
+        const names = screen.getByTestId('photos');
+       fireEvent.click(photos);
+    
+        const html = document.body.innerHTML;
+    
+        const careGuidesIndex = html.search("image slides");
+  
+    
+        // check that index of careGuides is less than names and names index is less than sizes
+        expect(careGuidesIndex).toBeLessThan(namesIndex);
+        expect(namesIndex).toBeLessThan(sizesIndex);
+
+        //expect(screen.getByText(/Care Guides/i)).toBeInTheDocument();
+      });
+
+
+
+
+
     });
 
 // u can run the tests using this command: npm test -- --testPathPattern="filtering/__tests__" 
