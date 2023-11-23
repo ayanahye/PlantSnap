@@ -28,6 +28,5 @@ export default async function search(req: Request, ctx: Context) {
         if ("" != Indoor) query += `&indoor=${Indoor}`
         query += `&hardiness=${hdmin}-${hdmax}`
     }
-    let res = await fetch("https://perenual.com/api/species-list?" + query)
-    return new Response(res.body)
+    return await fetch("https://perenual.com/api/species-list?" + query)
 }
