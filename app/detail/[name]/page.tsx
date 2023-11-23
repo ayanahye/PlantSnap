@@ -64,11 +64,11 @@ export default function Page({params}: {
     let [plantDetail, setPlantDetail] = useState(empDetail);
     let name = decodeURIComponent(params.name);
     useEffect(() => {
+        let tmp: detailType
         fetch(`/.netlify/functions/filtering?q=${name}`)
             .then(res => res.json())
             .then(data => {
                 let tdata: perenual_detail = data
-                let tmp: detailType
                 if (tdata.id) {
                     tmp = {
                         common_name: tdata.common_name,
@@ -92,7 +92,11 @@ export default function Page({params}: {
                         poisonous_to_humans: tdata.poisonous_to_humans,
                         tropical: tdata.tropical,
                     }
-                } else if (localStorage.getItem(name) != null) {
+                }
+            })
+            .catch((error) => {
+                console.error("Error:", error)
+                if (localStorage.getItem(name) != null) {
                     let loc: {
                         image: string[],
                         family: string | null,
@@ -120,10 +124,13 @@ export default function Page({params}: {
                         poisonous_to_humans: 0,
                         tropical: false,
                     }
-                } else notFound()
-                setPlantDetail(tmp)
+                }
             })
-            .catch((error) => console.error("Error:", error));
+            .finally(() => {
+                if (tmp)
+                    setPlantDetail(tmp)
+                else notFound()
+            })
     }, [name]);
 
     return (
