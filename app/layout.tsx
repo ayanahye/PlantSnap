@@ -47,7 +47,7 @@ export default function RootLayout({children,}: {
                             <Link className="nav-link text-center" aria-current="page" href="/">Home</Link>
                         </li>
                         <li className="nav-item mx-2" id="minscreen">
-                            <Link className="nav-link text-center" aria-current="page" href="/search">Search</Link>
+                            <Link className="nav-link text-center" aria-current="page" href="/search"> Plant Search</Link>
                         </li>
                         <li className="nav-item mx-2" id="minscreen">
                             <Link className="nav-link text-center" aria-current="page" href="/identify">Identify</Link>
@@ -56,10 +56,10 @@ export default function RootLayout({children,}: {
                             <Link className="nav-link text-center" aria-current="page" href="/filtering">Filter temp</Link>
                         </li>
                     </ul>
-                    <form className="d-flex" role="search" action={searchSubmit}>
+                    <form className="d-flex" role="search"action={searchSubmit}>
                         <input className="form-control me-2" type="search" placeholder="Search"
-                               aria-label="Search" name="inputq"/>
-                        <button id="darker" className="btn btn-outline-success" type="submit">Search</button>
+                               aria-label="Search"  id = "ligher" name="inputq"/>
+                        <button id="lighter" className="btn btn-outline-success" type="submit">🔍</button>
                     </form>
                 </div>
             </div>
