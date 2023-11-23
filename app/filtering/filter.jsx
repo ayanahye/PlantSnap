@@ -163,53 +163,54 @@ export default function Filter(props) {
                         {optionValues.length > 0 ? (
                         <>
                             {optionValues.includes("Care Guide") && (
-                            <div data-testid="care-guides-section"> {/*removed green box */}
+                           <div data-testid="care-guides-section">
                                 <strong style={{ display: 'block' }}>Care Guides</strong>
+                                
                                 {props.speciesList["common_name"] && (
                                 <span>The {props.speciesList["common_name"]} requires </span>
                                 )}
 
-                                <strong style={{ display: 'block' }}>Watering</strong>
+                                
                                 {props.speciesList["watering"] && (
                                 <span>{props.speciesList["watering"].charAt(0).toLowerCase() + props.speciesList["watering"].slice(1)} watering. </span>
                                 )}
 
-                                <strong style={{ display: 'block' }}>Sunlight</strong>
+                                
                                 {props.speciesList["sunlight"] && (
                                 <span>The amount of sun the plant needs is {props.speciesList["sunlight"]}. </span>
                                 )}
 
-                                <strong style={{ display: 'block' }}>Pruning Month</strong>
+                                
                                 {props.speciesList["pruning_month"] && (
                                 <span>The best month to prune the plant is {props.speciesList["pruning_month"]} and </span>
                                 )}
 
-                                <strong style={{ display: 'block' }}>Maintenance</strong> 
+                                
                                 {props.speciesList["maintenance"] && (
                                 <span>the overall maintenance to care for this plant is {props.speciesList["maintenance"]}. </span>
                                 )}
 
-                                <strong style={{ display: 'block' }}>Drought Tolerance</strong> 
+                                
                                 {props.speciesList["drought_tolerant"] !== null && (
                                 <span>the plant {props.speciesList["drought_tolerant"] ? "is drought tolerant" : "is not drought tolerant"}. </span>
                                 )}
                                 
-                                <strong style={{ display: 'block' }}>Salt Tolerance</strong> 
+                                
                                 {props.speciesList["salt_tolerant"] !== null && (
                                 <span>Additionally, the plant {props.speciesList["salt_tolerant"] ? "is salt tolerant" : "is not salt tolerant"}. </span>
                                 )}
 
-                                <strong style={{ display: 'block' }}>Fruits</strong> 
+                               
                                 {props.speciesList["fruits"] !== null && (
                                 <span>Furthermore, the plant {props.speciesList["fruits"] ? "grows fruits" : "does not grow fruits"}. </span>
                                 )}
 
-                                <strong style={{ display: 'block' }}>Indoor</strong> 
+                                
                                 {props.speciesList["indoor"] !== null && (
                                 <span>The plant {props.speciesList["indoor"] ? "is an indoor plant" : "is not an indoor plant"}. </span>
                                 )}
 
-                                <strong style={{ display: 'block' }}>Care Level</strong> 
+                               
                                 {props.speciesList["care_level"] !== null && (
                                 <span>The overall care level of the plant is said to be {props.speciesList["care_level"].charAt(0).toLowerCase() + props.speciesList["care_level"].slice(1)}. </span>
                                 )}
