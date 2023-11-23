@@ -7,6 +7,7 @@ import styles from "./detail.module.css"
 import PlantIcons from '../../components/plantIcons';
 import PlantDesc from '../../components/plantDescandDets';
 import {perenual_detail} from "@/app/globalTypes";
+import warningIcon from './warning-red.webp'
 
 export type detailType = {
     common_name: string | null;
@@ -74,14 +75,14 @@ export default function Page({params}: {
                         common_name: tdata.common_name,
                         cycle: tdata.cycle,
                         description: tdata.description,
-                        dimension: tdata.description,
-                        family: tdata.description,
+                        dimension: tdata.dimension,
+                        family: tdata.family,
                         id: tdata.id,
                         image: tdata.default_image ? tdata.default_image.regular_url : "/images/no_image.jpg",
                         scientific_name: tdata.scientific_name,
                         sunlight: tdata.sunlight,
-                        type: tdata.description,
-                        watering: tdata.description,
+                        type: tdata.type,
+                        watering: tdata.watering,
                         drought_tolerant: tdata.drought_tolerant,
                         edible_fruit: tdata.edible_fruit,
                         edible_leaf: tdata.edible_leaf,
@@ -135,6 +136,16 @@ export default function Page({params}: {
 
     return (
         <main className="container py-5">
+            {plantDetail.poisonous_to_humans === 0 && (
+                <div className="alert alert-danger d-flex align-items-center" role="alert" id={styles.warningtop}>
+                    <Image height={50}src={warningIcon} alt="Warning" className="bi flex-shrink-0 me-2" />
+              
+                    <p className="mb-0 flex-grow-1 text-center">
+                        WARNING! This plant is poisonous to humans, keep your distance.
+                    </p>
+                    
+                </div>
+            )}
             <div className="row">
                 <div className="col-12 col-md-5">
                     <div className="card">
@@ -150,8 +161,7 @@ export default function Page({params}: {
                     <PlantDesc d={plantDetail}/>
                     <div className="row justify-content-center py-3">
                         <div className="col col-auto">
-                            <Link className="btn btn-light border border-secondary"
-                                  href={`/detail/${plantDetail.id}/filter`}>
+                            <Link className="btn btn-light border border-secondary" href={`/detail/${plantDetail.id}/filter`}>
                                 View More&gt;&gt;&gt;
                             </Link>
                         </div>
@@ -160,4 +170,5 @@ export default function Page({params}: {
             </div>
         </main>
     );
+    
 }
