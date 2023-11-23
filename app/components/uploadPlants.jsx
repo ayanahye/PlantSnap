@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "../identify/identify.module.css";
+import styles from "../identify.module.css"
 
 const UploadInput = ({ onFileChange }) => {
     return (

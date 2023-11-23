@@ -87,7 +87,7 @@ export default function Page() {
                 set_showresult(true)
             })
             .finally(() => {
-                set_showload(false); // hide the loading spinner regardless of success or failure
+                set_showload(false);
             });
         })
     }
