@@ -67,30 +67,60 @@ export default function Page({params}: {
         fetch(`/.netlify/functions/filtering?q=${name}`)
             .then(res => res.json())
             .then(data => {
-                if (!data) notFound()
                 let tdata: perenual_detail = data
-                let tmp: detailType = {
-                    common_name: tdata.common_name,
-                    cycle: tdata.cycle,
-                    description: tdata.description,
-                    dimension: tdata.description,
-                    family: tdata.description,
-                    id: tdata.id,
-                    image: tdata.default_image ? tdata.default_image.regular_url : "/images/no_image.jpg",
-                    scientific_name: tdata.scientific_name,
-                    sunlight: tdata.sunlight,
-                    type: tdata.description,
-                    watering: tdata.description,
-                    drought_tolerant: tdata.drought_tolerant,
-                    edible_fruit: tdata.edible_fruit,
-                    edible_leaf: tdata.edible_leaf,
-                    flowers: tdata.flowers,
-                    indoor: tdata.indoor,
-                    leaf: tdata.leaf,
-                    medicinal: tdata.medicinal,
-                    poisonous_to_humans: tdata.poisonous_to_humans,
-                    tropical: tdata.tropical,
-                }
+                let tmp: detailType
+                if (tdata.id) {
+                    tmp = {
+                        common_name: tdata.common_name,
+                        cycle: tdata.cycle,
+                        description: tdata.description,
+                        dimension: tdata.description,
+                        family: tdata.description,
+                        id: tdata.id,
+                        image: tdata.default_image ? tdata.default_image.regular_url : "/images/no_image.jpg",
+                        scientific_name: tdata.scientific_name,
+                        sunlight: tdata.sunlight,
+                        type: tdata.description,
+                        watering: tdata.description,
+                        drought_tolerant: tdata.drought_tolerant,
+                        edible_fruit: tdata.edible_fruit,
+                        edible_leaf: tdata.edible_leaf,
+                        flowers: tdata.flowers,
+                        indoor: tdata.indoor,
+                        leaf: tdata.leaf,
+                        medicinal: tdata.medicinal,
+                        poisonous_to_humans: tdata.poisonous_to_humans,
+                        tropical: tdata.tropical,
+                    }
+                } else if (localStorage.getItem(name) != null) {
+                    let loc: {
+                        image: string[],
+                        family: string | null,
+                        commons: string[]
+                    } = JSON.parse(localStorage.getItem(name) as string)
+                    tmp = {
+                        common_name: loc.commons.join(),
+                        cycle: "",
+                        description: "",
+                        dimension: "",
+                        family: "",
+                        id: 0,
+                        image: loc.image[0],
+                        scientific_name: [name],
+                        sunlight: [],
+                        type: "",
+                        watering: "",
+                        drought_tolerant: false,
+                        edible_fruit: false,
+                        edible_leaf: false,
+                        flowers: false,
+                        indoor: false,
+                        leaf: false,
+                        medicinal: false,
+                        poisonous_to_humans: 0,
+                        tropical: false,
+                    }
+                } else notFound()
                 setPlantDetail(tmp)
             })
             .catch((error) => console.error("Error:", error));

@@ -19,7 +19,7 @@ export default function PlantDetails(ctx: { d: plantDetail }) {
     return <>
         <div className="row align-items-end">
             <h3 className="col-auto">{plantDetail ? plantDetail.common_name : ""}</h3>
-            <h6 className="col-auto">{plantDetail ? plantDetail.scientific_name[0] : ""}</h6>
+            <h6 className="col-auto">{plantDetail.scientific_name ? plantDetail.scientific_name[0] : ""}</h6>
         </div>
         <div className="row">
             <h5 className="col text-success">Description</h5>
