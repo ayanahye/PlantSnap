@@ -2,7 +2,7 @@
 import Link from "next/link";
 import {notFound} from "next/navigation";
 import Image from "next/image";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./detail.css"
 import PlantIcons from '../../components/plantIcons';
 import PlantDesc from '../../components/plantDescandDets';
@@ -63,36 +63,39 @@ export default function Page({params}: {
     }
     let [plantDetail, setPlantDetail] = useState(empDetail);
     let name = decodeURIComponent(params.name);
-    fetch(`/.netlify/functions/filtering?q=${name}`)
-        .then(res => res.json())
-        .then(data => {
-            if (!data) notFound()
-            let tdata: perenual_detail = data
-            let tmp: detailType = {
-                common_name: tdata.common_name,
-                cycle: tdata.cycle,
-                description: tdata.description,
-                dimension: tdata.description,
-                family: tdata.description,
-                id: tdata.id,
-                image: tdata.default_image ? tdata.default_image.regular_url : "/images/no_image.jpg",
-                scientific_name: tdata.scientific_name,
-                sunlight: tdata.sunlight,
-                type: tdata.description,
-                watering: tdata.description,
-                drought_tolerant: tdata.drought_tolerant,
-                edible_fruit: tdata.edible_fruit,
-                edible_leaf: tdata.edible_leaf,
-                flowers: tdata.flowers,
-                indoor: tdata.indoor,
-                leaf: tdata.leaf,
-                medicinal: tdata.medicinal,
-                poisonous_to_humans: tdata.poisonous_to_humans,
-                tropical: tdata.tropical,
-            }
-            setPlantDetail(tmp)
-        })
-        .catch((error) => console.error("Error:", error));
+    useEffect(() => {
+        fetch(`/.netlify/functions/filtering?q=${name}`)
+            .then(res => res.json())
+            .then(data => {
+                if (!data) notFound()
+                let tdata: perenual_detail = data
+                let tmp: detailType = {
+                    common_name: tdata.common_name,
+                    cycle: tdata.cycle,
+                    description: tdata.description,
+                    dimension: tdata.description,
+                    family: tdata.description,
+                    id: tdata.id,
+                    image: tdata.default_image ? tdata.default_image.regular_url : "/images/no_image.jpg",
+                    scientific_name: tdata.scientific_name,
+                    sunlight: tdata.sunlight,
+                    type: tdata.description,
+                    watering: tdata.description,
+                    drought_tolerant: tdata.drought_tolerant,
+                    edible_fruit: tdata.edible_fruit,
+                    edible_leaf: tdata.edible_leaf,
+                    flowers: tdata.flowers,
+                    indoor: tdata.indoor,
+                    leaf: tdata.leaf,
+                    medicinal: tdata.medicinal,
+                    poisonous_to_humans: tdata.poisonous_to_humans,
+                    tropical: tdata.tropical,
+                }
+                setPlantDetail(tmp)
+            })
+            .catch((error) => console.error("Error:", error));
+    }, [name]);
+
     return (
         <main className="container py-5">
             <div className="row">
