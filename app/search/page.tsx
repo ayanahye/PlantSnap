@@ -1,9 +1,10 @@
 'use client'
 import styles from "./search.module.css"
-import React, {useEffect, useOptimistic, useState} from "react";
+import React, {useEffect, useState} from "react";
 import ListResult, {result} from "@/app/components/listResult";
 import {useSearchParams} from "next/navigation";
 import {perenual_search} from "@/app/globalTypes";
+import "../identify.module.css"
 
 let page = 1, lastpage = 1
 
@@ -11,7 +12,7 @@ export default function Page() {
     let c: result[] = []
     const params = useSearchParams()
     const [adv, setadv] = useState(false)
-    const [showload, set_showload] = useOptimistic(false)
+    const [showload, set_showload] = useState(false)
     const [showresult, set_showresult] = useState(false)
     const [resultlst, set_resultlst] = useState(c)
     const [pagination, set_pagination] = useState(<></>)
@@ -88,7 +89,7 @@ export default function Page() {
                     </ul>
                 </nav>)
                 //text on top
-                set_pagetext(`display${r.per_page}/${r.total} page#${r.current_page}/${r.last_page}`)
+                set_pagetext(`display [${r.per_page}/${r.total}] [page #${r.current_page}/${r.last_page}]`)
 
                 let tmp: result[] = []
                 if (r.data)
@@ -103,7 +104,7 @@ export default function Page() {
                         tmp.push({
                             image: {url: url, alt: plant.common_name},
                             name: plant.common_name,
-                            sciName: plant.scientific_name[0]
+                            anchor: plant.id
                         })
                     }
                 set_resultlst(tmp)
@@ -112,6 +113,9 @@ export default function Page() {
         }, () => {
             set_pagetext("error on connecting api")
         })
+        .finally(() => {
+            set_showload(false);
+        });
 
     }
 

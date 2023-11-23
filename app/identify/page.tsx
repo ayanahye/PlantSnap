@@ -1,11 +1,10 @@
 'use client'
-import styles from "./identify.module.css"
+import styles from "../identify.module.css"
 import React, {useOptimistic, useState} from "react";
 import Image from "next/image";
-import {postData} from "@/app/identify/connection";
 import ListResult, {result} from "@/app/components/listResult";
-import uploadPlants from "@/app/components/uploadPlants";
 import UploadInput from "@/app/components/uploadPlants";
+import {plantnet} from "@/app/globalTypes";
 
 type preview = {
     id: string
@@ -34,7 +33,7 @@ export default function Page() {
     const [d_input, set_d_input] = useState(true)
     const [showinput, set_showinput] = useState(true)
     const [showinputo, set_showinputo] = useOptimistic(true)
-    const [showload, set_showload] = useOptimistic(false)
+    const [showload, set_showload] = useState(false);
     const [showresult, set_showresult] = useState(false)
 
     let lastInput: HTMLInputElement | null = null;
@@ -73,19 +72,33 @@ export default function Page() {
             body: form,
             method: 'POST',
         }).then(res => {
-            res.json().then(data => {
+            res.json().then(d => {
+                let data: plantnet = d
                 let tmp: result[] = []
                 for (let r of data.results) {
+
                     tmp.push({
                         name: r.species.commonNames.length > 0 ? r.species.scientificNameWithoutAuthor : r.species.scientificNameWithoutAuthor,
                         image: {url: r.images[0].url.m, alt: r.species.commonNames.join(", ")},
                         score: r.score,
-                        sciName: r.species.scientificNameWithoutAuthor
+                        anchor: r.species.scientificNameWithoutAuthor
                     })
+                    let img = []
+                    for (let image of r.images) {
+                        img.push(image.url.m)
+                    }
+                    localStorage.setItem(r.species.scientificNameWithoutAuthor, JSON.stringify({
+                        image: img,
+                        family: r.species.family.scientificNameWithoutAuthor,
+                        commons:r.species.commonNames,
+                    }))
                 }
                 set_resultlst(tmp)
                 set_showresult(true)
             })
+                .finally(() => {
+                    set_showload(false);
+                });
         })
     }
 
@@ -182,7 +195,7 @@ export default function Page() {
                     </div>
                 </div>
                 <div id="input_holder" className="d-none">
-                    <UploadInput onFileChange={onFileChange} />
+                    <UploadInput onFileChange={onFileChange}/>
                     <input type="text" name="organs" value={typeValue} readOnly={true}/>
                 </div>
             </form>

@@ -2,36 +2,24 @@ name: SimplePipeline
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
-  lintTest:
-    name: Lint
+  LintAndDeploy:
     runs-on: ubuntu-latest
     steps:
       - name: Clone Repository
         uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: |
-          echo "Running Installing Dependencies..."
-          npm install
-      - name: Run Linting
-        run: |
-          echo "Running Linting tests..."
-          npm run lint
-        env:
-          CI: true
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
-      - name: Install deps
+      - name: Install Dependencies
         run: npm install
+      - name: Run Linting
+        run: npm run lint
       - name: Deploy
         run: npm run deploy:prod
         env:
-            NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-            NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          CI: true
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 

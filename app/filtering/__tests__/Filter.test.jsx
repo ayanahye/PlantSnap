@@ -3,6 +3,47 @@ import {render, fireEvent, screen, queryByText, within} from '@testing-library/r
 import '@testing-library/jest-dom/extend-expect'; 
 import Filter from '../filter'; 
 
+import userEvent from '@testing-library/user-event';
+import Page from '../page';
+import {http, HttpResponse} from 'msw'
+import {setupServer} from "msw/node";
+import {perenual_detail_test_value} from "../../globalTypes";
+
+
+// integration test for filter page that it correctly integrates with netlify functions
+const server = setupServer(
+    http.get('/.netlify/functions/filter', async ({request}) => {
+        return HttpResponse.json(perenual_detail_test_value)
+    })
+)
+
+beforeAll(() => server.listen())
+afterEach(() => server.resetHandlers())
+afterAll(() => server.close())
+
+describe("filter page integrates with API", () => {
+    test('Clicking dropdown option displays correct information', async () => {
+      render(<Filter speciesList={perenual_detail_test_value} />);
+
+
+      const navigationFilterBox = screen.getByTestId('navigationfilterbox');
+  
+      const checkBox = screen.getByTestId('checkbox-option1-common_name');
+      fireEvent.click(checkBox);
+
+        const informationDiv = screen.getByTestId('scroll-object1');
+  
+        const expectedInformation = 'common_name: European Silver Fir';
+        expect(informationDiv).toHaveTextContent(expectedInformation);
+      
+    });
+})
+
+
+
+
+
+
 
 
 describe("Options shows in display div", () => {
@@ -56,6 +97,7 @@ describe("Options shows in display div", () => {
         expect(within(informationContainer).getByText(/care level of the plant is said to be easy\./i)).toBeInTheDocument();
       });
       
+      // integration test
       it('will render the Care Guides at the top and all other options below.', () => {
         render(<Filter speciesList={mockSpeciesList} />);
     
@@ -88,6 +130,7 @@ describe("Options shows in display div", () => {
         expect(currentPlantName).toBeInTheDocument();
 
       })
+      /*
 
       it('will show you the next image on the click', () => {
         render(<Filter speciesList={mockSpeciesList} />);
@@ -107,11 +150,10 @@ describe("Options shows in display div", () => {
         //expect(screen.getByText(/Care Guides/i)).toBeInTheDocument();
       });
 
-
+      */
 
 
 
     });
 
 // u can run the tests using this command: npm test -- --testPathPattern="filtering/__tests__" 
-

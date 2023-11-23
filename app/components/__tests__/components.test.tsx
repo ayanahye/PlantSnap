@@ -58,6 +58,7 @@ describe('Planticons display', () => {
     })
 });
 
+// integration
 describe("Plant details and description display", () => {
     it("should render the description correctly, and show the correct details", () => {
         const plantDesc = {

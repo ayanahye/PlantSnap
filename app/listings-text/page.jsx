@@ -23,7 +23,7 @@ function Listings() {
 
         setLoading(true)
        
-        const apiKey = 'sk-sZxb6546cce0783d62824';
+        const apiKey = "sk-0LNN653568a6b58a62648"
         const url = `https://perenual.com/api/species-list?key=${apiKey}&q=${searchQuery}&page=1}`;
 
         try {
