@@ -34,7 +34,7 @@ export default function Page() {
     const [d_input, set_d_input] = useState(true)
     const [showinput, set_showinput] = useState(true)
     const [showinputo, set_showinputo] = useOptimistic(true)
-    const [showload, set_showload] = useOptimistic(false)
+    const [showload, set_showload] = useState(false);
     const [showresult, set_showresult] = useState(false)
 
     let lastInput: HTMLInputElement | null = null;
@@ -86,6 +86,9 @@ export default function Page() {
                 set_resultlst(tmp)
                 set_showresult(true)
             })
+            .finally(() => {
+                set_showload(false); // hide the loading spinner regardless of success or failure
+            });
         })
     }
 
