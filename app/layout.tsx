@@ -34,7 +34,7 @@ export default function RootLayout({children,}: {
         <nav className="navbar navbar-expand-lg w-100 position-sticky top-0">
             <div className="container-fluid mx-lg-5 mx-3">
                 <a className="navbar-brand" href="/">
-                    <Image src="/images/plantsnaplogo.svg" width="255" height="30" alt="logo"/>
+                    <Image src="/images/plantsnaplogo.svg" width="255" height="70" alt="logo"/>
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -42,18 +42,18 @@ export default function RootLayout({children,}: {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <Link className="nav-link" aria-current="page" href="/">Home</Link>
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
+                        <li className="nav-item mx-2">
+                            <Link className="nav-link text-center" aria-current="page" href="/">Home</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" aria-current="page" href="/search">Search</Link>
+                        <li className="nav-item mx-2">
+                            <Link className="nav-link text-center" aria-current="page" href="/search">Search</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" aria-current="page" href="/identify">Identify</Link>
+                        <li className="nav-item mx-2">
+                            <Link className="nav-link text-center" aria-current="page" href="/identify">Identify</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" aria-current="page" href="/filtering">Filter temp</Link>
+                        <li className="nav-item mx-2">
+                            <Link className="nav-link text-center" aria-current="page" href="/filtering">Filter temp</Link>
                         </li>
                     </ul>
                     <form className="d-flex" role="search" action={searchSubmit}>

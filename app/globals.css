@@ -77,5 +77,31 @@
 
 body > .navbar {
     z-index: 1000;
-    background: #d1f995;
+    background: #358856;
+}
+           
+.navbar-brand {
+        /* Styles for the navbar brand */
+        /* For example: */
+        padding: 30px; /* Adjust as needed */
+        
+      }
+      
+      /* Target the navbar links */
+.navbar-nav .nav-link {
+        /* Styles for the navbar links */
+        /* For example: */
+        color:black; /* Change the color of the links */
+        align-items: space-between;
+        /* Other styles like font-size, margin, etc. */
+        background-color: rgb(235, 249, 235);
+        border: black;
+        border-radius: 5px;
+        width: 8em;
+        
+}
+
+.bg-body-tertiary {
+        background-color: green; /* Replace with your desired color */
+        /* Other styles as needed */
 }
