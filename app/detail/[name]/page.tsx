@@ -107,7 +107,7 @@ export default function Page({params}: {
                         cycle: "",
                         description: "",
                         dimension: "",
-                        family: "",
+                        family: loc.family,
                         id: 0,
                         image: loc.image[0],
                         scientific_name: [name],
