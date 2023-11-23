@@ -1,7 +1,7 @@
 import type {Context} from "@netlify/functions"
 
 export default async function filtering(req: Request, ctx: Context) {
-    let P_KEY = "sk-koJX6534658bd876d2628";
+    let P_KEY = "sk-0LNN653568a6b58a62648";
     try {
         let plantId = new URL(req.url).searchParams.get("q");
         if (!plantId) return new Response("")
