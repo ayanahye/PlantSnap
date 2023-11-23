@@ -43,23 +43,23 @@ export default function RootLayout({children,}: {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
-                        <li className="nav-item mx-2">
+                        <li className="nav-item mx-2" id="minscreen">
                             <Link className="nav-link text-center" aria-current="page" href="/">Home</Link>
                         </li>
-                        <li className="nav-item mx-2">
+                        <li className="nav-item mx-2" id="minscreen">
                             <Link className="nav-link text-center" aria-current="page" href="/search">Search</Link>
                         </li>
-                        <li className="nav-item mx-2">
+                        <li className="nav-item mx-2" id="minscreen">
                             <Link className="nav-link text-center" aria-current="page" href="/identify">Identify</Link>
                         </li>
-                        <li className="nav-item mx-2">
+                        <li className="nav-item mx-2" id="minscreen">
                             <Link className="nav-link text-center" aria-current="page" href="/filtering">Filter temp</Link>
                         </li>
                     </ul>
                     <form className="d-flex" role="search" action={searchSubmit}>
                         <input className="form-control me-2" type="search" placeholder="Search"
                                aria-label="Search" name="inputq"/>
-                        <button className="btn btn-outline-success" type="submit">Search</button>
+                        <button id="darker" className="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
             </div>

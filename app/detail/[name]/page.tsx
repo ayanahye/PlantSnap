@@ -136,7 +136,7 @@ export default function Page({params}: {
 
     return (
         <main className="container py-5">
-            {plantDetail.poisonous_to_humans === 0 && (
+            {plantDetail.poisonous_to_humans === 1 && (
                 <div className="alert alert-danger d-flex align-items-center" role="alert" id={styles.warningtop}>
                     <Image height={50}src={warningIcon} alt="Warning" className="bi flex-shrink-0 me-2" />
               
