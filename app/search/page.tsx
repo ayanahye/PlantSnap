@@ -89,7 +89,7 @@ export default function Page() {
                     </ul>
                 </nav>)
                 //text on top
-                set_pagetext(`display${r.per_page}/${r.total} page#${r.current_page}/${r.last_page}`)
+                set_pagetext(`display [${r.per_page}/${r.total}] [page #${r.current_page}/${r.last_page}]`)
 
                 let tmp: result[] = []
                 if (r.data)

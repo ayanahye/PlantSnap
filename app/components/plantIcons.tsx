@@ -11,14 +11,14 @@ interface PlantIconsProps {
     edible_fruit: boolean;
     edible_leaf: boolean;
     medicinal: boolean;
-    poisonous_to_humans: boolean;
+    poisonous_to_humans: number;
     tropical: boolean;
   };
 }
 
 const PlantIcons: React.FC<PlantIconsProps> = ({ plantDetail }) => (
   <div className="card-text plantIco">
-    {plantDetail.poisonous_to_humans && (
+    {plantDetail.poisonous_to_humans === 0 && (
       <Image src="/images/warning-icon.webp" alt="danger" width={50} height={50} />
     )}
     {plantDetail.drought_tolerant && (
