@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
 
-export default function Page() {
+export default function fetchData() {
   const [speciesData, setSpeciesData] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [fullsearchQuery, setFullSearchQuery] = useState('');
