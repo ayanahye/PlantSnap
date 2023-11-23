@@ -20,7 +20,7 @@
 
 
 .text {
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 .notfoundphoto{
@@ -29,3 +29,24 @@
     justify-content: center;
 
 }
+
+
+  .text {
+    text-align: center;
+  }
+  
+  .error {
+    font-size: 5em; 
+    color: green;
+  }
+  
+  .text p {
+    font-size: 2em; 
+
+  }
+  
+  .btn {
+    font-size: 2em;
+  
+  }
+  
