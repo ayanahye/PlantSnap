@@ -47,7 +47,7 @@ let empDetail: detailType = {
     dimension: "loading...",
     family: "loading...",
     id: 0,
-    image: "/images/no_image.jpg",
+    image: "/images/no-image.jpg",
     scientific_name: ["loading..."],
     sunlight: ["loading..."],
     type: "loading...",
