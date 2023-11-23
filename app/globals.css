@@ -105,3 +105,14 @@ body > .navbar {
         background-color: green; /* Replace with your desired color */
         /* Other styles as needed */
 }
+
+#minscreen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}
+
+#darker {
+        background-color: #1c5433;
+}
