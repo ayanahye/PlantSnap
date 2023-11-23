@@ -1,5 +1,5 @@
 'use client'
-import styles from "./identify.module.css"
+import styles from "../identify.module.css"
 import React, {useOptimistic, useState} from "react";
 import Image from "next/image";
 import {postData} from "@/app/identify/connection";
