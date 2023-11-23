@@ -3,7 +3,7 @@ import Link from "next/link";
 import {notFound} from "next/navigation";
 import Image from "next/image";
 import React, {useEffect, useState} from "react";
-import "./detail.css"
+import styles from "./detail.module.css"
 import PlantIcons from '../../components/plantIcons';
 import PlantDesc from '../../components/plantDescandDets';
 import {perenual_detail} from "@/app/globalTypes";
@@ -139,7 +139,7 @@ export default function Page({params}: {
                 <div className="col-12 col-md-5">
                     <div className="card">
                         <div className="card-img-top overflow-hidden">
-                            <Image src={plantDetail.image} width={983} height={983} alt="plant"/>
+                            <Image src={plantDetail.image} width={983} height={983} alt="plant" className={styles.img}/>
                         </div>
                         <div className="card-body">
                             <PlantIcons plantDetail={plantDetail}/>
