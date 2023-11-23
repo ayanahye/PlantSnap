@@ -2,9 +2,7 @@
 import styles from "../identify.module.css"
 import React, {useOptimistic, useState} from "react";
 import Image from "next/image";
-import {postData} from "@/app/identify/connection";
 import ListResult, {result} from "@/app/components/listResult";
-import uploadPlants from "@/app/components/uploadPlants";
 import UploadInput from "@/app/components/uploadPlants";
 
 type preview = {
@@ -80,7 +78,7 @@ export default function Page() {
                         name: r.species.commonNames.length > 0 ? r.species.scientificNameWithoutAuthor : r.species.scientificNameWithoutAuthor,
                         image: {url: r.images[0].url.m, alt: r.species.commonNames.join(", ")},
                         score: r.score,
-                        sciName: r.species.scientificNameWithoutAuthor
+                        anchor: r.species.scientificNameWithoutAuthor
                     })
                 }
                 set_resultlst(tmp)

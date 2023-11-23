@@ -1,6 +1,6 @@
 'use client'
 import styles from "./search.module.css"
-import React, {useEffect, useOptimistic, useState} from "react";
+import React, {useEffect, useState} from "react";
 import ListResult, {result} from "@/app/components/listResult";
 import {useSearchParams} from "next/navigation";
 import {perenual_search} from "@/app/globalTypes";
@@ -104,7 +104,7 @@ export default function Page() {
                         tmp.push({
                             image: {url: url, alt: plant.common_name},
                             name: plant.common_name,
-                            sciName: plant.scientific_name[0]
+                            anchor: plant.id
                         })
                     }
                 set_resultlst(tmp)
