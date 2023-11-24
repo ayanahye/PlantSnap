@@ -56,7 +56,7 @@ import Data from '../SampleData.json'
 function Filtering(props) {
  
   const plantId = props.id;
-  const [speciesData, setSpeciesData] = useState(Data);
+  const [speciesData, setSpeciesData] = useState(null);
 
 
   useEffect(() => {
