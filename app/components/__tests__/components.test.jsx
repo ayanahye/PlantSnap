@@ -44,7 +44,7 @@ describe('Planticons display', () => {
             edible_fruit: true,
             edible_leaf: false,
             medicinal: true,
-            poisonous_to_humans: true,
+            poisonous_to_humans: 1,
             tropical: false
         };
 
@@ -71,12 +71,13 @@ describe("Plant details and description display", () => {
             cycle: "perenual",
             watering: "frequent",
             sunlight: ["full sun"],
-            id: '100'
+            id: 100
         };
 
-        render(<PlantDetails plantDetail={plantDesc} />);
+        render(<PlantDetails d={plantDesc} />);
 
         expect(screen.getByText('rose')).toBeInTheDocument();
+        
         expect(screen.getByText('rosa')).toBeInTheDocument();
         expect(screen.getByText('This is a desc for rose flower')).toBeInTheDocument();
         expect(screen.getByText(/rose family/i)).toBeInTheDocument();
@@ -85,6 +86,7 @@ describe("Plant details and description display", () => {
         expect(screen.getByText(/perenual/i)).toBeInTheDocument();
         expect(screen.getByText(/frequent/i)).toBeInTheDocument();
         expect(screen.getByText(/full sun/i)).toBeInTheDocument();
+        
     })
 });
 

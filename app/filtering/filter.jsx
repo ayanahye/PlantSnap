@@ -133,7 +133,7 @@ export default function Filter(props) {
             <h3 style={{paddingBottom: '10px'}}>{props.speciesList.common_name || "No name yet"}</h3>
             
             <div class = "container">
-            <Image src={props.speciesList.default_image.regular_url} class="d-block w-1000 l-1000" height={400} width={400} style={{ border: '5px solid #000' , borderRadius: '15px'}}/>
+            <Image alt="backup" src={props.speciesList.default_image.regular_url} class="d-block w-1000 l-1000" height={400} width={400} style={{ border: '5px solid #000' , borderRadius: '15px'}}/>
    
             
             <div className="filterPart">
