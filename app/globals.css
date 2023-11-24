@@ -119,3 +119,10 @@ body > .navbar {
 .nav-item:hover .nav-link {
         background-color:#b9ffb4;
       }
+      
+
+@media (max-width: 600px) {
+        .navbar-nav .nav-link {
+                width: 100%; /* Make the navbar links take up the full width */
+            }
+}

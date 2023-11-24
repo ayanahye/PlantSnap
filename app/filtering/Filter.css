@@ -6,7 +6,7 @@
     max-height: 100vh;
     overflow-y: auto;
     background-color: white;
-    padding: 200px;
+    padding: 50px 200px;
 }
 
 .filterPart {
@@ -15,7 +15,7 @@
     align-items: left;
     justify-content: right;
     /* width: 185em; */
-    padding: 20px;
+    padding: 0px 20px;
     
 }
 
@@ -24,7 +24,7 @@
     background-color: rgb(235, 249, 235);
     color:black;
     flex: 1;
-    font-size: 50px;
+    font-size: 25px;
     text-align: left;
     border:none;
     padding:0;
@@ -51,7 +51,7 @@
     padding-top: 20px;
     overflow: auto;
     justify-content: center;
-    font-size: 60px;
+    font-size: 25px;
 }
 .filterBlock {
     height: 400px;
@@ -75,7 +75,7 @@
 /* name of filter */
 .right-align {
     text-align: start;
-    font-size: 35px;
+    font-size: 25px;
 }
 
  
@@ -197,3 +197,61 @@ details {
     justify-content: space-evenly;
    
 }
+
+
+
+@media (max-width: 850px) {
+    .main-filter {
+        padding: 20px; 
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filterPart {
+        flex-direction: column;
+    }
+
+    #full-width {
+        font-size: 20px; 
+    }
+
+    .filterBlock {
+        width: 100%; 
+        border-radius: 0; 
+        padding: 20px; 
+        margin: 0; 
+    }
+
+    .scroll-object1 {
+        width: 100%; 
+        border-radius: 0; 
+    }
+
+    .information {
+        font-size: 20px; /* Adjust font size for smaller screens */
+        padding: 10px; /* Adjust padding for smaller screens */
+        margin: 0;
+        width: 95vw;
+
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .filterBlock {
+        width: 92vw;
+        margin: 0;
+        text-align: center;
+    }
+
+    #img-b {
+        width: 92vw;
+    }
+}
+
