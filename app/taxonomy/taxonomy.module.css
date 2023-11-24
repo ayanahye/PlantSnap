@@ -1,0 +1,42 @@
+.tax {
+    padding: 3em;
+    overflow: auto;
+    height: calc(100vh - 96px);
+    font-weight: bold;
+}
+
+.tax input {
+    display: none;
+}
+
+.tax label {
+    padding: 0.2em;
+    border-radius: 0.2em;
+    transition: background-color 0.2s ease;
+}
+
+.tax label:hover {
+    background: #eeffe0 !important;
+}
+
+.tax input:checked ~ label {
+    background: #deffc4;
+}
+
+.tax input:checked ~ .inner {
+    display: block;
+}
+
+.outer {
+    display: flex;
+    align-items: center;
+}
+
+.inner {
+    display: none;
+    margin: 0.2em;
+    padding: 0.2em;
+    border-image: linear-gradient(90deg, #78b75f, #fff 20%) 2;
+    border-width: 2px 0 2px 2px;
+    border-style: solid;
+}
