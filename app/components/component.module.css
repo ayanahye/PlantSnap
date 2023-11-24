@@ -8,16 +8,49 @@
     aspect-ratio: 1/1;
     overflow: hidden;
 }
+
 .dropdown {
     margin-bottom: 20px;
     width: 100%;
     display: flex;
-    color:rgb(235, 249, 235)
+    color: rgb(235, 249, 235)
 }
+
 .dropdown-item-custom {
     display: flex;
     justify-content: left;
 }
+
 .plantIco img {
-    margin:0 0.5em;
+    margin: 0 0.5em;
+}
+
+.atxlst {
+    font-weight: bold;
+    color: #5b5b5b;
+}
+
+.atxlst > div > div:nth-last-child(n+2) {
+    border-left: 3px solid;
+    border-image: linear-gradient(#fff, #a2a2a2, #fff) 30;
+}
+
+.atxlst .highlight {
+    font-weight: bolder;
+    color: #257e19;
+    position: relative;
+    display: flex;
+}
+
+.atxlst > div > div:nth-child(n+2) > .highlight:after {
+    content: "◀";
+    position: absolute;
+    display: block;
+    color: #a2a2a2;
+    left: 100%;
+}
+
+.atxlst .rank {
+    color: #444444;
+    text-align: center;
 }

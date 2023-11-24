@@ -1,12 +1,10 @@
-.main-filter{
+.main-filter {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-grow: 1; 
+    flex-grow: 1;
     max-height: 100vh;
-    overflow-y: auto;
     background-color: white;
-    padding: 50px 200px;
 }
 
 .filterPart {
@@ -16,19 +14,19 @@
     justify-content: right;
     /* width: 185em; */
     padding: 0px 20px;
-    
+
 }
 
 /* these are the filter categories ex. names,size,edible, etc */
 #full-width {
     background-color: rgb(235, 249, 235);
-    color:black;
+    color: black;
     flex: 1;
     font-size: 25px;
     text-align: left;
-    border:none;
-    padding:0;
-    
+    border: none;
+    padding: 0;
+
 }
 
 /* .filterFullArea {
@@ -53,6 +51,7 @@
     justify-content: center;
     font-size: 25px;
 }
+
 .filterBlock {
     height: 400px;
     width: 1000px;
@@ -63,13 +62,13 @@
     padding-top: 20px;
     border: 2px solid black;
     border-radius: 20px 0px 0px 20px;
-    margin: right;  
+    margin: right;
     padding: 50px;
     text-align: center;
     overflow: hidden;
     overflow-y: scroll;
     font-size: 25px;
-   
+
 }
 
 /* name of filter */
@@ -78,29 +77,34 @@
     font-size: 25px;
 }
 
- 
+
 /* information inside of bottom scroll bar */
 .information {
     color: black;
-    font-size: 25px;
     padding: 20px;
     text-align: left;
+    width: 100%;
 }
 
-/* size of the scroll bar */
-.scroll-object1{
-    height: 300px;
-    background-color:  rgb(235, 249, 235);
-    width: 1415px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+.information > div {
+    background-color: rgb(235, 249, 235);
     border: 2px solid black;
-    border-radius: 20px 0px 0px 20px;
-    margin: auto;  
     padding: 20px;
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+
+/* size of the scroll bar */
+.scroll-object1 {
+    font-size: 25px;
+    height: 300px;
+    margin: auto;
     text-align: left;
     overflow: hidden;
     overflow-y: scroll;
+    border-radius: 20px 0 0 20px!important;
 }
 
 /* adjusts page width */
@@ -111,18 +115,19 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
 
 }
-.multi-level, item ul, .nav{
+
+.multi-level, item ul, .nav {
     display: none;
 
 
 }
 
-#menu:checked ~ .multi-level, .item input:checked ~ ul{
+#menu:checked ~ .multi-level, .item input:checked ~ ul {
     display: block;
 }
 
 /* Arrow */
-.arrow{
+.arrow {
     width: 12px;
     height: 12px;
     vertical-align: middle;
@@ -130,7 +135,8 @@ html, body {
     z-index: 0;
     margin: 17px 1em 0 2em;
 }
-.item input + .arrow{
+
+.item input + .arrow {
     transform: rotate(-90deg);
     transition: 0.1s;
 
@@ -139,37 +145,37 @@ html, body {
 .item input:checked + .arrow {
     transform: rotate(0deg);
     transition: 0.1s;
-} 
+}
 
 
 /* using new code for filters */
 details {
     user-select: none;
-  }
-  
-  details>summary span.icon {
+}
+
+details > summary span.icon {
     width: 24px;
     height: 24px;
     transition: all 0.3s;
-    margin-left:0%;
-  }
-  
-  details[open] summary span.icon {
+    margin-left: 0%;
+}
+
+details[open] summary span.icon {
     transform: rotate(90deg);
-    color:green;
-  }
-  
-  summary {
+    color: green;
+}
+
+summary {
     display: flex;
     justify-content: flex-start;
     cursor: pointer;
-  }
-  
-  summary::-webkit-details-marker {
-    display: none;
-  }
+}
 
-  .focus-capturer:focus-within .collapsible-content {
+summary::-webkit-details-marker {
+    display: none;
+}
+
+.focus-capturer:focus-within .collapsible-content {
     display: block;
 }
 
@@ -192,17 +198,16 @@ details {
     margin-bottom: 20px;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: space-evenly;
-   
-}
 
+}
 
 
 @media (max-width: 850px) {
     .main-filter {
-        padding: 20px; 
+        padding: 20px;
         margin: 0;
         display: flex;
         flex-direction: column;
@@ -213,23 +218,23 @@ details {
     }
 
     #full-width {
-        font-size: 20px; 
+        font-size: 20px;
     }
 
     .filterBlock {
-        width: 100%; 
-        border-radius: 0; 
-        padding: 20px; 
-        margin: 0; 
+        width: 100%;
+        border-radius: 0;
+        padding: 20px;
+        margin: 0;
     }
 
     .scroll-object1 {
-        width: 100%; 
-        border-radius: 0; 
+        width: 100%;
+        border-radius: 0;
+        font-size: 20px; /* Adjust font size for smaller screens */
     }
 
     .information {
-        font-size: 20px; /* Adjust font size for smaller screens */
         padding: 10px; /* Adjust padding for smaller screens */
         margin: 0;
         width: 95vw;

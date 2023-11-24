@@ -1,30 +1,12 @@
 'use client';
-import React, {useEffect, useState} from 'react'
-
+import React from 'react'
+import Taxonomy_list from "../components/taxonomy_list";
 
 
 function Display() {
 
-    const [prevSearchQuery, setPrevSearchQuery] = useState("");
 
-    useEffect(() => {
-        const searchQuery = localStorage.getItem('lastSearchQuery');
-
-        if (searchQuery !== null) {
-            console.log('Your search: ', searchQuery);
-            setPrevSearchQuery(searchQuery);
-
-            localStorage.removeItem('lastSearchQuery');
-        }
-        else {
-            console.log("no data");
-        }
-    }, [])
-
-
-  return (
-    prevSearchQuery && <div>your search is: {prevSearchQuery}</div>
-  )
+    return <Taxonomy_list family="Asteraceae"/>
 }
 
 export default Display;
