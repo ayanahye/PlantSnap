@@ -1,4 +1,4 @@
-import type {Metadata} from 'next'
+'use client'
 import {Inter} from 'next/font/google'
 import './globals.css'
 import Script from "next/script";
@@ -7,22 +7,20 @@ import React from "react";
 import Image from "next/image";
 import Link from 'next/link';
 import {redirect} from "next/navigation";
-
+import { useRouter } from 'next/navigation';
 
 
 const inter = Inter({subsets: ['latin']})
 
-export const metadata: Metadata = {
-    title: 'PlantSnap',
-    description: 'TODO',
-}
+
 
 export default function RootLayout({children,}: {
     children: React.ReactNode
 }) {
+    const router = useRouter();
     async function searchSubmit(form: FormData) {
-        "use server"
-        redirect("/search?q=" + form.get("inputq"))
+        const query = form.get("inputq");
+        router.push(`/search?q=${query}`);
     }
 
     //This is the layout, the master of the page, which appears as the outer border on each page.
