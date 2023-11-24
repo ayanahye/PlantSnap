@@ -83,7 +83,7 @@ body > .navbar {
 .navbar-brand {
         /* Styles for the navbar brand */
         /* For example: */
-        padding: 30px; /* Adjust as needed */
+        /*padding: min(30px,10vw); !* Adjust as needed *!*/
         
       }
       
@@ -96,7 +96,7 @@ body > .navbar {
         background-color: rgb(235, 249, 235);
         border: black;
         border-radius: 5px;
-        width: 8em;
+        min-width: 8em;
         
 }
 
