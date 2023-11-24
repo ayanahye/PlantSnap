@@ -147,8 +147,8 @@ export default function Page() {
                                     <span className="input-group-text">Edible</span>
                                     <select name="edible" className='form-select'>
                                         <option value="">any</option>
-                                        <option value="true">true</option>
-                                        <option value='false'>false</option>
+                                        <option value="1">true</option>
+                                        <option value='0'>false</option>
                                     </select>
                                 </div>
                             </div>
@@ -157,8 +157,8 @@ export default function Page() {
                                     <span className="input-group-text">Poisonous</span>
                                     <select name="poisonous" className='form-select'>
                                         <option value="">any</option>
-                                        <option value="true">true</option>
-                                        <option value='false'>false</option>
+                                        <option value="1">true</option>
+                                        <option value='0'>false</option>
                                     </select>
                                 </div>
                             </div>
@@ -167,8 +167,8 @@ export default function Page() {
                                     <span className="input-group-text">Indoor</span>
                                     <select name="indoor" className='form-select'>
                                         <option value="">any</option>
-                                        <option value="true">true</option>
-                                        <option value='false'>false</option>
+                                        <option value="1">true</option>
+                                        <option value='0'>false</option>
                                     </select>
                                 </div>
                             </div>
