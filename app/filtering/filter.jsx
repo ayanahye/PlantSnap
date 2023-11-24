@@ -129,7 +129,7 @@ export default function Filter(props) {
 
     return (
         <main className="main-filter">
-            <h3 style={{paddingBottom: '10px'}}>{props.speciesList.common_name || "No name yet"}</h3>
+            <h3 style={{paddingBottom: '10px'}}>{props.speciesList.common_name || "No Plant Selected"}</h3>
 
             <div class="container">
 

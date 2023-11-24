@@ -52,10 +52,6 @@ export default function RootLayout({children,}: {
                         <li className="nav-item mx-xl-2 mb-2 mb-xl-0">
                             <Link className="nav-link text-center" aria-current="page" href="/identify">Identify</Link>
                         </li>
-                        <li className="nav-item mx-xl-2 mb-2 mb-xl-0">
-                            <Link className="nav-link text-center" aria-current="page" href="/filtering">Filter
-                                temp</Link>
-                        </li>
                     </ul>
                     <form className="d-flex" role="search" action={searchSubmit}>
                         <input className="form-control me-2" type="search" placeholder="Search"
