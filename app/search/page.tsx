@@ -35,6 +35,7 @@ export default function Page() {
         page = i
         let btn = document.querySelector("#submitSearch") as HTMLButtonElement
         btn.click()
+
     }
 
     //call when search button click
@@ -116,6 +117,7 @@ export default function Page() {
     }
 
     return <main>
+
         <div className={`${styles.input} ${adv && styles.adv}`} data-testid="input">
             <form action={postForm}>
                 <div>
@@ -243,5 +245,6 @@ export default function Page() {
             <ListResult data={resultlst}/>
             {pagination}
         </div>
+
     </main>
 }
