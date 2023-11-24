@@ -8,6 +8,8 @@ import Image from "next/image";
 import Link from 'next/link';
 import {redirect} from "next/navigation";
 
+
+
 const inter = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {
@@ -43,16 +45,16 @@ export default function RootLayout({children,}: {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
-                        <li className="nav-item mx-2" id="minscreen">
+                        <li className="nav-item mx-lg-2 mb-2 mb-lg-0">
                             <Link className="nav-link text-center" aria-current="page" href="/">Home</Link>
                         </li>
-                        <li className="nav-item mx-2" id="minscreen">
+                        <li className="nav-item mx-lg-2 mb-2 mb-lg-0">
                             <Link className="nav-link text-center" aria-current="page" href="/search"> Plant Search</Link>
                         </li>
-                        <li className="nav-item mx-2" id="minscreen">
+                        <li className="nav-item mx-lg-2 mb-2 mb-lg-0">
                             <Link className="nav-link text-center" aria-current="page" href="/identify">Identify</Link>
                         </li>
-                        <li className="nav-item mx-2" id="minscreen">
+                        <li className="nav-item mx-lg-2 mb-2 mb-lg-0">
                             <Link className="nav-link text-center" aria-current="page" href="/filtering">Filter temp</Link>
                         </li>
                     </ul>
