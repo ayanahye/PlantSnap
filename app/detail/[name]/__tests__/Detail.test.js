@@ -27,7 +27,7 @@ global.fetch = jest.fn(() => {
         }
         return Promise.resolve({
             ok: true,
-            json: () => Promise.resolve({data: [tmp]}),
+            json: () => Promise.resolve(tmp),
         })
     }
 );

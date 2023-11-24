@@ -70,7 +70,7 @@ export default function Page({params}: {
             .then(res => res.json())
             .then(data => {
                 let tdata: perenual_detail = data
-                if (tdata.id) {
+                if (tdata.id != null) {
                     tmp = {
                         common_name: tdata.common_name,
                         cycle: tdata.cycle,
@@ -138,12 +138,12 @@ export default function Page({params}: {
         <main className="container py-5">
             {plantDetail.poisonous_to_humans === 1 && (
                 <div className="alert alert-danger d-flex align-items-center" role="alert" id={styles.warningtop}>
-                    <Image height={50}src={warningIcon} alt="Warning" className="bi flex-shrink-0 me-2" />
-              
+                    <Image height={50} src={warningIcon} alt="Warning" className="bi flex-shrink-0 me-2"/>
+
                     <p className="mb-0 flex-grow-1 text-center">
                         WARNING! This plant is poisonous to humans, keep your distance.
                     </p>
-                    
+
                 </div>
             )}
             <div className="row">
@@ -161,7 +161,8 @@ export default function Page({params}: {
                     <PlantDesc d={plantDetail}/>
                     <div className="row justify-content-center py-3">
                         <div className="col col-auto">
-                            <Link className="btn btn-light border border-secondary" href={`/detail/${plantDetail.id}/filter`}>
+                            <Link className="btn btn-light border border-secondary"
+                                  href={`/detail/${plantDetail.id}/filter`}>
                                 View More&gt;&gt;&gt;
                             </Link>
                         </div>
@@ -170,5 +171,5 @@ export default function Page({params}: {
             </div>
         </main>
     );
-    
+
 }
