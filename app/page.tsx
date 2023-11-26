@@ -121,11 +121,11 @@ export default function Home() {
                             </div>
                             <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
                                 <p>Danger</p>
-                                <Image src="/images/warning-icon.webp" width='50' height='50' alt="flower"></Image>
+                                <Image src="/images/danger.svg" width='50' height='50' alt="flower"></Image>
                             </div>
                             <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
                                 <p>Medicinal</p>
-                                <Image src="/images/medicinal.svg" width='50' height='50' alt="flower"></Image>
+                                <Image src="/images/medical.svg" width='50' height='50' alt="flower"></Image>
                             </div>
                             <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
                                 <p>Indoor</p>
@@ -145,7 +145,7 @@ export default function Home() {
                             </div>
                             <div style={{display: 'flex', justifyContent: 'space-between', marginRight: '20px'}}>
                                 <p>Rare</p>
-                                <Image src="/images/rare.webp" width='50' height='50' alt="flower"></Image>
+                                <Image src="/images/rare.svg" width='50' height='50' alt="flower"></Image>
                             </div>
                         </blockquote>
                     </div>
