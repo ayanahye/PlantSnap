@@ -5,9 +5,7 @@
     flex-grow: 1; 
     max-height: 100vh;
     overflow-y: auto;
-    background: url('filter_background.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: white;
     padding: 200px;
 }
 
