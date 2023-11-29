@@ -26,7 +26,7 @@ beforeAll(() => server.listen())
 afterEach(() => server.resetHandlers())
 afterAll(() => server.close())
 
-
+// integration test - advanced search works after fetching api from the netlify function
 describe("test search page", () => {
     test('Clicking "v" button toggles advanced search options', async () => {
         render(<Page/>);

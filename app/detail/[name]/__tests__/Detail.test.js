@@ -14,16 +14,16 @@ global.fetch = jest.fn(() => {
             poisonous_to_humans: 0,
             tropical: false,
             common_name: "test",
-            cycle: "test",
-            description: "test",
+            cycle: "cycle_test",
+            description: "desc_test",
             dimension: "loading",
-            family: "test",
+            family: "fam_test",
             id: 0,
             default_image: {regular_url: "/images/no_image.jpg"},
-            scientific_name: ["test"],
-            sunlight: ["test"],
-            type: "test",
-            watering: "test"
+            scientific_name: ["sci_test"],
+            sunlight: ["sun_test"],
+            type: "type_test",
+            watering: "water_test"
         }
         return Promise.resolve({
             ok: true,
@@ -39,7 +39,8 @@ it('renders', async () => {
     setTimeout(test1,10)//wait for fetch
 });
 
+// integration test for detail page
 function test1() {
     expect(screen.getByText('test')).toBeInTheDocument();
-    expect(global.fetch).toHaveBeenCalledTimes(2);
+    expect(global.fetch).toHaveBeenCalledTimes(1);
 }

@@ -9,11 +9,12 @@ import { mock } from 'node:test';
 import UploadInput from '../uploadPlants';
 import Pagination from '../pagination';
 
+// unit test
 describe('Dropdown Component', () => {
     it('The isChecked property should be updated when the checkbox is clicked', () => {
         const mockHandleCheckboxChange = jest.fn();
 
-        const { getByLabelText } = render (
+        render (
             <Dropdown 
                 data={['origin', 'type', 'dimension']}
                 name="Names"
@@ -34,6 +35,7 @@ describe('Dropdown Component', () => {
     });
 });
 
+// unit test
 describe('Planticons display', () => {
     it("should display the correct icons", () => {
         const plantDetail = {
@@ -58,7 +60,7 @@ describe('Planticons display', () => {
     })
 });
 
-// integration
+// integration - display page
 describe("Plant details and description display", () => {
     it("should render the description correctly, and show the correct details", () => {
         const plantDesc = {
@@ -90,6 +92,7 @@ describe("Plant details and description display", () => {
     })
 });
 
+// unit test
 describe("list results display", () => {
     it("should render the confidence score and name correctly", () => {
         const plantData = [
@@ -110,7 +113,7 @@ describe("list results display", () => {
 });
 
 
-// note: im not sure if this is the correct way to test that the file change is called the expected number of times.
+// unit test
 describe("upload plant images", () => {
     it("should render 5 file input elements and handle the file upload correctly.", () => {
         const mockFileChange = jest.fn();
@@ -134,10 +137,11 @@ describe("upload plant images", () => {
     });
 });
 
+// unit test
 describe("Pagination display", () => {
     it("the page should update accordingly when the correct button is pressed.", () => {
         const page = 3;
-        const lastPage = 10;
+        const lastPage = 5;
         const onPageClick = jest.fn();
 
         render(<Pagination page={page} lastPage={lastPage} onPageClick={onPageClick} />);

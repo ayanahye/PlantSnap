@@ -149,7 +149,8 @@ describe("Options shows in display div", () => {
     "other_images": "Upgrade Plan To Supreme For Access https://perenual.com/subscription-api-pricing. I'm sorry"
   };
     
-    it("When the check is clicked for an option, the key and value pair should be displayed for the user in the div container called information.", () => {
+    // unit test
+    it("When the check is clicked for an option, the key and value pair should be displayed for the user in the div called information.", () => {
 
         render(<Filter speciesList={mockSpeciesList} />);
 
@@ -160,7 +161,7 @@ describe("Options shows in display div", () => {
         expect(within(informationContainer).getByText(/common_name:\s*European Silver Fir/i)).toBeInTheDocument();
     })
 
-    
+    // unit test    
     it('displays Care Reqs information when "Care Guide" is selected', () => {
     
         render(<Filter speciesList={mockSpeciesList} />);
@@ -182,7 +183,7 @@ describe("Options shows in display div", () => {
         expect(within(informationContainer).getByText(/care level of the plant is said to be medium\./i)).toBeInTheDocument();
       });
       
-      // integration test
+      // integration test - care guides
       it('will render the Care Guides at the top and all other options below.', () => {
         render(<Filter speciesList={mockSpeciesList} />);
     
@@ -205,9 +206,9 @@ describe("Options shows in display div", () => {
         expect(careGuidesIndex).toBeLessThan(namesIndex);
         expect(namesIndex).toBeLessThan(sizesIndex);
 
-        //expect(screen.getByText(/Care Guides/i)).toBeInTheDocument();
       });
 
+      // unit test
       it('will render "Current plant = No name yet" and filters are empty on render when speciesList is empty or null.', () => {
         render(<Filter />);
 
@@ -215,30 +216,6 @@ describe("Options shows in display div", () => {
         expect(currentPlantName).toBeInTheDocument();
 
       })
-      /*
-
-      it('will show you the next image on the click', () => {
-        render(<Filter speciesList={mockSpeciesList} />);
-    
-        const names = screen.getByTestId('photos');
-       fireEvent.click(photos);
-    
-        const html = document.body.innerHTML;
-    
-        const careGuidesIndex = html.search("image slides");
-  
-    
-        // check that index of careGuides is less than names and names index is less than sizes
-        expect(careGuidesIndex).toBeLessThan(namesIndex);
-        expect(namesIndex).toBeLessThan(sizesIndex);
-
-        //expect(screen.getByText(/Care Guides/i)).toBeInTheDocument();
-      });
-
-      */
-
-
-
     });
 
 // u can run the tests using this command: npm test -- --testPathPattern="filtering/__tests__" 

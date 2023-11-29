@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import ListResult from '../app/components/listResult'; 
 
+// integration test for list results with confidence rate and linking to display page
 describe('ListResult Component', () => {
   it('renders Link to detail page with data-testid', () => {
 
