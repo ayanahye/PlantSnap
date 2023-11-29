@@ -13,7 +13,6 @@ type preview = {
 }
 type typeimg = { img: string, name: string }
 
-//TODO: ico for type
 //icon on top of preview image
 const typeImage = {
     leaf: {img: "/images/leaf.svg", name: "leaf"},

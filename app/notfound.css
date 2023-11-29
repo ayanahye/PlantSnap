@@ -1,9 +1,7 @@
 .testing {
     height: 95vh;
-    display: flex;
-    justify-content: center;
-    align-items:start;
-    padding-top: 50px;
+    text-align: center;
+
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -20,7 +18,7 @@
 
 
 .text {
-    margin-left: 40px;
+    margin-top: 20px;
 }
 
 .notfoundphoto{
@@ -33,6 +31,9 @@
 
   .text {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    
   }
   
   .error {
@@ -45,4 +46,9 @@
 
   }
   
+  #bigger {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
   

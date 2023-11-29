@@ -14,6 +14,9 @@ This project was planned, designed, and implemented by:
 - Haoran Miao
 - Ayana Hussain
 
+# Link to Website
+https://plantsnapify.netlify.app/
+
 # Setup Instructions
 1. Please ensure you have Node.js installed with version 18 or higher and npm. Here is a link to download them [nodejs.org](https://nodejs.org/).
 2. Use command

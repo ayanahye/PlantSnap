@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  LintAndDeploy:
+  LintTestAndDeploy:
     runs-on: ubuntu-latest
     steps:
       - name: Clone Repository
@@ -16,10 +16,11 @@ jobs:
         run: npm install
       - name: Run Linting
         run: npm run lint
+      - name: Run Tests
+        run: npm test
       - name: Deploy
         run: npm run deploy:prod
         env:
           CI: true
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-

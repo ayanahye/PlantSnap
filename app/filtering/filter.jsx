@@ -8,9 +8,7 @@ import Taxonomy_list from "@/app/components/taxonomy_list";
 
 
 export default function Filter(props) {
-    //console.log(props.speciesList);
     const [selectedOptionNames, setSelectedOptionNames] = useState({});
-    console.log(props)
 
     if (!props.speciesList) {
         return (
@@ -104,28 +102,7 @@ export default function Filter(props) {
         })
     }
 
-    console.log(selectedOptionNames);
-
     const optionValues = Object.values(selectedOptionNames);
-
-    /*
-    const optionsArray = optionValues.map(valueOption => (
-        
-        <div key={valueOption}>
-
-          <p className="p-border"><strong>{valueOption}:</strong> {props.speciesList.valueOption}</p>
-        </div>
-      ));
-
-    */
-
-
-    // for (value in values) {
-    //     if (key === selectedOptionNames[id]) {
-    //         // then map the key to the value?
-    //     }
-    // }
-
 
     return (
         <main className="main-filter">
@@ -163,7 +140,6 @@ export default function Filter(props) {
                     </div>
                 </div>
             </div>
-
 
             <div className="information">
                 <div data-testid="scroll-object1" className="scroll-object1">
@@ -249,11 +225,3 @@ export default function Filter(props) {
     );
 
 }
-
-/*<<Dropdown data={dataNames} name="Names" onOptionChange={handleOptionChange} id="option1"/>
-                         <Dropdown data={dataSizes} name="Sizes" onOptionChange={handleOptionChange} id="option2"/>
-                         <Dropdown data={dataEdible} name="Edible" onOptionChange={handleOptionChange} id="option3"/>
-                         <Dropdown data={dataMaintenance} name="Maintenance" onOptionChange={handleOptionChange} id="option4"/>
-                         <Dropdown data={dataCareReqs} name="Care Reqs" onOptionChange={handleOptionChange} id="option5"/>
-// <Dropdown data={dataPoisonous} name="Poisonous" onOptionChange={handleOptionChange} id="option6"/> */
-    

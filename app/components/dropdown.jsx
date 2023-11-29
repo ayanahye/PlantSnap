@@ -41,5 +41,3 @@ export default function Dropdown(props) {
 
     
 }
-
-// checkbox-option1-1

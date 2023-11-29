@@ -22,5 +22,4 @@ export default async function search(req: Request, ctx: Context) {
             method: 'POST',
         })
     return new Response(res.body)
-    // return plantnet_test_value
 }
