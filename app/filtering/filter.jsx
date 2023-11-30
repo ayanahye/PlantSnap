@@ -1,6 +1,7 @@
 'use client'
 import React, {useState} from 'react';
 import "./Filter.css";
+import Link from 'next/link';
 
 import Dropdown from '../components/dropdown';
 import Image from 'next/image';
@@ -12,8 +13,10 @@ export default function Filter(props) {
 
     if (!props.speciesList) {
         return (
-            <main className="main-filter">
+            <main style={{display:'flex', alignItems:'center', 'justifyContent': 'center', flexDirection:'column', height: '90vh', textAlign:'center'}}>
                 <h3 style={{paddingBottom: '15px'}}>Current plant = No name yet</h3>
+                <p>There is no additional data available for this plant. Please try another search. Thank you.</p>
+                <button id="bigger" type="button" className="btn btn-success"><Link style={{color: 'white', textDecoration:'none'}} className="link" href="/search">Return to Search</Link></button>
             </main>
         );
     }

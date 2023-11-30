@@ -29,6 +29,7 @@ export default function RootLayout({children,}: {
     return (
         <html lang="en">
         <Script src='/bootstrap/bootstrap.bundle.min.js'></Script>
+        <link rel="icon" type="image/x-icon" href="/images/leaf.svg"></link>
         <body className={inter.className}>
         <nav className="navbar navbar-expand-xl w-100 position-sticky top-0">
             <div className="container-fluid mx-xl-5 mx-1">
