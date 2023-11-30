@@ -247,7 +247,9 @@ export default function Page() {
         <div className={`${styles.result} ${showresult && styles.show}`}>
             <div className={styles.pagetext}>{pagetext}</div>
             <ListResult data={resultlst}/>
-            {pagination}
+            <div className={`pagination-wrapper ${resultlst.length === 0 && styles.invisible}`}>
+                {pagination}
+            </div>
         </div>
     </main>
 }

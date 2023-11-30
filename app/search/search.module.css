@@ -88,3 +88,7 @@
     padding: 1em 0;
     color: #444444;
 }
+
+.invisible {
+    display: none;
+}
