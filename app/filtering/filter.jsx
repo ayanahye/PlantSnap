@@ -200,6 +200,7 @@ export default function Filter(props) {
                                     {props.speciesList["care_level"] !== null && (
                                         <span>The overall care level of the plant is said to be {props.speciesList["care_level"].charAt(0).toLowerCase() + props.speciesList["care_level"].slice(1)}. </span>
                                     )}
+                                    <hr></hr>
                                 </div>
                             )}
                             {optionValues.map((valueOption, index) => (
@@ -210,7 +211,7 @@ export default function Filter(props) {
                                                 ? `${valueOption}: ${Object.values(props.speciesList[valueOption]).join(", ")}`
                                                 : `${valueOption}: ${props.speciesList[valueOption]}`
                                         ) : (
-                                            "No data yet"
+                                            `${valueOption}: No data yet`
                                         )
                                     )}
                                 </div>

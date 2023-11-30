@@ -93,7 +93,6 @@
     padding: 20px;
     width: 100%;
     border-radius: 20px;
-    margin-top: 20px;
 }
 
 
@@ -106,6 +105,7 @@
     overflow: hidden;
     overflow-y: scroll;
     border-radius: 20px 0 0 20px!important;
+    margin-bottom: 15px;
 }
 
 /* adjusts page width */
@@ -258,6 +258,7 @@ summary::-webkit-details-marker {
 
     #img-b {
         width: 92vw;
+        margin-bottom: 15px;
     }
 }
 
