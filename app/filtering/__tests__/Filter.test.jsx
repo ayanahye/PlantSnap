@@ -1,14 +1,10 @@
 import React from 'react';
-import {render, fireEvent, screen, queryByText, within} from '@testing-library/react';
+import {render, fireEvent, screen, within} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect'; 
 import Filter from '../filter'; 
-
-import userEvent from '@testing-library/user-event';
-import Page from '../page';
 import {http, HttpResponse} from 'msw'
 import {setupServer} from "msw/node";
 import {perenual_detail_test_value} from "../../globalTypes";
-
 
 // integration test for filter page that it correctly integrates with netlify functions
 const server = setupServer(
@@ -24,12 +20,9 @@ afterAll(() => server.close())
 describe("filter page integrates with API", () => {
     test('Clicking dropdown option displays correct information', async () => {
       render(<Filter speciesList={perenual_detail_test_value} />);
-
-
-      const navigationFilterBox = screen.getByTestId('navigationfilterbox');
-  
-      const checkBox = screen.getByTestId('checkbox-option1-common_name');
-      fireEvent.click(checkBox);
+    
+        const checkBox = screen.getByTestId('checkbox-option1-common_name');
+        fireEvent.click(checkBox);
 
         const informationDiv = screen.getByTestId('scroll-object1');
   
@@ -211,7 +204,6 @@ describe("Options shows in display div", () => {
       // unit test
       it('will render "Current plant = No name yet" and filters are empty on render when speciesList is empty or null.', () => {
         render(<Filter />);
-
         const currentPlantName = screen.getByText(/Current plant = No name yet/i);
         expect(currentPlantName).toBeInTheDocument();
 

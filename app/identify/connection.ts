@@ -1,6 +1,6 @@
 "use server"
 
-import {plantnet, plantnet_test_value} from "@/app/globalTypes";
+import {plantnet} from "@/app/globalTypes";
 
 export async function postData(form: FormData): Promise<plantnet> {
     //see .env file in root folder

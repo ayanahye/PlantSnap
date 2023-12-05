@@ -1,10 +1,8 @@
 'use client'
 import { useEffect, useState } from "react";
-
 import React from 'react'
 import Filter from './filter';
 import "./Filter.css";
-import Data from '../SampleData.json'
 
 function Filtering(props) {
  

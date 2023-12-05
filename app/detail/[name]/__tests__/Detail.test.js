@@ -1,7 +1,6 @@
 import {render, screen} from '@testing-library/react';
 import Page from "../page";
 
-
 global.fetch = jest.fn(() => {
         let tmp = {
             drought_tolerant: false,

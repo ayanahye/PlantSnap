@@ -1,5 +1,4 @@
 "use server"
-
 import {perenual_search} from "@/app/globalTypes";
 
 // :something is used for define data type, ignore them if you don't understand

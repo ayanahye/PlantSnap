@@ -30,12 +30,6 @@
 
 }
 
-/* .filterFullArea {
-    display: flex;
-    flex-direction: right;
-    align-items: left;
-    justify-content: right;
-} */
 .dropdown-item-custom {
     display: flex;
     justify-content: left;

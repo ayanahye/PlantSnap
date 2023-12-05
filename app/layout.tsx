@@ -8,9 +8,7 @@ import Image from "next/image";
 import Link from 'next/link';
 import {useRouter} from 'next/navigation';
 
-
 const inter = Inter({subsets: ['latin']})
-
 
 export default function RootLayout({children,}: {
     children: React.ReactNode
@@ -25,7 +23,6 @@ export default function RootLayout({children,}: {
     //This is the layout, the master of the page, which appears as the outer border on each page.
     //bootstrap has been referenced globally, do not import it again.
 
-    //do not delete this bootstrap js plz!!!!!
     return (
         <html lang="en">
         <Script src='/bootstrap/bootstrap.bundle.min.js'></Script>
