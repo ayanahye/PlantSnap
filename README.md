@@ -1,3 +1,5 @@
+### Hello! Quick note that Our AI Disclosures are in the public folder under AI_disclosures (public/AI_disclosures)
+
 # Objectives
 PlantSnap: Data and Care is a comprehensive plant care and identification tool designed to 
 meet the needs of students, gardening enthusiasts, professors, and other researchers in an all-in-one application. Users would be able to search for specific plants using Perenual Plant API and acquire data or have the option to utilize an AI image recognition tool called Pl@ntNet API to identify plants. The data returned includes: care guide specifications related to water, sunlight and indoor requirements, and keywords which will be displayed as icons indicating the severity of interacting with this plant. Our project aims to offer a wider range of features compared to existing plant search tools. This will enable researchers, gardening enthusiasts, and other users to find plant data, comparable plants, and other information without needing to search around additional websites.
