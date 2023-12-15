@@ -11,7 +11,8 @@ export default async function filtering(req: Request, ctx: Context) {
             if (speciesList.data.length == 0) return new Response("")
             plantId = speciesList.data[0].id;
         }
-        return await fetch(`https://perenual.com/api/species/details/${plantId}?key=${P_KEY}`);
+        let res = await fetch(`https://perenual.com/api/species/details/${plantId}?key=${P_KEY}`)
+        return new Response(res.body)
     } catch (error) {
         console.log("Error fetching data:", error);
     }
